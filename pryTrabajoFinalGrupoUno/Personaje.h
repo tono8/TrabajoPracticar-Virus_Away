@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class Entidad
+class Personaje
 {
 protected:
 	int x, y;
@@ -13,7 +13,7 @@ protected:
 	//Indice de direccion
 	int IDx;//se declara para mostrar fotogramas de acuerdo al indice
 public:
-	Entidad() {
+	Personaje() {
 		x = y = 0;
 		dx = dy = 0;
 		ancho = alto = 0;

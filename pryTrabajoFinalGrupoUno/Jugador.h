@@ -1,5 +1,5 @@
 #pragma once
-#include "Entidad.h"
+#include "Personaje.h"
 
 enum SpriteJugador {
 	j1CaminarDerecha,
@@ -8,7 +8,7 @@ enum SpriteJugador {
 	j1CaminarAbajo,
 };
 
-class Jugador : public Entidad {
+class Jugador : public Personaje {
 private:
 	SpriteJugador movimiento;
 public:

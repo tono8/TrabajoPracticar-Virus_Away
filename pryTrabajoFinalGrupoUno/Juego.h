@@ -9,7 +9,7 @@ private:
 public:
 	Controlador()
 	{
-		imgJugador = gcnew System::Drawing::Bitmap("img/testing1_alt2.png");
+		imgJugador = gcnew System::Drawing::Bitmap("img/testing1_32_alt2.png");
 
 		jugador = new Jugador(imgJugador);
 	}
