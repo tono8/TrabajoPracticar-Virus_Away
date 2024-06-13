@@ -73,7 +73,7 @@ namespace pryTrabajoFinalGrupoUno {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(840, 840);
 			this->Cursor = System::Windows::Forms::Cursors::No;
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MaximizeBox = false;
 			this->Name = L"frmJuego";
 			this->ShowInTaskbar = false;
