@@ -118,14 +118,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="frmJuego.cpp" />
     <ClCompile Include="frmPrincipal.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="frmJuego.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Personaje.h" />
     <ClInclude Include="frmPrincipal.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Juego.h" />
+    <ClInclude Include="Jugador.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmJuego.resx">
+      <DependentUpon>frmJuego.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.h</DependentUpon>
     </EmbeddedResource>

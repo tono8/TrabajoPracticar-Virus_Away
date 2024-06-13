@@ -1,4 +1,5 @@
 #include "frmPrincipal.h"
+#include "frmJuego.h"
 #include "Windows.h"
 using namespace pryTrabajoFinalGrupoUno;
 
