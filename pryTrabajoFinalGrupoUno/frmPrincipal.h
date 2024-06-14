@@ -1,35 +1,24 @@
 #pragma once
 //frmPresentacion
 #include "frmJuego.h"
-
-
+//#include "frmInstrucciones.h"
+//#include "frmCreditos.h"
+//#include "frmExtras.h"
 namespace pryTrabajoFinalGrupoUno {
-
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
-	/// <summary>
-	/// Summary for frmPrincipal
-	/// </summary>
 	public ref class frmPrincipal : public System::Windows::Forms::Form
 	{
 	public:
 		frmPrincipal(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
 		}
-
 	protected:
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
 		~frmPrincipal()
 		{
 			if (components)
@@ -40,35 +29,20 @@ namespace pryTrabajoFinalGrupoUno {
 	private: System::Windows::Forms::Button^ btnIniciar;
 	private: System::Windows::Forms::GroupBox^ grbPrincipales;
 	private: System::Windows::Forms::Button^ btnInstrucciones;
-
-
 	private: System::Windows::Forms::Button^ btnCreditos;
 	private: System::Windows::Forms::Button^ btnFinalizar1;
-
-
 	protected:
-
 	protected:
 	private: System::ComponentModel::IContainer^ components;
-
 	private:
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-
-
 #pragma region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
 		void InitializeComponent(void)
 		{
 			this->btnIniciar = (gcnew System::Windows::Forms::Button());
 			this->grbPrincipales = (gcnew System::Windows::Forms::GroupBox());
-			this->btnInstrucciones = (gcnew System::Windows::Forms::Button());
-			this->btnCreditos = (gcnew System::Windows::Forms::Button());
 			this->btnFinalizar1 = (gcnew System::Windows::Forms::Button());
+			this->btnCreditos = (gcnew System::Windows::Forms::Button());
+			this->btnInstrucciones = (gcnew System::Windows::Forms::Button());
 			this->grbPrincipales->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -91,37 +65,11 @@ namespace pryTrabajoFinalGrupoUno {
 			this->grbPrincipales->Controls->Add(this->btnCreditos);
 			this->grbPrincipales->Controls->Add(this->btnInstrucciones);
 			this->grbPrincipales->Controls->Add(this->btnIniciar);
-			this->grbPrincipales->Location = System::Drawing::Point(12, 288);
+			this->grbPrincipales->Location = System::Drawing::Point(20, 288);
 			this->grbPrincipales->Name = L"grbPrincipales";
 			this->grbPrincipales->Size = System::Drawing::Size(262, 255);
 			this->grbPrincipales->TabIndex = 1;
 			this->grbPrincipales->TabStop = false;
-			// 
-			// btnInstrucciones
-			// 
-			this->btnInstrucciones->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->btnInstrucciones->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnInstrucciones->Location = System::Drawing::Point(6, 66);
-			this->btnInstrucciones->Name = L"btnInstrucciones";
-			this->btnInstrucciones->Size = System::Drawing::Size(250, 40);
-			this->btnInstrucciones->TabIndex = 0;
-			this->btnInstrucciones->Text = L"Instrucciones";
-			this->btnInstrucciones->UseVisualStyleBackColor = false;
-			this->btnInstrucciones->Click += gcnew System::EventHandler(this, &frmPrincipal::btnIniciar_Click);
-			// 
-			// btnCreditos
-			// 
-			this->btnCreditos->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->btnCreditos->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnCreditos->Location = System::Drawing::Point(6, 112);
-			this->btnCreditos->Name = L"btnCreditos";
-			this->btnCreditos->Size = System::Drawing::Size(250, 40);
-			this->btnCreditos->TabIndex = 0;
-			this->btnCreditos->Text = L"Creditos";
-			this->btnCreditos->UseVisualStyleBackColor = false;
-			this->btnCreditos->Click += gcnew System::EventHandler(this, &frmPrincipal::btnIniciar_Click);
 			// 
 			// btnFinalizar1
 			// 
@@ -131,10 +79,36 @@ namespace pryTrabajoFinalGrupoUno {
 			this->btnFinalizar1->Location = System::Drawing::Point(6, 209);
 			this->btnFinalizar1->Name = L"btnFinalizar1";
 			this->btnFinalizar1->Size = System::Drawing::Size(250, 40);
-			this->btnFinalizar1->TabIndex = 0;
+			this->btnFinalizar1->TabIndex = 3;
 			this->btnFinalizar1->Text = L"Salir";
 			this->btnFinalizar1->UseVisualStyleBackColor = false;
-			this->btnFinalizar1->Click += gcnew System::EventHandler(this, &frmPrincipal::btnIniciar_Click);
+			this->btnFinalizar1->Click += gcnew System::EventHandler(this, &frmPrincipal::btnFinalizar1_Click);
+			// 
+			// btnCreditos
+			// 
+			this->btnCreditos->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->btnCreditos->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnCreditos->Location = System::Drawing::Point(6, 112);
+			this->btnCreditos->Name = L"btnCreditos";
+			this->btnCreditos->Size = System::Drawing::Size(250, 40);
+			this->btnCreditos->TabIndex = 2;
+			this->btnCreditos->Text = L"Creditos";
+			this->btnCreditos->UseVisualStyleBackColor = false;
+			this->btnCreditos->Click += gcnew System::EventHandler(this, &frmPrincipal::btnCreditos_Click);
+			// 
+			// btnInstrucciones
+			// 
+			this->btnInstrucciones->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->btnInstrucciones->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnInstrucciones->Location = System::Drawing::Point(6, 66);
+			this->btnInstrucciones->Name = L"btnInstrucciones";
+			this->btnInstrucciones->Size = System::Drawing::Size(250, 40);
+			this->btnInstrucciones->TabIndex = 1;
+			this->btnInstrucciones->Text = L"Instrucciones";
+			this->btnInstrucciones->UseVisualStyleBackColor = false;
+			this->btnInstrucciones->Click += gcnew System::EventHandler(this, &frmPrincipal::btnInstrucciones_Click);
 			// 
 			// frmPrincipal
 			// 
@@ -159,5 +133,16 @@ namespace pryTrabajoFinalGrupoUno {
 		frmJ->ShowDialog();
 		this->Visible = true;
 	}
-	};
+	private: System::Void btnInstrucciones_Click(System::Object^ sender, System::EventArgs^ e) {
+		//grbPrincipales->Visible = false;
+		//grbPrincipales->Visible = true;
+	}
+	private: System::Void btnCreditos_Click(System::Object^ sender, System::EventArgs^ e) {
+		//grbPrincipales->Visible = false;
+		//grbPrincipales->Visible = true;
+	}
+	private: System::Void btnFinalizar1_Click(System::Object^ sender, System::EventArgs^ e) {
+		Application::Exit();
+	}
+};
 }

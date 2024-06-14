@@ -23,13 +23,25 @@
     <ClInclude Include="frmPrincipal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Entidad.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Jugador.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Juego.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="frmJuego.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Personaje.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemigo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Aliado.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Proyectil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -118,10 +118,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="frmJuego.cpp" />
     <ClCompile Include="frmPrincipal.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Aliado.h" />
+    <ClInclude Include="Enemigo.h" />
     <ClInclude Include="frmJuego.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -131,6 +132,7 @@
     </ClInclude>
     <ClInclude Include="Juego.h" />
     <ClInclude Include="Jugador.h" />
+    <ClInclude Include="Proyectil.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmJuego.resx">

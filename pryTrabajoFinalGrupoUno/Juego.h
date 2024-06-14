@@ -23,39 +23,38 @@ public:
 		int v = 9;
 		if (movimiento == true)
 		{
-			if (tecla == System::Windows::Forms::Keys::Up) {
+			if (tecla == System::Windows::Forms::Keys::W) {
 				jugador->setDY(-v);
-				jugador->setMovimiento(j1CaminarArriba);
+				jugador->setMovimiento(jCaminarArriba);
 			}
-			else if (tecla == System::Windows::Forms::Keys::Down) {
+			else if (tecla == System::Windows::Forms::Keys::S) {
 				jugador->setDY(v);
-				jugador->setMovimiento(j1CaminarAbajo);
+				jugador->setMovimiento(jCaminarAbajo);
 			}
-			else if (tecla == System::Windows::Forms::Keys::Left) {
+			else if (tecla == System::Windows::Forms::Keys::A) {
 				jugador->setDX(-v);
-				jugador->setMovimiento(j1CaminarIzquierda);
+				jugador->setMovimiento(jCaminarIzquierda);
 			}
-			else if (tecla == System::Windows::Forms::Keys::Right) {
+			else if (tecla == System::Windows::Forms::Keys::D) {
 				jugador->setDX(v);
-				jugador->setMovimiento(j1CaminarDerecha);
+				jugador->setMovimiento(jCaminarDerecha);
 			}
 		}
 		else {
-			if (tecla == System::Windows::Forms::Keys::Up) {
+			if (tecla == System::Windows::Forms::Keys::W) {
 				jugador->setDY(0);
 			}
-			else if (tecla == System::Windows::Forms::Keys::Down) {
+			else if (tecla == System::Windows::Forms::Keys::S) {
 				jugador->setDY(0);
 			}
-			else if (tecla == System::Windows::Forms::Keys::Left) {
+			else if (tecla == System::Windows::Forms::Keys::A) {
 				jugador->setDX(0);
 			}
-			else if (tecla == System::Windows::Forms::Keys::Right) {
+			else if (tecla == System::Windows::Forms::Keys::D) {
 				jugador->setDX(0);
 			}
 		}
 	}
-
 
 	void mover(System::Drawing::Graphics^ g)
 	{

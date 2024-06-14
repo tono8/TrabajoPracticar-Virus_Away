@@ -71,7 +71,7 @@ namespace pryTrabajoFinalGrupoUno {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(840, 840);
+			this->ClientSize = System::Drawing::Size(844, 821);
 			this->Cursor = System::Windows::Forms::Cursors::No;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MaximizeBox = false;
@@ -85,6 +85,33 @@ namespace pryTrabajoFinalGrupoUno {
 
 		}
 #pragma endregion
+	void sala1_nivel1() {
+
+	}
+	void sala2_nivel1() {
+
+	}
+	void sala3_nivel1() {
+
+	}
+	void sala4_nivel1() {
+		Bitmap^ bgS4N1 = gcnew Bitmap("img/mapa2.gif");
+	}
+	void sala5_nivel1() {
+
+	}
+	void sala6_nivel1() {
+
+	}
+	void sala7_nivel1() {
+
+	}
+	void sala8_nivel1() {
+
+	}
+	void sala9_nivel1() {
+
+	}
 	private: System::Void timer_I_Tick(System::Object^ sender, System::EventArgs^ e) {
 		Graphics^ g = this->CreateGraphics();
 		BufferedGraphicsContext^ bfc = BufferedGraphicsManager::Current;

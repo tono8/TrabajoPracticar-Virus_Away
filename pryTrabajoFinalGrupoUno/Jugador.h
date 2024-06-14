@@ -1,13 +1,11 @@
 #pragma once
 #include "Personaje.h"
-
 enum SpriteJugador {
-	j1CaminarDerecha,
-	j1CaminarIzquierda,
-	j1CaminarArriba,
-	j1CaminarAbajo,
+	jCaminarDerecha,
+	jCaminarIzquierda,
+	jCaminarArriba,
+	jCaminarAbajo,
 };
-
 class Jugador : public Personaje {
 private:
 	SpriteJugador movimiento;
@@ -19,11 +17,14 @@ public:
 		ancho = img->Width / 27;//Cantidad de fotogramas horizontales - Cantidad regular: 9
 		alto = img->Height / 4;//Cantidad de fotogramas verticales
 
-		movimiento = j1CaminarArriba;
+		movimiento = jCaminarAbajo;
 	}
 	void setMovimiento(SpriteJugador value)
 	{
 		movimiento = value;
+	}
+	SpriteJugador getMovimiento() {
+		return movimiento;
 	}
 
 	void mover(System::Drawing::Graphics^ g)
@@ -41,8 +42,8 @@ public:
 
 		if (dx != 0 || dy != 0)
 		{
-			if (movimiento >= j1CaminarDerecha && movimiento <= j1CaminarAbajo)
-				//Cantidad de fotogramas en la imagen
+			if (movimiento >= jCaminarDerecha && movimiento <= jCaminarAbajo && (dx != 0 || dy != 0))
+				// Cantidad de fotogramas en la imagen
 				// Cantidad regular: 9
 				// Fotogramas en "testing1_alt2": 27
 				IDx = (IDx + 1) % 27;
