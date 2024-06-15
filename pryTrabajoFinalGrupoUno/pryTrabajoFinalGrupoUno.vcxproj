@@ -123,6 +123,9 @@
   <ItemGroup>
     <ClInclude Include="Aliado.h" />
     <ClInclude Include="Enemigo.h" />
+    <ClInclude Include="Enemigo1.h" />
+    <ClInclude Include="Enemigo2.h" />
+    <ClInclude Include="Enemigo3.h" />
     <ClInclude Include="frmJuego.h">
       <FileType>CppForm</FileType>
     </ClInclude>

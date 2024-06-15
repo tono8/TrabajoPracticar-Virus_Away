@@ -16,7 +16,7 @@ public:
 		dx = dy = 0;
 
 		ancho = img->Width / 27;//Cantidad de fotogramas horizontales - Cantidad regular: 9
-		alto = img->Height / 4;//Cantidad de fotogramas verticales
+		alto = img->Height / 5;//Cantidad de fotogramas verticales
 
 		movimiento = jCaminarAbajo;
 	}
