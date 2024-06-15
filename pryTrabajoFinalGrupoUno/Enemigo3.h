@@ -6,17 +6,9 @@ public:
 	Enemigo3(int x_e3, int y_e3, System::Drawing::Bitmap^ img) {
 		x = x_e3;
 		y = y_e3;
-		if (rand() % 2 == 0) {
-			dx = rand() % 10 - 5;
-			if (dx == 0)
-				dx = 5;
-		}
-		else
-		{
-			dy = rand() % 10 - 5;
-			if (dy == 0)
-				dy = 5;
-		}
+		x = rand() % 700;
+		y = rand() % 700;
+		dx = dy = rand() % (50 - 0, 2 + 1) + 0.8;
 		ancho = img->Width / 27;//Cantidad de fotogramas horizontales
 		alto = img->Height / 5;//Cantidad de fotogramas verticales
 	};

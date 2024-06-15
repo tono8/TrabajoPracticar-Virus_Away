@@ -33,18 +33,17 @@ public:
 	{
 		x_j = pX_j;
 		y_j = pY_j;
-		int v = 1.5;
 		// Eje X
 		if (x == x_j) {
 			x += 0;
 		}
 		else if (x < x_j) {
-			x += dx * v;
+			x += dx;
 			IDx++;
 			movimiento = eCaminarDerecha;
 		}
 		else if (x > x_j) {
-			x -= dx * v;
+			x -= dx;
 			IDx++;
 			movimiento = eCaminarIzquierda;
 		}
@@ -53,12 +52,12 @@ public:
 			y += 0;
 		}
 		else if (y < y_j) {
-			y += dy * v;
+			y += dy;
 			IDx++;
 			movimiento = eCaminarAbajo;
 		}
 		else if (y > y_j) {
-			y -= dy * v;
+			y -= dy;
 			IDx++;
 			movimiento = eCaminarArriba;
 		}
