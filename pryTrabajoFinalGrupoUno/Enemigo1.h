@@ -21,7 +21,7 @@ public:
 		ancho = img->Width / 27;//Cantidad de fotogramas horizontales
 		alto = img->Height / 5;//Cantidad de fotogramas verticales
 	};
-	void mostrar1(System::Drawing::Graphics^ g, System::Drawing::Bitmap^ img)
+	void eMostrar1(System::Drawing::Graphics^ g, System::Drawing::Bitmap^ img)
 	{
 		System::Drawing::Rectangle corte = System::Drawing::Rectangle(IDx * ancho, movimiento * alto, ancho, alto);
 		g->DrawImage(img, Area(), corte, System::Drawing::GraphicsUnit::Pixel);
@@ -37,6 +37,31 @@ public:
 			// Cantidad regular: 9
 			// Fotogramas en "testing2_32_alt2": 27
 			IDx = IDx + 1 % 27;
+	}
+	void eMover1(System::Drawing::Graphics^ g)
+	{
+		if (!(x + dx >= 0 && x + ancho + dx < g->VisibleClipBounds.Width)) {
+			dx *= -1;
+		}
+		if (!(y + dy >= 0 && y + alto + dy < g->VisibleClipBounds.Height)) {
+			dy *= -1;
+		}
+
+		if (dy < 0) {
+			movimiento = eCaminarIzquierda;
+		}
+		else if (dy > 0) {
+			movimiento = eCaminarDerecha;
+		}
+		else if (dx < 0) {
+			movimiento = eCaminarArriba;
+		}
+		else if (dx > 0) {
+			movimiento = eCaminarAbajo;
+		}
+
+		x += dx;
+		y += dy;
 	}
 };
 class Enemigos1
@@ -62,11 +87,11 @@ public:
 		}
 		return false;
 	}
-	void eMover1(System::Drawing::Graphics^ g) {
+	void mover1(System::Drawing::Graphics^ g) {
 		for each (Enemigo1 * E1 in enemigos1)
 			E1->mover(g);
 	}
-	void eMostrar1(System::Drawing::Graphics^ g, System::Drawing::Bitmap^ img) {
+	void mostrar1(System::Drawing::Graphics^ g, System::Drawing::Bitmap^ img) {
 		for each (Enemigo1 * E1 in enemigos1)
 			E1->mostrar(g, img);
 	}
