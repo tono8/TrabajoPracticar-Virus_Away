@@ -5,8 +5,10 @@ public:
 	Enemigo1(int x_e1, int y_e1, System::Drawing::Bitmap^ img) {
 		x = x_e1;
 		y = y_e1;
-		dx = dy = rand() % (35 - 15 + 1) + 15;
-		ancho = img->Width / 27;//Cantidad de fotogramas horizontales
+		x = rand() % 700;
+		y = rand() % 700;
+		dx = dy = rand() % (50 - 0,2 + 1) + 0.8;
+		ancho = img->Width / 78;//Cantidad de fotogramas horizontales
 		alto = img->Height / 5;//Cantidad de fotogramas verticales
 	};
 	void eMostrar1(System::Drawing::Graphics^ g, System::Drawing::Bitmap^ img)
@@ -19,7 +21,8 @@ public:
 			// Cantidad de fotogramas en la imagen
 			// Cantidad regular: 9
 			// Fotogramas en "testing2_32_alt2": 27
-			IDx = (IDx + 1) % 27;
+			// Fotogramas en "testing2_32_alt3": 78
+			IDx = (IDx + 1) % 78;
 		else if (movimiento == eEliminado)
 			// Cantidad de fotogramas en la imagen
 			// Cantidad regular: 9
@@ -30,31 +33,34 @@ public:
 	{
 		x_j = pX_j;
 		y_j = pY_j;
+		int v = 1.5;
 		// Eje X
 		if (x == x_j) {
 			x += 0;
 		}
 		else if (x < x_j) {
-			x += dx;
+			x += dx * v;
 			IDx++;
+			movimiento = eCaminarDerecha;
 		}
 		else if (x > x_j) {
-			x -= dx;
+			x -= dx * v;
 			IDx++;
+			movimiento = eCaminarIzquierda;
 		}
 		// Eje y
 		if (y == y_j) {
 			y += 0;
 		}
 		else if (y < y_j) {
-			y += dy;
-			IDx++;
-			movimiento = eCaminarArriba;
-		}
-		else if (y > y_j) {
-			y -= dy ;
+			y += dy * v;
 			IDx++;
 			movimiento = eCaminarAbajo;
+		}
+		else if (y > y_j) {
+			y -= dy * v;
+			IDx++;
+			movimiento = eCaminarArriba;
 		}
 
 		//if (dx < 0) {

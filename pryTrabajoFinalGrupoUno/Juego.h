@@ -23,7 +23,7 @@ public:
 					int pX_e3, int pY_e3, int cant_e3)
 	{
 		imgJugador = gcnew System::Drawing::Bitmap("img/testing1_32_alt2.png");
-		imgEnemigo1 = gcnew System::Drawing::Bitmap("img/testing2_32_alt2.png");
+		imgEnemigo1 = gcnew System::Drawing::Bitmap("img/testing2_32_alt3.png");
 		imgEnemigo2 = gcnew System::Drawing::Bitmap("img/testing3_32_alt2.png");
 		imgEnemigo3 = gcnew System::Drawing::Bitmap("img/testing4_32_alt2.png");
 		imgAliado = gcnew System::Drawing::Bitmap("img/testing5_32_alt2.png");
@@ -75,7 +75,6 @@ public:
 			}
 		}
 	}
-
 	void mover(System::Drawing::Graphics^ g)
 	{
 		jugador->mover(g);
