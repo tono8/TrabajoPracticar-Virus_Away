@@ -85,33 +85,33 @@ namespace pryTrabajoFinalGrupoUno {
 
 		}
 #pragma endregion
-	void sala1_nivel1() {
-
-	}
-	void sala2_nivel1() {
-
-	}
-	void sala3_nivel1() {
-
-	}
-	void sala4_nivel1() {
-		Bitmap^ bgS4N1 = gcnew Bitmap("img/mapa2.gif");
-	}
-	void sala5_nivel1() {
-
-	}
-	void sala6_nivel1() {
-
-	}
-	void sala7_nivel1() {
-
-	}
-	void sala8_nivel1() {
-
-	}
-	void sala9_nivel1() {
-
-	}
+	//void sala1_nivel1() {
+	//	Bitmap^ bgS1N1 = gcnew Bitmap("img/fondoS1N1_test1.png");
+	//}
+	//void sala2_nivel1() {
+	//	Bitmap^ bgS2N1 = gcnew Bitmap("img/fondoS2N1_test1.png");
+	//}
+	//void sala3_nivel1() {
+	//	Bitmap^ bgS3N1 = gcnew Bitmap("img/fondoS3N1_test1.png");
+	//}
+	//void sala4_nivel1() {
+	//	Bitmap^ bgS4N1 = gcnew Bitmap("img/fondoS4N1_test1.png");
+	//}
+	//void sala5_nivel1() {
+	//	Bitmap^ bgS5N1 = gcnew Bitmap("img/fondoS5N1_test1.png");
+	//}
+	//void sala6_nivel1() {
+	//	Bitmap^ bgS6N1 = gcnew Bitmap("img/fondoS6N1_test1.png");
+	//}
+	//void sala7_nivel1() {
+	//	Bitmap^ bgS7N1 = gcnew Bitmap("img/fondoS7N1_test1.png");
+	//}
+	//void sala8_nivel1() {
+	//	Bitmap^ bgS8N1 = gcnew Bitmap("img/fondoS8N1_test1.png");
+	//}
+	//void sala9_nivel1() {
+	//	Bitmap^ bgS9N1 = gcnew Bitmap("img/fondoS9N1_test1.png");
+	//}
 	private: System::Void timer_I_Tick(System::Object^ sender, System::EventArgs^ e) {
 		Graphics^ g = this->CreateGraphics();
 		BufferedGraphicsContext^ bfc = BufferedGraphicsManager::Current;

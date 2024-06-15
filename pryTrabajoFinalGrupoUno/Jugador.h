@@ -5,6 +5,7 @@ enum SpriteJugador {
 	jCaminarIzquierda,
 	jCaminarArriba,
 	jCaminarAbajo,
+	jCapturado
 };
 class Jugador : public Personaje {
 private:
@@ -42,11 +43,18 @@ public:
 
 		if (dx != 0 || dy != 0)
 		{
-			if (movimiento >= jCaminarDerecha && movimiento <= jCaminarAbajo && (dx != 0 || dy != 0))
+			if (movimiento >= jCaminarDerecha && movimiento <= jCaminarAbajo && (dx != 0 || dy != 0)) {
 				// Cantidad de fotogramas en la imagen
 				// Cantidad regular: 9
-				// Fotogramas en "testing1_alt2": 27
+				// Fotogramas en "testing1_32_alt2": 27
 				IDx = (IDx + 1) % 27;
+			}
+			else if (movimiento == jCapturado) {
+				// Cantidad de fotogramas en la imagen
+				// Cantidad regular: 9
+				// Fotogramas en "testing1_32_alt2": 27
+				IDx = (IDx + 1) % 27;
+			}
 		}
 	}
 };
