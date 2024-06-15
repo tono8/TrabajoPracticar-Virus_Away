@@ -79,7 +79,7 @@ public:
 	void mover(System::Drawing::Graphics^ g)
 	{
 		jugador->mover(g);
-		enemigos1->mover(jugador->getX(), jugador->getY(), g);
+		enemigos1->mover(g, jugador->getX(), jugador->getY());
 		enemigos2->mover(g);
 		enemigos3->mover(g);
 	}

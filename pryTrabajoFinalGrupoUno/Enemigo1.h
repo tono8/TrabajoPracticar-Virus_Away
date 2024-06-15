@@ -1,22 +1,11 @@
 #pragma once
 #include "Enemigo.h"
 class Enemigo1 : public Enemigo {
-private:
 public:
 	Enemigo1(int x_e1, int y_e1, System::Drawing::Bitmap^ img) {
 		x = x_e1;
 		y = y_e1;
-		if (rand() % 2 == 0) {
-			dx = rand() % 10 - 5;
-			if (dx == 0)
-				dx = 5;
-		}
-		else
-		{
-			dy = rand() % 10 - 5;
-			if (dy == 0)
-				dy = 5;
-		}
+		dx = dy = rand() % (35 - 15 + 1) + 15;
 		ancho = img->Width / 27;//Cantidad de fotogramas horizontales
 		alto = img->Height / 5;//Cantidad de fotogramas verticales
 	};
@@ -37,41 +26,49 @@ public:
 			// Fotogramas en "testing2_32_alt2": 27
 			IDx = IDx + 1 % 27;
 	}
-	void eMover1(int x_j, int y_j, System::Drawing::Graphics^ g)
+	void eMover1(System::Drawing::Graphics^ g, int pX_j, int pY_j)
 	{
-		int Cdx = 0, Cdy = 0;
-
-		if (x <= x_j && y <= y_j) {
-			Cdx = dx; Cdy = dy;
+		x_j = pX_j;
+		y_j = pY_j;
+		// Eje X
+		if (x == x_j) {
+			x += 0;
 		}
-
-		else if (x <= x_j && y >= y_j) {
-			Cdx = dx; Cdy = -dy;
+		else if (x < x_j) {
+			x += dx;
+			IDx++;
 		}
-
-		else if (x >= x_j && y <= y_j) {
-			Cdx = -dx; Cdy = dy;
+		else if (x > x_j) {
+			x -= dx;
+			IDx++;
 		}
-
-		else if (x >= x_j && y >= y_j) {
-			Cdx = -dx; Cdy = -dy;
+		// Eje y
+		if (y == y_j) {
+			y += 0;
 		}
-
-		if (dx < 0) {
-			movimiento = eCaminarIzquierda;
-		}
-		else if (dx > 0) {
-			movimiento = eCaminarDerecha;
-		}
-		else if (dy < 0) {
+		else if (y < y_j) {
+			y += dy;
+			IDx++;
 			movimiento = eCaminarArriba;
 		}
-		else if (dy > 0) {
+		else if (y > y_j) {
+			y -= dy ;
+			IDx++;
 			movimiento = eCaminarAbajo;
 		}
 
-		x += Cdx;
-		y += Cdy;
+		//if (dx < 0) {
+		//	movimiento = eCaminarIzquierda;
+		//}
+		//else if (dx > 0) {
+		//	movimiento = eCaminarDerecha;
+		//}
+		//else if (dy < 0) {
+		//	movimiento = eCaminarArriba;
+		//}
+		//else if (dy > 0) {
+		//	movimiento = eCaminarAbajo;
+		//}
 	}
 };
 class Enemigos1
@@ -97,9 +94,9 @@ public:
 		}
 		return false;
 	}
-	void mover(int x_j, int y_j, System::Drawing::Graphics^ g) {
+	void mover(System::Drawing::Graphics^ g, int pX_j, int pY_j) {
 		for each (Enemigo1 * E1 in enemigos1)
-			E1->eMover1(x_j, y_j, g);
+			E1->eMover1(g, pX_j, pY_j);
 	}
 	void mostrar(System::Drawing::Graphics^ g, System::Drawing::Bitmap^ img) {
 		for each (Enemigo1 * E1 in enemigos1)

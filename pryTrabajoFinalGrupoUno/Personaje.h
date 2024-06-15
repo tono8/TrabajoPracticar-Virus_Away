@@ -12,6 +12,7 @@ protected:
 	int ancho, alto;
 	//Indice de direccion
 	int IDx;//se declara para mostrar fotogramas de acuerdo al indice
+	float zoom;
 public:
 	Personaje() {
 		x = y = 0;
@@ -27,8 +28,12 @@ public:
 	{
 		dy = value;
 	}
-	int getX() const;
-	int getY() const;
+	int getX() {
+		return x;
+	};
+	int getY() {
+		return y;
+	};
 	System::Drawing::Rectangle Area()
 	{
 		return System::Drawing::Rectangle(x, y, ancho, alto);
@@ -46,10 +51,4 @@ public:
 	{
 		g->FillRectangle(System::Drawing::Brushes::Black, Area());
 	}
-};
-int Personaje::getX() const {
-	return x;
-};
-int Personaje::getY() const {
-	return y;
 };

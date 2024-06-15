@@ -20,20 +20,20 @@ public:
 
 		movimiento = jCaminarAbajo;
 	}
-	void setMovimiento(SpriteJugador value)
-	{
+	void setMovimiento(SpriteJugador value) {
 		movimiento = value;
 	}
 	SpriteJugador getMovimiento() {
 		return movimiento;
 	}
 
-	void mover(System::Drawing::Graphics^ g)
-	{
-		if (x + dx >= 0 && x + ancho + dx < g->VisibleClipBounds.Width)
+	void mover(System::Drawing::Graphics^ g) {
+		if (x + dx >= 0 && x + ancho + dx < g->VisibleClipBounds.Width) {
 			x += dx;
-		if (y + dy >= 0 && y + alto + dy < g->VisibleClipBounds.Height)
+		}
+		if (y + dy >= 0 && y + alto + dy < g->VisibleClipBounds.Height) {
 			y += dy;
+		}
 	}
 	void mostrar(System::Drawing::Graphics^ g, System::Drawing::Bitmap^ img)
 	{
