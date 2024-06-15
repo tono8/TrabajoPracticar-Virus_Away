@@ -1,7 +1,6 @@
 #pragma once
 #include "Enemigo.h"
-class Enemigo2 : public Enemigo
-{
+class Enemigo2 : public Enemigo {
 private:
 public:
 	Enemigo2(int x_e2, int y_e2, System::Drawing::Bitmap^ img) {
@@ -47,16 +46,16 @@ public:
 			dy *= -1;
 		}
 
-		if (dy < 0) {
+		if (dx < 0) {
 			movimiento = eCaminarIzquierda;
 		}
-		else if (dy > 0) {
+		else if (dx > 0) {
 			movimiento = eCaminarDerecha;
 		}
-		else if (dx < 0) {
+		else if (dy < 0) {
 			movimiento = eCaminarArriba;
 		}
-		else if (dx > 0) {
+		else if (dy > 0) {
 			movimiento = eCaminarAbajo;
 		}
 
@@ -87,12 +86,12 @@ public:
 		}
 		return false;
 	}
-	void mover2(System::Drawing::Graphics^ g) {
+	void mover(System::Drawing::Graphics^ g) {
 		for each (Enemigo2 * E2 in enemigos2)
-			E2->mover(g);
+			E2->eMover2(g);
 	}
-	void mostrar2(System::Drawing::Graphics^ g, System::Drawing::Bitmap^ img) {
+	void mostrar(System::Drawing::Graphics^ g, System::Drawing::Bitmap^ img) {
 		for each (Enemigo2 * E2 in enemigos2)
-			E2->mostrar(g, img);
+			E2->eMostrar2(g, img);
 	}
 };

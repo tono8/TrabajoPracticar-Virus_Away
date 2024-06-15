@@ -1,11 +1,15 @@
 #pragma once
 #include "Jugador.h"
-#include "Enemigo.h"
+#include "Enemigo1.h"
+#include "Enemigo2.h"
+#include "Enemigo3.h"
 #include "Aliado.h"
 ref class Controlador {
 private:
 	Jugador* jugador;
-	Enemigos* enemigos;
+	Enemigos1* enemigos1;
+	Enemigos2* enemigos2;
+	Enemigos3* enemigos3;
 
 	System::Drawing::Bitmap^ imgJugador;
 	System::Drawing::Bitmap^ imgEnemigo1;
@@ -13,7 +17,10 @@ private:
 	System::Drawing::Bitmap^ imgEnemigo3;
 	System::Drawing::Bitmap^ imgAliado;
 public:
-	Controlador()
+	Controlador(	/*int salud_j, */
+					int pX_e1, int pY_e1, int cant_e1, 
+					int pX_e2, int pY_e2, int cant_e2, 
+					int pX_e3, int pY_e3, int cant_e3)
 	{
 		imgJugador = gcnew System::Drawing::Bitmap("img/testing1_32_alt2.png");
 		imgEnemigo1 = gcnew System::Drawing::Bitmap("img/testing2_32_alt2.png");
@@ -22,10 +29,13 @@ public:
 		imgAliado = gcnew System::Drawing::Bitmap("img/testing5_32_alt2.png");
 
 		jugador = new Jugador(imgJugador);
+		enemigos1 = new Enemigos1(pX_e1, pY_e1, imgEnemigo1, cant_e1);
+		enemigos2 = new Enemigos2(pX_e2, pY_e2, imgEnemigo2, cant_e2);
+		enemigos3 = new Enemigos3(pX_e3, pY_e3, imgEnemigo3, cant_e3);
 	}
 	~Controlador()
 	{
-		delete jugador;
+		delete jugador, enemigos1, enemigos2, enemigos3;
 	}
 
 	void movimientoJugador(bool movimiento, System::Windows::Forms::Keys tecla)
@@ -69,9 +79,15 @@ public:
 	void mover(System::Drawing::Graphics^ g)
 	{
 		jugador->mover(g);
+		enemigos1->mover(jugador->getX(), jugador->getY(), g);
+		enemigos2->mover(g);
+		enemigos3->mover(g);
 	}
 	void mostrar(System::Drawing::Graphics^ g)
 	{
 		jugador->mostrar(g, imgJugador);
+		enemigos1->mostrar(g, imgEnemigo1);
+		enemigos2->mostrar(g, imgEnemigo1);
+		enemigos3->mostrar(g, imgEnemigo1);
 	}
 };

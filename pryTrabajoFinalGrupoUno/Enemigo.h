@@ -1,15 +1,13 @@
 #pragma once
 #include "Personaje.h"
-enum SpriteEnemigo
-{
+enum SpriteEnemigo {
 	eCaminarDerecha,
 	eCaminarIzquierda,
 	eCaminarArriba,
 	eCaminarAbajo,
 	eEliminado
 };
-class Enemigo : public Personaje
-{
+class Enemigo : public Personaje {
 protected:
 	SpriteEnemigo movimiento;
 public:
@@ -19,8 +17,6 @@ public:
 };
 //class Enemigos
 //{
-//private:
-//
 //public:
 //	Enemigos(System::Drawing::Bitmap^ img, int cant) {
 //		for (int i = 0; i < cant; i++) {

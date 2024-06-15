@@ -1,7 +1,6 @@
 #pragma once
 #include "Enemigo.h"
-class Enemigo1 : public Enemigo
-{
+class Enemigo1 : public Enemigo {
 private:
 public:
 	Enemigo1(int x_e1, int y_e1, System::Drawing::Bitmap^ img) {
@@ -38,30 +37,41 @@ public:
 			// Fotogramas en "testing2_32_alt2": 27
 			IDx = IDx + 1 % 27;
 	}
-	void eMover1(System::Drawing::Graphics^ g)
+	void eMover1(int x_j, int y_j, System::Drawing::Graphics^ g)
 	{
-		if (!(x + dx >= 0 && x + ancho + dx < g->VisibleClipBounds.Width)) {
-			dx *= -1;
-		}
-		if (!(y + dy >= 0 && y + alto + dy < g->VisibleClipBounds.Height)) {
-			dy *= -1;
+		int Cdx = 0, Cdy = 0;
+
+		if (x <= x_j && y <= y_j) {
+			Cdx = dx; Cdy = dy;
 		}
 
-		if (dy < 0) {
+		else if (x <= x_j && y >= y_j) {
+			Cdx = dx; Cdy = -dy;
+		}
+
+		else if (x >= x_j && y <= y_j) {
+			Cdx = -dx; Cdy = dy;
+		}
+
+		else if (x >= x_j && y >= y_j) {
+			Cdx = -dx; Cdy = -dy;
+		}
+
+		if (dx < 0) {
 			movimiento = eCaminarIzquierda;
 		}
-		else if (dy > 0) {
+		else if (dx > 0) {
 			movimiento = eCaminarDerecha;
 		}
-		else if (dx < 0) {
+		else if (dy < 0) {
 			movimiento = eCaminarArriba;
 		}
-		else if (dx > 0) {
+		else if (dy > 0) {
 			movimiento = eCaminarAbajo;
 		}
 
-		x += dx;
-		y += dy;
+		x += Cdx;
+		y += Cdy;
 	}
 };
 class Enemigos1
@@ -80,19 +90,19 @@ public:
 			delete E1;
 		}
 	};
-	bool eColision1(System::Drawing::Rectangle obj) {
+	bool eColision(System::Drawing::Rectangle obj) {
 		for each (Enemigo1 * E1 in enemigos1) {
 			if (E1->NextArea().IntersectsWith(obj))
 				return true;
 		}
 		return false;
 	}
-	void mover1(System::Drawing::Graphics^ g) {
+	void mover(int x_j, int y_j, System::Drawing::Graphics^ g) {
 		for each (Enemigo1 * E1 in enemigos1)
-			E1->mover(g);
+			E1->eMover1(x_j, y_j, g);
 	}
-	void mostrar1(System::Drawing::Graphics^ g, System::Drawing::Bitmap^ img) {
+	void mostrar(System::Drawing::Graphics^ g, System::Drawing::Bitmap^ img) {
 		for each (Enemigo1 * E1 in enemigos1)
-			E1->mostrar(g, img);
+			E1->eMostrar1(g, img);
 	}
 };

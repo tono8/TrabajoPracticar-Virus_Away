@@ -27,6 +27,8 @@ public:
 	{
 		dy = value;
 	}
+	int getX() const;
+	int getY() const;
 	System::Drawing::Rectangle Area()
 	{
 		return System::Drawing::Rectangle(x, y, ancho, alto);
@@ -44,4 +46,10 @@ public:
 	{
 		g->FillRectangle(System::Drawing::Brushes::Black, Area());
 	}
+};
+int Personaje::getX() const {
+	return x;
+};
+int Personaje::getY() const {
+	return y;
 };
