@@ -31,6 +31,7 @@ namespace pryTrabajoFinalGrupoUno {
 	private: System::Windows::Forms::Button^ btnInstrucciones;
 	private: System::Windows::Forms::Button^ btnCreditos;
 	private: System::Windows::Forms::Button^ btnFinalizar1;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	protected:
 	protected:
 	private: System::ComponentModel::IContainer^ components;
@@ -43,7 +44,9 @@ namespace pryTrabajoFinalGrupoUno {
 			this->btnFinalizar1 = (gcnew System::Windows::Forms::Button());
 			this->btnCreditos = (gcnew System::Windows::Forms::Button());
 			this->btnInstrucciones = (gcnew System::Windows::Forms::Button());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->grbPrincipales->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// btnIniciar
@@ -110,12 +113,21 @@ namespace pryTrabajoFinalGrupoUno {
 			this->btnInstrucciones->UseVisualStyleBackColor = false;
 			this->btnInstrucciones->Click += gcnew System::EventHandler(this, &frmPrincipal::btnInstrucciones_Click);
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Location = System::Drawing::Point(0, 0);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(622, 600);
+			this->pictureBox1->TabIndex = 2;
+			this->pictureBox1->TabStop = false;
+			// 
 			// frmPrincipal
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(624, 601);
 			this->Controls->Add(this->grbPrincipales);
+			this->Controls->Add(this->pictureBox1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MaximizeBox = false;
 			this->Name = L"frmPrincipal";
@@ -123,6 +135,7 @@ namespace pryTrabajoFinalGrupoUno {
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"UPC - TF - //NOMBRE DEL JUEGO//";
 			this->grbPrincipales->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
 		}

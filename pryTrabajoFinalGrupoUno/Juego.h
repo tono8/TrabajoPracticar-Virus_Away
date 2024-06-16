@@ -26,10 +26,34 @@ public:
 					int pX_e3, int pY_e3, int cant_e3,
 					int pX_a, int pY_a, int cant_a)
 	{
-		imgJugador = gcnew System::Drawing::Bitmap("img/testing1_32_alt2.png");
+		//
+		// nombres de imagenes asignadas al jugador:
+		// jugador_v1_64_alt1
+		// testing1
+		// testing1_32_alt1
+		// testing1_32_alt2
+		//
+		imgJugador = gcnew System::Drawing::Bitmap("img/jugador_v1_64_alt1.png");
+		//
+		// nombres de imagenes asignadas al enemigo 1:
+		// testing2_32_alt2
+		// testing2_32_alt3
+		//
 		imgEnemigo1 = gcnew System::Drawing::Bitmap("img/testing2_32_alt3.png");
+		//
+		// nombres de imagenes asignadas al enemigo 2:
+		// testing3_32_alt2
+		//
 		imgEnemigo2 = gcnew System::Drawing::Bitmap("img/testing3_32_alt2.png");
+		//
+		// nombres de imagenes asignadas al enemigo 3:
+		// testing4_32_alt2
+		//
 		imgEnemigo3 = gcnew System::Drawing::Bitmap("img/testing4_32_alt2.png");
+		//
+		// nombres de imagenes asignados al los aliados:
+		// testing5_32_alt2
+		//
 		imgAliado = gcnew System::Drawing::Bitmap("img/testing5_32_alt2.png");
 
 		jugador = new Jugador(imgJugador);
@@ -45,7 +69,7 @@ public:
 
 	void movimientoJugador(bool movimiento, System::Windows::Forms::Keys tecla)
 	{
-		int v = 9;
+		int v = 6;
 		if (movimiento == true)
 		{
 			if (tecla == System::Windows::Forms::Keys::W) {
