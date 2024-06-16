@@ -6,6 +6,7 @@
 #include "Enemigo2.h"
 #include "Enemigo3.h"
 #include "Aliado.h"
+#include "Proyectil.h"
 ref class Controlador {
 private:
 	Jugador* jugador;
@@ -13,6 +14,7 @@ private:
 	Enemigos2* enemigos2;
 	Enemigos3* enemigos3;
 	Aliados* aliados;
+	Proyectiles* proyectiles;
 
 	System::Drawing::Bitmap^ imgJugador;
 	System::Drawing::Bitmap^ imgEnemigo1;
@@ -38,8 +40,9 @@ public:
 		// nombres de imagenes asignadas al enemigo 1:
 		// testing2_32_alt2
 		// testing2_32_alt3
+		// testing2_64_alt3
 		//
-		imgEnemigo1 = gcnew System::Drawing::Bitmap("img/testing2_32_alt3.png");
+		imgEnemigo1 = gcnew System::Drawing::Bitmap("img/testing2_64_alt3.png");
 		//
 		// nombres de imagenes asignadas al enemigo 2:
 		// testing3_32_alt2
@@ -61,10 +64,11 @@ public:
 		enemigos2 = new Enemigos2(pX_e2, pY_e2, imgEnemigo2, cant_e2);
 		enemigos3 = new Enemigos3(pX_e3, pY_e3, imgEnemigo3, cant_e3);
 		aliados = new Aliados(pX_a, pY_a, imgAliado, cant_a);
+		proyectiles = new Proyectiles();
 	}
 	~Controlador()
 	{
-		delete jugador, enemigos1, enemigos2, enemigos3, aliados;
+		delete jugador, enemigos1, enemigos2, enemigos3, aliados, proyectiles;
 	}
 
 	void movimientoJugador(bool movimiento, System::Windows::Forms::Keys tecla)
@@ -104,6 +108,23 @@ public:
 			}
 		}
 	}
+	void DispararJugador(bool movimiento, System::Windows::Forms::Keys tecla) {
+		if (movimiento == true)
+		{
+			if (tecla == System::Windows::Forms::Keys::I) {
+				jugador->setMovimiento(jCaminarArriba);
+			}
+			else if (tecla == System::Windows::Forms::Keys::K) {
+				jugador->setMovimiento(jCaminarAbajo);
+			}
+			else if (tecla == System::Windows::Forms::Keys::J) {
+				jugador->setMovimiento(jCaminarIzquierda);
+			}
+			else if (tecla == System::Windows::Forms::Keys::L) {
+				jugador->setMovimiento(jCaminarDerecha);
+			}
+		}
+	}
 	void mover(System::Drawing::Graphics^ g)
 	{
 		jugador->mover(g);
@@ -111,6 +132,7 @@ public:
 		enemigos2->mover(g);
 		enemigos3->mover(g);
 		aliados->mover(g);
+		proyectiles->mover(g);
 	}
 	void mostrar(System::Drawing::Graphics^ g)
 	{
@@ -119,5 +141,6 @@ public:
 		enemigos2->mostrar(g, imgEnemigo1);
 		enemigos3->mostrar(g, imgEnemigo1);
 		aliados->mostrar(g, imgAliado);
+		proyectiles->mostrar(g);
 	}
 };

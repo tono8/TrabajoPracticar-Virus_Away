@@ -7,7 +7,8 @@ public:
 		y = y_e1;
 		x = rand() % 700;
 		y = rand() % 700;
-		dx = dy = rand() % 2;
+		// dx = dy = rand() % (50 - 0,2 + 1) + 0.8;
+		dx = dy = 2;
 		ancho = img->Width / 78;//Cantidad de fotogramas horizontales
 		alto = img->Height / 5;//Cantidad de fotogramas verticales
 	};
@@ -22,11 +23,13 @@ public:
 			// Cantidad regular: 9
 			// Fotogramas en "testing2_32_alt2": 27
 			// Fotogramas en "testing2_32_alt3": 78
+			// Fotogramas en "testing2_64_alt3": 78
 			IDx = (IDx + 1) % 78;
 		else if (movimiento == eEliminado)
 			// Cantidad de fotogramas en la imagen
 			// Cantidad regular: 9
 			// Fotogramas en "testing2_32_alt2": 27
+			// Fotogramas en "testing2_64_alt3": 27
 			IDx = IDx + 1 % 27;
 	}
 	void eMover1(System::Drawing::Graphics^ g, int pX_j, int pY_j) {
@@ -91,6 +94,16 @@ public:
 			delete E1;
 		}
 	};
+	int eEliminar(System::Drawing::Rectangle rectangulo) {
+		int cant = 0;
+		for (int i = 0; i < enemigos1.size(); i++)
+		{
+			if (enemigos1[i]->Area().IntersectsWith(rectangulo)) {
+				enemigos1.erase(enemigos1.begin() + i--);
+				cant++;
+			}
+		}
+	}
 	bool eColision(System::Drawing::Rectangle obj) {
 		for each (Enemigo1 * E1 in enemigos1) {
 			if (E1->NextArea().IntersectsWith(obj))
