@@ -23,7 +23,7 @@ namespace pryTrabajoFinalGrupoUno {
 			//
 			//TODO: Add the constructor code here
 			//
-			juego = gcnew Controlador(220, 60, 2, 0, 0, 0, 0, 0, 0, 120, 120, 2);
+			juego = gcnew Controlador(220, 60, 8, 0, 0, 0, 0, 0, 0, 120, 120, 2);
 		}
 
 	protected:

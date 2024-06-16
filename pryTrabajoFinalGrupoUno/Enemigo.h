@@ -16,15 +16,3 @@ public:
 		movimiento = eCaminarAbajo;
 	};
 };
-//class Enemigos
-//{
-//public:
-//	Enemigos(System::Drawing::Bitmap^ img, int cant) {
-//		for (int i = 0; i < cant; i++) {
-//
-//		}
-//	};
-//	~Enemigos() {
-//
-//	};
-//};

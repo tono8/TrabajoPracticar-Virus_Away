@@ -1,5 +1,6 @@
 #pragma once
 // Enlace del boceto del juego https://upcedupe-my.sharepoint.com/:wb:/g/personal/u201513502_upc_edu_pe/EfMt0EkFdrZAsvHCmFQwT54BhPo2i1FoQQeFJpItpi3ylA?e=HGpCRi
+// 
 #include "Jugador.h"
 #include "Enemigo1.h"
 #include "Enemigo2.h"

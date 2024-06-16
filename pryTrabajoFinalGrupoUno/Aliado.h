@@ -16,7 +16,18 @@ public:
 	Aliado(int x_a, int y_a, System::Drawing::Bitmap^ img) {
 		x = x_a;
 		y = y_a;
-		dx = dy = 0;
+		//dx = dy = 0;
+		if (rand() % 2 == 0) {
+			dx = rand() % 10 - 5;
+			if (dx == 0)
+				dx = 5;
+		}
+		else
+		{
+			dy = rand() % 10 - 5;
+			if (dy ==	0)
+				dy = 5;
+		}
 		ancho = img->Width / 27;//Cantidad de fotogramas horizontales
 		alto = img->Height / 5;//Cantidad de fotogramas verticales
 		movimiento = aCaminarAbajo;
@@ -26,6 +37,12 @@ public:
 		g->DrawImage(img, Area(), corte, System::Drawing::GraphicsUnit::Pixel);
 		//g->DrawRectangle(Pens::Black, Area());
 
+		//if (movimiento >= eCaminarDerecha && movimiento <= eCaminarAbajo) {
+		//	// Cantidad de fotogramas en la imagen
+		//	// Cantidad regular: 9
+		//	// Fotogramas en "testing5_32_alt2": 27
+		//	IDx = (IDx + 1) % 27;
+		//}
 		if (movimiento >= eCaminarDerecha && movimiento <= eCaminarAbajo) {
 			// Cantidad de fotogramas en la imagen
 			// Cantidad regular: 9
@@ -34,18 +51,23 @@ public:
 		}
 	}
 	void aMover(System::Drawing::Graphics^ g) {
-		if (x == 120 && y == 120) {
-			dx = 8; dy = 0;
-		}
-		if (x == 200 && y == 120) {
-			dx = 0; dy = 8; 
-		}
-		if (x == 200 && y == 140) {
-			dx = -8; dy = 0; 
-		}
-		if (x == 140 && y == 180) {
-			dx = 0; dy = -8; 
-		}
+		//if (x == 120 && y == 120) {
+		//	dx = 8; dy = 0;
+		//}
+		//if (x == 200 && y == 120) {
+		//	dx = 0; dy = 8;
+		//}
+		//if (x == 200 && y == 180) {
+		//	dx = -8; dy = 0;
+		//}
+		//if (x == 120 && y == 180) {
+		//	dx = 0; dy = -8;
+		//}
+
+		if (!(x + dx >= 0 && x + ancho + dx < g->VisibleClipBounds.Width))
+			dx *= -1;
+		if (!(y + dy >= 0 && y + alto + dy < g->VisibleClipBounds.Height))
+			dy *= -1;
 
 		if (dx < 0) {
 			movimiento = aCaminarIzquierda;
