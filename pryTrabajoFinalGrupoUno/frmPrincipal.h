@@ -39,6 +39,7 @@ namespace pryTrabajoFinalGrupoUno {
 #pragma region Windows Form Designer generated code
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(frmPrincipal::typeid));
 			this->btnIniciar = (gcnew System::Windows::Forms::Button());
 			this->grbPrincipales = (gcnew System::Windows::Forms::GroupBox());
 			this->btnFinalizar1 = (gcnew System::Windows::Forms::Button());
@@ -64,11 +65,12 @@ namespace pryTrabajoFinalGrupoUno {
 			// 
 			// grbPrincipales
 			// 
+			this->grbPrincipales->BackColor = System::Drawing::SystemColors::Highlight;
 			this->grbPrincipales->Controls->Add(this->btnFinalizar1);
 			this->grbPrincipales->Controls->Add(this->btnCreditos);
 			this->grbPrincipales->Controls->Add(this->btnInstrucciones);
 			this->grbPrincipales->Controls->Add(this->btnIniciar);
-			this->grbPrincipales->Location = System::Drawing::Point(20, 288);
+			this->grbPrincipales->Location = System::Drawing::Point(20, 366);
 			this->grbPrincipales->Name = L"grbPrincipales";
 			this->grbPrincipales->Size = System::Drawing::Size(262, 255);
 			this->grbPrincipales->TabIndex = 1;
@@ -115,9 +117,11 @@ namespace pryTrabajoFinalGrupoUno {
 			// 
 			// pictureBox1
 			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->Location = System::Drawing::Point(0, 0);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(622, 600);
+			this->pictureBox1->Size = System::Drawing::Size(640, 640);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 2;
 			this->pictureBox1->TabStop = false;
 			// 
@@ -125,7 +129,7 @@ namespace pryTrabajoFinalGrupoUno {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(624, 601);
+			this->ClientSize = System::Drawing::Size(640, 640);
 			this->Controls->Add(this->grbPrincipales);
 			this->Controls->Add(this->pictureBox1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;

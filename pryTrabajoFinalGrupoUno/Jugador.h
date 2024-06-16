@@ -12,7 +12,7 @@ private:
 	SpriteJugador movimiento;
 public:
 	Jugador(System::Drawing::Bitmap^ img) {
-		x = 60; y = 60;
+		x = 360; y = 360;
 		dx = dy = 0;
 
 		ancho = img->Width / 4;//Cantidad de fotogramas horizontales - Cantidad regular: 9
