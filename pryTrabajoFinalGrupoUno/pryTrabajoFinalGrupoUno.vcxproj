@@ -126,7 +126,7 @@
     <ClInclude Include="Enemigo1.h" />
     <ClInclude Include="Enemigo2.h" />
     <ClInclude Include="Enemigo3.h" />
-    <ClInclude Include="frmJuego.h">
+    <ClInclude Include="frmJuego1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Personaje.h" />
@@ -138,8 +138,8 @@
     <ClInclude Include="Proyectil.h" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmJuego.resx">
-      <DependentUpon>frmJuego.h</DependentUpon>
+    <EmbeddedResource Include="frmJuego1.resx">
+      <DependentUpon>frmJuego1.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.h</DependentUpon>

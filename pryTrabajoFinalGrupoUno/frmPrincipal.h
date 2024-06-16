@@ -1,6 +1,6 @@
 #pragma once
 //frmPresentacion
-#include "frmJuego.h"
+#include "frmJuego1.h"
 //#include "frmInstrucciones.h"
 //#include "frmCreditos.h"
 //#include "frmExtras.h"
@@ -128,9 +128,9 @@ namespace pryTrabajoFinalGrupoUno {
 		}
 #pragma endregion
 	private: System::Void btnIniciar_Click(System::Object^ sender, System::EventArgs^ e) {
-		frmJuego^ frmJ = gcnew frmJuego();
+		frmJuego1^ frmJ1 = gcnew frmJuego1();
 		this->Visible = false;
-		frmJ->ShowDialog();
+		frmJ1->ShowDialog();
 		this->Visible = true;
 	}
 	private: System::Void btnInstrucciones_Click(System::Object^ sender, System::EventArgs^ e) {

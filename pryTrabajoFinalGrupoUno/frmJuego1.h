@@ -13,11 +13,11 @@ namespace pryTrabajoFinalGrupoUno {
 	/// <summary>
 	/// Summary for frmJuego
 	/// </summary>
-	public ref class frmJuego : public System::Windows::Forms::Form
+	public ref class frmJuego1 : public System::Windows::Forms::Form
 	{
 		Controlador^ juego;
 	public:
-		frmJuego(void)
+		frmJuego1(void)
 		{
 			InitializeComponent();
 			//
@@ -30,7 +30,7 @@ namespace pryTrabajoFinalGrupoUno {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~frmJuego()
+		~frmJuego1()
 		{
 			if (components)
 			{
@@ -65,7 +65,7 @@ namespace pryTrabajoFinalGrupoUno {
 			// 
 			this->timer_I->Enabled = true;
 			this->timer_I->Interval = 22;
-			this->timer_I->Tick += gcnew System::EventHandler(this, &frmJuego::timer_I_Tick);
+			this->timer_I->Tick += gcnew System::EventHandler(this, &frmJuego1::timer_I_Tick);
 			// 
 			// frmJuego
 			// 
@@ -79,8 +79,8 @@ namespace pryTrabajoFinalGrupoUno {
 			this->ShowInTaskbar = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"UPC - TF - //NOMBRE DEL JUEGO//";
-			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &frmJuego::frmJuego_KeyDown);
-			this->KeyUp += gcnew System::Windows::Forms::KeyEventHandler(this, &frmJuego::frmJuego_KeyUp);
+			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &frmJuego1::frmJuego_KeyDown);
+			this->KeyUp += gcnew System::Windows::Forms::KeyEventHandler(this, &frmJuego1::frmJuego_KeyUp);
 			this->ResumeLayout(false);
 
 		}

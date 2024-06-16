@@ -29,7 +29,7 @@
     <ClInclude Include="Juego.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="frmJuego.h">
+    <ClInclude Include="frmJuego1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Personaje.h">
