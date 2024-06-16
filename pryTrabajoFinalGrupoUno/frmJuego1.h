@@ -39,6 +39,7 @@ namespace pryTrabajoFinalGrupoUno {
 			delete juego;
 		}
 	private: System::Windows::Forms::Timer^ timer_I;
+
 	protected:
 
 	protected:
@@ -67,15 +68,15 @@ namespace pryTrabajoFinalGrupoUno {
 			this->timer_I->Interval = 22;
 			this->timer_I->Tick += gcnew System::EventHandler(this, &frmJuego1::timer_I_Tick);
 			// 
-			// frmJuego
+			// frmJuego1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(844, 821);
+			this->ClientSize = System::Drawing::Size(860, 861);
 			this->Cursor = System::Windows::Forms::Cursors::No;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MaximizeBox = false;
-			this->Name = L"frmJuego";
+			this->Name = L"frmJuego1";
 			this->ShowInTaskbar = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"UPC - TF - //NOMBRE DEL JUEGO//";
