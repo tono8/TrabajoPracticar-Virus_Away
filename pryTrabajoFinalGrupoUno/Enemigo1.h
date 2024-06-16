@@ -29,8 +29,7 @@ public:
 			// Fotogramas en "testing2_32_alt2": 27
 			IDx = IDx + 1 % 27;
 	}
-	void eMover1(System::Drawing::Graphics^ g, int pX_j, int pY_j)
-	{
+	void eMover1(System::Drawing::Graphics^ g, int pX_j, int pY_j) {
 		x_j = pX_j;
 		y_j = pY_j;
 		// Eje X

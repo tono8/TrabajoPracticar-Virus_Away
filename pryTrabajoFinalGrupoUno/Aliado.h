@@ -1,5 +1,7 @@
 #pragma once
 #include "Personaje.h"
+// Segun los requisitos del hito 2, el aliiado debe aparecer invisible
+// el jugador puede presionar la barra de espacio para revelar al aliado
 enum SpriteAliado {
 	aCaminarDerecha,
 	aCaminarIzquierda,
@@ -33,16 +35,16 @@ public:
 	}
 	void aMover(System::Drawing::Graphics^ g) {
 		if (x == 120 && y == 120) {
-			dx = 1; dy = 0;
+			dx = 8; dy = 0;
 		}
-		if (x == 300 && y == 120) {
-			dx = 0; dy = 1; 
+		if (x == 200 && y == 120) {
+			dx = 0; dy = 8; 
 		}
-		if (x == 300 && y == 180) {
-			dx = -1; dy = 0; 
+		if (x == 200 && y == 140) {
+			dx = -8; dy = 0; 
 		}
-		if (x == 120 && y == 180) {
-			dx = 0; dy = -1; 
+		if (x == 140 && y == 180) {
+			dx = 0; dy = -8; 
 		}
 
 		if (dx < 0) {
