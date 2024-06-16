@@ -42,8 +42,9 @@ public:
 		// testing2_32_alt3
 		// testing2_64_alt3
 		// enemigo1_v1_64_alt1 (Aumento en parpadeo)
+		// enemigo1_v2_64
 		//
-		imgEnemigo1 = gcnew System::Drawing::Bitmap("img/testing2_64_alt3.png");
+		imgEnemigo1 = gcnew System::Drawing::Bitmap("img/enemigo1_v2_64.png");
 		//
 		// nombres de imagenes asignadas al enemigo 2:
 		// testing3_32_alt2
