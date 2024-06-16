@@ -79,8 +79,8 @@ namespace pryTrabajoFinalGrupoUno {
 			this->ShowInTaskbar = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"UPC - TF - //NOMBRE DEL JUEGO//";
-			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &frmJuego1::frmJuego_KeyDown);
-			this->KeyUp += gcnew System::Windows::Forms::KeyEventHandler(this, &frmJuego1::frmJuego_KeyUp);
+			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &frmJuego1::frmJuego1_KeyDown);
+			this->KeyUp += gcnew System::Windows::Forms::KeyEventHandler(this, &frmJuego1::frmJuego1_KeyUp);
 			this->ResumeLayout(false);
 
 		}
@@ -128,10 +128,10 @@ namespace pryTrabajoFinalGrupoUno {
 		delete bfc;
 		delete g;
 	}
-	private: System::Void frmJuego_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	private: System::Void frmJuego1_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
 		juego->movimientoJugador(true, e->KeyCode);
 	}
-	private: System::Void frmJuego_KeyUp(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	private: System::Void frmJuego1_KeyUp(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
 		juego->movimientoJugador(false, e->KeyCode);
 	}
 	};
