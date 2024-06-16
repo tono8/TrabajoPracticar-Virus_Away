@@ -130,6 +130,7 @@ namespace pryTrabajoFinalGrupoUno {
 	}
 	private: System::Void frmJuego1_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
 		juego->movimientoJugador(true, e->KeyCode);
+		juego->DispararJugador(true, e->KeyCode);
 	}
 	private: System::Void frmJuego1_KeyUp(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
 		juego->movimientoJugador(false, e->KeyCode);
