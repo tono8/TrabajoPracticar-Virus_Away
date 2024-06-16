@@ -57,8 +57,9 @@ public:
 		//
 		// nombres de imagenes asignados al los aliados:
 		// testing5_32_alt2
+		// aliado_v1_64_alt1
 		//
-		imgAliado = gcnew System::Drawing::Bitmap("img/testing5_32_alt2.png");
+		imgAliado = gcnew System::Drawing::Bitmap("img/aliado_v1_64_alt1.png");
 
 		jugador = new Jugador(imgJugador);
 		enemigos1 = new Enemigos1(pX_e1, pY_e1, imgEnemigo1, cant_e1);

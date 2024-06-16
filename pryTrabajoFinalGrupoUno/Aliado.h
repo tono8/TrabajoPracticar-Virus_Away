@@ -3,10 +3,10 @@
 // Segun los requisitos del hito 2, el aliiado debe aparecer invisible
 // el jugador puede presionar la barra de espacio para revelar al aliado
 enum SpriteAliado {
-	aCaminarDerecha,
-	aCaminarIzquierda,
 	aCaminarArriba,
-	aCaminarAbajo
+	aCaminarDerecha,
+	aCaminarAbajo,
+	aCaminarIzquierda
 };
 class Aliado: public Personaje
 {
@@ -28,26 +28,20 @@ public:
 			if (dy ==	0)
 				dy = 5;
 		}
-		ancho = img->Width / 27;//Cantidad de fotogramas horizontales
-		alto = img->Height / 5;//Cantidad de fotogramas verticales
+		ancho = img->Width / 3;//Cantidad de fotogramas horizontales
+		alto = img->Height / 4;//Cantidad de fotogramas verticales
 		movimiento = aCaminarAbajo;
 	};
 	void aMostrar(System::Drawing::Graphics^ g, System::Drawing::Bitmap^ img) {
 		System::Drawing::Rectangle corte = System::Drawing::Rectangle(IDx * ancho, movimiento * alto, ancho, alto);
 		g->DrawImage(img, Area(), corte, System::Drawing::GraphicsUnit::Pixel);
 		//g->DrawRectangle(Pens::Black, Area());
-
-		//if (movimiento >= eCaminarDerecha && movimiento <= eCaminarAbajo) {
-		//	// Cantidad de fotogramas en la imagen
-		//	// Cantidad regular: 9
-		//	// Fotogramas en "testing5_32_alt2": 27
-		//	IDx = (IDx + 1) % 27;
-		//}
-		if (movimiento >= eCaminarDerecha && movimiento <= eCaminarAbajo) {
+		if (movimiento >= aCaminarArriba && movimiento <= aCaminarIzquierda) {
 			// Cantidad de fotogramas en la imagen
 			// Cantidad regular: 9
 			// Fotogramas en "testing5_32_alt2": 27
-			IDx = (IDx + 1) % 27;
+		//	// Fotogramas en "aliado_v1_64_alt1": 3
+			IDx = (IDx + 1) % 3;
 		}
 	}
 	void aMover(System::Drawing::Graphics^ g) {
