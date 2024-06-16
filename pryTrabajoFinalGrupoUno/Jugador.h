@@ -15,7 +15,7 @@ public:
 		x = 60; y = 60;
 		dx = dy = 0;
 
-		ancho = img->Width / 27;//Cantidad de fotogramas horizontales - Cantidad regular: 9
+		ancho = img->Width / 4;//Cantidad de fotogramas horizontales - Cantidad regular: 9
 		alto = img->Height / 5;//Cantidad de fotogramas verticales
 
 		movimiento = jCaminarAbajo;
@@ -47,13 +47,15 @@ public:
 				// Cantidad de fotogramas en la imagen
 				// Cantidad regular: 9
 				// Fotogramas en "testing1_32_alt2": 27
-				IDx = (IDx + 1) % 27;
+				// Fotogramas en "jugador_v1_64_alt1": 3
+				IDx = (IDx + 1) % 3;
 			}
 			else if (movimiento == jCapturado) {
 				// Cantidad de fotogramas en la imagen
 				// Cantidad regular: 9
 				// Fotogramas en "testing1_32_alt2": 27
-				IDx = (IDx + 1) % 27;
+				// Fotogramas en "jugador_v1_64_alt1": 4
+				IDx = (IDx + 1) % 4;
 			}
 		}
 	}

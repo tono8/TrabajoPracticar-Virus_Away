@@ -7,7 +7,7 @@ public:
 		y = y_e1;
 		x = rand() % 700;
 		y = rand() % 700;
-		dx = dy = rand() % (50 - 0,2 + 1) + 0.8;
+		dx = dy = rand() % 2;
 		ancho = img->Width / 78;//Cantidad de fotogramas horizontales
 		alto = img->Height / 5;//Cantidad de fotogramas verticales
 	};
