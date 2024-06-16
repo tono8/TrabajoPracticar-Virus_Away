@@ -24,12 +24,14 @@ public:
 			// Fotogramas en "testing2_32_alt2": 27
 			// Fotogramas en "testing2_32_alt3": 78
 			// Fotogramas en "testing2_64_alt3": 78
+			// Fotogramas en "enemigo1_v1_64_alt1": 3
 			IDx = (IDx + 1) % 78;
 		else if (movimiento == eEliminado)
 			// Cantidad de fotogramas en la imagen
 			// Cantidad regular: 9
 			// Fotogramas en "testing2_32_alt2": 27
 			// Fotogramas en "testing2_64_alt3": 27
+			// Fotogramas en "enemigo1_v1_64_alt1": 4
 			IDx = IDx + 1 % 27;
 	}
 	void eMover1(System::Drawing::Graphics^ g, int pX_j, int pY_j) {
