@@ -63,7 +63,7 @@
 											"top": 287,
 											"width": 194.984375,
 											"height": 13,
-											"text": "Entidad"
+											"text": "Personaje"
 										},
 										{
 											"_type": "LabelView",
@@ -3118,7 +3118,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Entidad",
+					"name": "Personaje",
 					"attributes": [
 						{
 							"_type": "UMLAttribute",
@@ -3187,6 +3187,7 @@
 								"$ref": "AAAAAAGP7uZPSmaihOo="
 							},
 							"name": "IDx: int",
+							"documentation": "Indice de Direccion",
 							"visibility": "protected",
 							"type": ""
 						}

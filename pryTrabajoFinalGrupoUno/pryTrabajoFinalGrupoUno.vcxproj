@@ -121,11 +121,26 @@
     <ClCompile Include="frmPrincipal.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Aliado.h" />
+    <ClInclude Include="Enemigo.h" />
+    <ClInclude Include="Enemigo1.h" />
+    <ClInclude Include="Enemigo2.h" />
+    <ClInclude Include="Enemigo3.h" />
+    <ClInclude Include="frmJuego1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Personaje.h" />
     <ClInclude Include="frmPrincipal.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Juego.h" />
+    <ClInclude Include="Jugador.h" />
+    <ClInclude Include="Proyectil.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmJuego1.resx">
+      <DependentUpon>frmJuego1.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.h</DependentUpon>
     </EmbeddedResource>

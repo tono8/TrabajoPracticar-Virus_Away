@@ -1,3 +1,5 @@
+// ESTA RAMA NO PUEDE SER COMBINADA CON LA RAMA MAESTRA
+
 #include "frmPrincipal.h"
 #include "Windows.h"
 using namespace pryTrabajoFinalGrupoUno;
