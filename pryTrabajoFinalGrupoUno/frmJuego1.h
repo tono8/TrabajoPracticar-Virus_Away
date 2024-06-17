@@ -17,7 +17,7 @@ namespace pryTrabajoFinalGrupoUno {
 	{
 		Controlador^ juego;
 
-		   Bitmap^ fondoJuego1_v1 = gcnew Bitmap("img/fondoGame1_v1.gif");
+		   Bitmap^ fondoJuego1_v1 = gcnew Bitmap("img/fondoGame1_v1.png");
 	public:
 		frmJuego1(void)
 		{
