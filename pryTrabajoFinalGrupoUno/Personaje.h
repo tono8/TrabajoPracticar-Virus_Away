@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class Personaje
+class Personaje // Cambiar nombre a entidad gracias a la inclusion de la clase proyectil
 {
 protected:
 	int x, y;
