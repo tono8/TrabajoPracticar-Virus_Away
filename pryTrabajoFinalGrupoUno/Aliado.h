@@ -22,8 +22,7 @@ public:
 			if (dx == 0)
 				dx = 5;
 		}
-		else
-		{
+		else {
 			dy = rand() % 10 - 5;
 			if (dy ==	0)
 				dy = 5;

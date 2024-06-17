@@ -16,6 +16,8 @@ namespace pryTrabajoFinalGrupoUno {
 	public ref class frmJuego1 : public System::Windows::Forms::Form
 	{
 		Controlador^ juego;
+
+		   Bitmap^ fondoJuego1_v1 = gcnew Bitmap("img/fondoGame1_v1.gif");
 	public:
 		frmJuego1(void)
 		{
@@ -59,6 +61,7 @@ namespace pryTrabajoFinalGrupoUno {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(frmJuego1::typeid));
 			this->timer_I = (gcnew System::Windows::Forms::Timer(this->components));
 			this->SuspendLayout();
 			// 
@@ -72,8 +75,11 @@ namespace pryTrabajoFinalGrupoUno {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(860, 861);
 			this->Cursor = System::Windows::Forms::Cursors::No;
+			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MaximizeBox = false;
 			this->Name = L"frmJuego1";
@@ -86,6 +92,9 @@ namespace pryTrabajoFinalGrupoUno {
 
 		}
 #pragma endregion
+	//
+	// COMIENZO DE COMENTARIO
+	// 
 	//void sala1_nivel1() {
 	//	Bitmap^ bgS1N1 = gcnew Bitmap("img/fondoS1N1_test1.png");
 	//}
@@ -113,12 +122,16 @@ namespace pryTrabajoFinalGrupoUno {
 	//void sala9_nivel1() {
 	//	Bitmap^ bgS9N1 = gcnew Bitmap("img/fondoS9N1_test1.png");
 	//}
+	// 
+	// FIN DE COMENTARIO
+	//
 	private: System::Void timer_I_Tick(System::Object^ sender, System::EventArgs^ e) {
 		Graphics^ g = this->CreateGraphics();
 		BufferedGraphicsContext^ bfc = BufferedGraphicsManager::Current;
 		BufferedGraphics^ bf = bfc->Allocate(g, this->ClientRectangle);
 
-		bf->Graphics->Clear(SystemColors::Control);
+		bf->Graphics->DrawImage(fondoJuego1_v1, 0, 0, (int)bf->Graphics->VisibleClipBounds.Width, (int)bf->Graphics->VisibleClipBounds.Height);
+		//bf->Graphics->Clear(SystemColors::Control);
 
 		juego->mover(bf->Graphics);
 		juego->mostrar(bf->Graphics);

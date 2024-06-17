@@ -61,7 +61,6 @@ public:
 		}
 		else if (y < y_j) {
 			y += dy;
-		}
 		else if (y > y_j) {
 			y -= dy;
 		}
