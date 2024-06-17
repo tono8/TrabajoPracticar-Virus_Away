@@ -32,7 +32,7 @@
     <ClInclude Include="frmJuego1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Personaje.h">
+    <ClInclude Include="Entidad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Enemigo.h">

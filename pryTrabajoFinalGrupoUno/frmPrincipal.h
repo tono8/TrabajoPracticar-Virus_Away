@@ -65,7 +65,8 @@ namespace pryTrabajoFinalGrupoUno {
 			// 
 			// grbPrincipales
 			// 
-			this->grbPrincipales->BackColor = System::Drawing::SystemColors::Highlight;
+			this->grbPrincipales->BackColor = System::Drawing::Color::Transparent;
+			this->grbPrincipales->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->grbPrincipales->Controls->Add(this->btnFinalizar1);
 			this->grbPrincipales->Controls->Add(this->btnCreditos);
 			this->grbPrincipales->Controls->Add(this->btnInstrucciones);

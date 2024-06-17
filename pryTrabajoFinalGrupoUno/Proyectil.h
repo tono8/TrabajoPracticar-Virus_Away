@@ -1,6 +1,6 @@
 #pragma once
-#include "Personaje.h"// El proyectil no es un personaje es una entidad
-class Proyectil : public Personaje
+#include "Entidad.h"
+class Proyectil : public Entidad
 {
 private:
 public:

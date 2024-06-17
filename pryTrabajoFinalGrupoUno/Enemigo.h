@@ -1,5 +1,5 @@
 #pragma once
-#include "Personaje.h"
+#include "Entidad.h"
 enum SpriteEnemigo {
 	eCaminarDerecha,
 	eCaminarIzquierda,
@@ -7,7 +7,7 @@ enum SpriteEnemigo {
 	eCaminarAbajo,
 	eEliminado
 };
-class Enemigo : public Personaje {
+class Enemigo : public Entidad {
 protected:
 	SpriteEnemigo movimiento;
 	int x_j, y_j;

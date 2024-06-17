@@ -129,7 +129,7 @@
     <ClInclude Include="frmJuego1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Personaje.h" />
+    <ClInclude Include="Entidad.h" />
     <ClInclude Include="frmPrincipal.h">
       <FileType>CppForm</FileType>
     </ClInclude>

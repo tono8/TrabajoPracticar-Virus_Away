@@ -1,5 +1,5 @@
 #pragma once
-#include "Personaje.h"
+#include "Entidad.h"
 // Segun los requisitos del hito 2, el aliiado debe aparecer invisible
 // el jugador puede presionar la barra de espacio para revelar al aliado
 enum SpriteAliado {
@@ -8,7 +8,7 @@ enum SpriteAliado {
 	aCaminarAbajo,
 	aCaminarIzquierda
 };
-class Aliado: public Personaje
+class Aliado: public Entidad
 {
 private:
 	SpriteAliado movimiento;

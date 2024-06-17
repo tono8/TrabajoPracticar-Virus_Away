@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class Personaje // Cambiar nombre a entidad gracias a la inclusion de la clase proyectil
+class Entidad // Cambiar nombre a entidad gracias a la inclusion de la clase proyectil
 {
 protected:
 	int x, y;
@@ -14,7 +14,7 @@ protected:
 	int IDx;//se declara para mostrar fotogramas de acuerdo al indice
 	float zoom;
 public:
-	Personaje() {
+	Entidad() {
 		x = y = 0;
 		dx = dy = 0;
 		ancho = alto = 0;
