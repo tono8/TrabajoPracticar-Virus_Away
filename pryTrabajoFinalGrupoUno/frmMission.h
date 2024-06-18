@@ -49,11 +49,17 @@ namespace pryTrabajoFinalGrupoUno {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"frmMission";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->SuspendLayout();
+			// 
+			// frmMission
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(860, 861);
+			this->Name = L"frmMission";
+			this->Text = L"frmMission";
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
 	};

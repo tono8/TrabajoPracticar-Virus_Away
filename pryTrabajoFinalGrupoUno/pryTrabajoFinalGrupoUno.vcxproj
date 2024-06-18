@@ -135,6 +135,9 @@
     <ClInclude Include="frmInstrucciones.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="frmInstrucciones_alternativo.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="frmJuego1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -159,11 +162,35 @@
     <ClInclude Include="Proyectil.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmCreditos.resx">
+      <DependentUpon>frmCreditos.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGanar.resx">
+      <DependentUpon>frmGanar.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInstrucciones.resx">
+      <DependentUpon>frmInstrucciones.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInstrucciones_alternativo.resx">
+      <DependentUpon>frmInstrucciones_alternativo.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmJuego1.resx">
       <DependentUpon>frmJuego1.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmJuego2.resx">
+      <DependentUpon>frmJuego2.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMission.resx">
+      <DependentUpon>frmMission.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPerder.resx">
+      <DependentUpon>frmPerder.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSeleccionar.resx">
+      <DependentUpon>frmSeleccionar.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,8 +1,9 @@
 #pragma once
 //frmPresentacion
 #include "frmJuego1.h"
-//#include "frmInstrucciones.h"
-//#include "frmCreditos.h"
+#include "frmInstrucciones.h"
+#include "frmInstrucciones_alternativo.h"
+#include "frmCreditos.h"
 //#include "frmExtras.h"
 namespace pryTrabajoFinalGrupoUno {
 	using namespace System;
@@ -55,6 +56,7 @@ namespace pryTrabajoFinalGrupoUno {
 			// 
 			this->btnIniciar->BackColor = System::Drawing::SystemColors::Desktop;
 			this->btnIniciar->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->btnIniciar->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btnIniciar->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->btnIniciar->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -70,6 +72,7 @@ namespace pryTrabajoFinalGrupoUno {
 			// btnFinalizar1
 			// 
 			this->btnFinalizar1->BackColor = System::Drawing::SystemColors::Desktop;
+			this->btnFinalizar1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btnFinalizar1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->btnFinalizar1->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -85,6 +88,7 @@ namespace pryTrabajoFinalGrupoUno {
 			// btnCreditos
 			// 
 			this->btnCreditos->BackColor = System::Drawing::SystemColors::Desktop;
+			this->btnCreditos->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btnCreditos->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->btnCreditos->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -101,6 +105,7 @@ namespace pryTrabajoFinalGrupoUno {
 			// 
 			this->btnInstrucciones->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
 			this->btnInstrucciones->BackColor = System::Drawing::SystemColors::Desktop;
+			this->btnInstrucciones->Cursor = System::Windows::Forms::Cursors::Help;
 			this->btnInstrucciones->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->btnInstrucciones->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -126,6 +131,7 @@ namespace pryTrabajoFinalGrupoUno {
 			// btnBonificacion
 			// 
 			this->btnBonificacion->BackColor = System::Drawing::SystemColors::GrayText;
+			this->btnBonificacion->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btnBonificacion->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei UI", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
 				System::Drawing::GraphicsUnit::Pixel, static_cast<System::Byte>(0)));
 			this->btnBonificacion->ForeColor = System::Drawing::SystemColors::Control;
@@ -148,7 +154,7 @@ namespace pryTrabajoFinalGrupoUno {
 			this->Controls->Add(this->btnIniciar);
 			this->Controls->Add(this->btnInstrucciones);
 			this->Controls->Add(this->pictureBox1);
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
 			this->MaximizeBox = false;
 			this->Name = L"frmPrincipal";
 			this->ShowIcon = false;
@@ -160,18 +166,24 @@ namespace pryTrabajoFinalGrupoUno {
 		}
 #pragma endregion
 	private: System::Void btnIniciar_Click(System::Object^ sender, System::EventArgs^ e) {
-		frmJuego1^ frmJ1 = gcnew frmJuego1();
+		//frmJuego1^ frmJ1 = gcnew frmJuego1();
+		frmInstrucciones_alternativo^ frmInstrAlt = gcnew frmInstrucciones_alternativo();
 		this->Visible = false;
-		frmJ1->ShowDialog();
+		//frmJ1->ShowDialog();
+		frmInstrAlt->ShowDialog();
 		this->Visible = true;
 	}
 	private: System::Void btnInstrucciones_Click(System::Object^ sender, System::EventArgs^ e) {
-		//grbPrincipales->Visible = false;
-		//grbPrincipales->Visible = true;
+		frmInstrucciones^ frmInstr = gcnew frmInstrucciones();
+		this->Visible = false;
+		frmInstr->ShowDialog();
+		this->Visible = true;
 	}
 	private: System::Void btnCreditos_Click(System::Object^ sender, System::EventArgs^ e) {
-		//grbPrincipales->Visible = false;
-		//grbPrincipales->Visible = true;
+		frmCreditos^ frmIntegrantes = gcnew frmCreditos();
+		this->Visible = false;
+		frmIntegrantes->ShowDialog();
+		this->Visible = true;
 	}
 	private: System::Void btnFinalizar1_Click(System::Object^ sender, System::EventArgs^ e) {
 		Application::Exit();

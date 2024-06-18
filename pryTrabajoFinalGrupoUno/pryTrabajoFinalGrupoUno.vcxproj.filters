@@ -74,5 +74,8 @@
     <ClInclude Include="frmCreditos.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="frmInstrucciones_alternativo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

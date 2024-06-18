@@ -34,6 +34,13 @@ namespace pryTrabajoFinalGrupoUno {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Button^ btnIniciar;
+	private: System::Windows::Forms::Button^ btnRetMenu;
+
+	protected:
+
+	protected:
+
 
 	private:
 		/// <summary>
@@ -48,12 +55,68 @@ namespace pryTrabajoFinalGrupoUno {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"frmInstrucciones";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->btnIniciar = (gcnew System::Windows::Forms::Button());
+			this->btnRetMenu = (gcnew System::Windows::Forms::Button());
+			this->SuspendLayout();
+			// 
+			// btnIniciar
+			// 
+			this->btnIniciar->BackColor = System::Drawing::SystemColors::Desktop;
+			this->btnIniciar->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->btnIniciar->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btnIniciar->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->btnIniciar->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnIniciar->ForeColor = System::Drawing::SystemColors::Control;
+			this->btnIniciar->Location = System::Drawing::Point(297, 674);
+			this->btnIniciar->Name = L"btnIniciar";
+			this->btnIniciar->Size = System::Drawing::Size(250, 40);
+			this->btnIniciar->TabIndex = 0;
+			this->btnIniciar->Text = L"Seleccionar nivel";
+			this->btnIniciar->UseVisualStyleBackColor = false;
+			this->btnIniciar->Visible = false;
+			this->btnIniciar->Click += gcnew System::EventHandler(this, &frmInstrucciones::btnIniciar_Click);
+			// 
+			// btnRetMenu
+			// 
+			this->btnRetMenu->BackColor = System::Drawing::SystemColors::Desktop;
+			this->btnRetMenu->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->btnRetMenu->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btnRetMenu->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->btnRetMenu->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnRetMenu->ForeColor = System::Drawing::SystemColors::Control;
+			this->btnRetMenu->Location = System::Drawing::Point(297, 750);
+			this->btnRetMenu->Name = L"btnRetMenu";
+			this->btnRetMenu->Size = System::Drawing::Size(250, 40);
+			this->btnRetMenu->TabIndex = 1;
+			this->btnRetMenu->Text = L"Volver al menu principal";
+			this->btnRetMenu->UseVisualStyleBackColor = false;
+			this->btnRetMenu->Click += gcnew System::EventHandler(this, &frmInstrucciones::btnRetMenu_Click);
+			// 
+			// frmInstrucciones
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(860, 861);
+			this->Controls->Add(this->btnRetMenu);
+			this->Controls->Add(this->btnIniciar);
+			this->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->MaximizeBox = false;
+			this->Name = L"frmInstrucciones";
+			this->ShowIcon = false;
+			this->ShowInTaskbar = false;
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+			this->Text = L"frmInstrucciones";
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
-	};
+	private: System::Void btnRetMenu_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+	}
+	private: System::Void btnIniciar_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }
