@@ -34,6 +34,12 @@ public:
 	int getY() {
 		return y;
 	};
+	int getAncho() {
+		return ancho;
+	};
+	int getAlto() {
+		return alto;
+	};
 	System::Drawing::Rectangle Area()
 	{
 		return System::Drawing::Rectangle(x, y, ancho, alto);

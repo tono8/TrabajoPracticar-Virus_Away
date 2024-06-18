@@ -9,6 +9,8 @@ enum SpriteJugador {
 };
 class Jugador : public Entidad {
 private:
+	int vida;
+	int puntos;
 	SpriteJugador movimiento;
 public:
 	Jugador(System::Drawing::Bitmap^ img) {
@@ -25,6 +27,12 @@ public:
 	}
 	SpriteJugador getMovimiento() {
 		return movimiento;
+	}
+	int getPuntos() {
+		return puntos;
+	}
+	void setPuntos(int value) {
+		puntos += value;
 	}
 
 	void mover(System::Drawing::Graphics^ g) {

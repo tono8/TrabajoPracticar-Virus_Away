@@ -2,7 +2,6 @@
 #include "Entidad.h"
 class Proyectil : public Entidad
 {
-private:
 public:
 	Proyectil(int x_pr, int y_pr, int dx_pr, int dy_pr) {
 		this->x = x_pr;
@@ -22,11 +21,11 @@ public:
 			delete proyectiles.at(i);
 		}
 	};
-	void prEliminar(int pos) {
-		proyectiles.erase(proyectiles.begin() + pos);
-	}
 	void prAgregar(Proyectil* proyectil) {
 		proyectiles.push_back(proyectil);
+	}
+	void prEliminar(int pos) {
+		proyectiles.erase(proyectiles.begin() + pos);
 	}
 	int prSize() {
 		return proyectiles.size();
@@ -42,8 +41,8 @@ public:
 		return false;
 	}
 	void mover(System::Drawing::Graphics^ g) {
-		for (Proyectil* b : proyectiles) {
-			b->mover(g);
+		for (Proyectil* pr : proyectiles) {
+			pr->mover(g);
 		}
 		System::Drawing::Rectangle pantalla = System::Drawing::Rectangle(0, 0, (int)g->VisibleClipBounds.Width, (int)g->VisibleClipBounds.Height);
 		for (int i = 0; i < prSize(); i++) {

@@ -133,6 +133,7 @@ public:
 				cant++;
 			}
 		}
+		return cant;
 	}
 	bool eColision(System::Drawing::Rectangle obj) {
 		for each (Enemigo1 * E1 in enemigos1) {

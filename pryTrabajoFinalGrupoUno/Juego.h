@@ -1,12 +1,12 @@
 #pragma once
+// La clase Juego es la clase CONTROLADORA
 // Enlace del boceto del juego https://upcedupe-my.sharepoint.com/:wb:/g/personal/u201513502_upc_edu_pe/EfMt0EkFdrZAsvHCmFQwT54BhPo2i1FoQQeFJpItpi3ylA?e=HGpCRi
-// 
 #include "Jugador.h"
 #include "Enemigo1.h"
 #include "Enemigo2.h"
 #include "Enemigo3.h"
 #include "Aliado.h"
-#include "Proyectil.h"
+#include "Proyectil.h" // Es tambien valido hacer la incorporacion en las clases "Jugador.h" y "Enemigo.h".
 ref class Controlador {
 private:
 	Jugador* jugador;
@@ -112,23 +112,28 @@ public:
 		}
 	}
 	void DispararJugador(bool movimiento, System::Windows::Forms::Keys tecla) {
+		int v = 10;
 		if (movimiento == true)
 		{
 			if (tecla == System::Windows::Forms::Keys::I) {
 				jugador->setMovimiento(jCaminarArriba);
+				proyectiles->prAgregar(new Proyectil(jugador->getX() + jugador->getAncho() / 2, jugador->getY() + jugador->getAlto() / 2, 0, -v));
 			}
 			else if (tecla == System::Windows::Forms::Keys::K) {
 				jugador->setMovimiento(jCaminarAbajo);
+				proyectiles->prAgregar(new Proyectil(jugador->getX() + jugador->getAncho() / 2, jugador->getY() + jugador->getAlto() / 2, 0, v));
 			}
 			else if (tecla == System::Windows::Forms::Keys::J) {
 				jugador->setMovimiento(jCaminarIzquierda);
+				proyectiles->prAgregar(new Proyectil(jugador->getX() + jugador->getAncho() / 2, jugador->getY() + jugador->getAlto() / 2, -v, 0));
 			}
 			else if (tecla == System::Windows::Forms::Keys::L) {
 				jugador->setMovimiento(jCaminarDerecha);
+				proyectiles->prAgregar(new Proyectil(jugador->getX() + jugador->getAncho() / 2, jugador->getY() + jugador->getAlto() / 2, v, 0));
 			}
 		}
 	}
-	void mover(System::Drawing::Graphics^ g)
+	bool mover(System::Drawing::Graphics^ g)
 	{
 		jugador->mover(g);
 		enemigos1->mover(g, jugador->getX(), jugador->getY());
@@ -136,6 +141,7 @@ public:
 		enemigos3->mover(g);
 		aliados->mover(g);
 		proyectiles->mover(g);
+		return true;
 	}
 	void mostrar(System::Drawing::Graphics^ g)
 	{
