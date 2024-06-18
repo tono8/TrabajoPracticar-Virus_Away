@@ -42,6 +42,7 @@ namespace pryTrabajoFinalGrupoUno {
 		}
 	private: System::Windows::Forms::Timer^ timer_I;
 
+
 	protected:
 
 	protected:
@@ -61,7 +62,6 @@ namespace pryTrabajoFinalGrupoUno {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(frmJuego1::typeid));
 			this->timer_I = (gcnew System::Windows::Forms::Timer(this->components));
 			this->SuspendLayout();
 			// 
@@ -75,8 +75,7 @@ namespace pryTrabajoFinalGrupoUno {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->ClientSize = System::Drawing::Size(860, 861);
 			this->Cursor = System::Windows::Forms::Cursors::No;
 			this->DoubleBuffered = true;
@@ -92,39 +91,6 @@ namespace pryTrabajoFinalGrupoUno {
 
 		}
 #pragma endregion
-	//
-	// COMIENZO DE COMENTARIO
-	// 
-	//void sala1_nivel1() {
-	//	Bitmap^ bgS1N1 = gcnew Bitmap("img/fondoS1N1_test1.png");
-	//}
-	//void sala2_nivel1() {
-	//	Bitmap^ bgS2N1 = gcnew Bitmap("img/fondoS2N1_test1.png");
-	//}
-	//void sala3_nivel1() {
-	//	Bitmap^ bgS3N1 = gcnew Bitmap("img/fondoS3N1_test1.png");
-	//}
-	//void sala4_nivel1() {
-	//	Bitmap^ bgS4N1 = gcnew Bitmap("img/fondoS4N1_test1.png");
-	//}
-	//void sala5_nivel1() {
-	//	Bitmap^ bgS5N1 = gcnew Bitmap("img/fondoS5N1_test1.png");
-	//}
-	//void sala6_nivel1() {
-	//	Bitmap^ bgS6N1 = gcnew Bitmap("img/fondoS6N1_test1.png");
-	//}
-	//void sala7_nivel1() {
-	//	Bitmap^ bgS7N1 = gcnew Bitmap("img/fondoS7N1_test1.png");
-	//}
-	//void sala8_nivel1() {
-	//	Bitmap^ bgS8N1 = gcnew Bitmap("img/fondoS8N1_test1.png");
-	//}
-	//void sala9_nivel1() {
-	//	Bitmap^ bgS9N1 = gcnew Bitmap("img/fondoS9N1_test1.png");
-	//}
-	// 
-	// FIN DE COMENTARIO
-	//
 	private: System::Void timer_I_Tick(System::Object^ sender, System::EventArgs^ e) {
 		Graphics^ g = this->CreateGraphics();
 		BufferedGraphicsContext^ bfc = BufferedGraphicsManager::Current;

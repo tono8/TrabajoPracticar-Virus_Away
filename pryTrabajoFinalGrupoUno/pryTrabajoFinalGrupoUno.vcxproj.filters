@@ -18,6 +18,9 @@
     <ClCompile Include="frmPrincipal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="frmMission.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="frmPrincipal.h">
@@ -51,6 +54,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Enemigo3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="frmMission.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
