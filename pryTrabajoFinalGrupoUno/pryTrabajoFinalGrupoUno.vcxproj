@@ -118,7 +118,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="frmMission.cpp" />
     <ClCompile Include="frmPrincipal.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -127,14 +126,32 @@
     <ClInclude Include="Enemigo1.h" />
     <ClInclude Include="Enemigo2.h" />
     <ClInclude Include="Enemigo3.h" />
+    <ClInclude Include="frmCreditos.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmGanar.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmInstrucciones.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="frmJuego1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Entidad.h" />
+    <ClInclude Include="frmJuego2.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="frmMission.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="frmPerder.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="frmPrincipal.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmSeleccionar.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Juego.h" />

@@ -14,7 +14,7 @@ public:
 		y = rand() % 700;
 		// dx = dy = rand() % (50 - 0,2 + 1) + 0.8;
 		dx = dy = 2;
-		ancho = img->Width / 35;//Cantidad de fotogramas horizontales
+		ancho = img->Width / 31;//Cantidad de fotogramas horizontales
 		alto = img->Height / 2;//Cantidad de fotogramas 
 		movimiento_alt1 = eMovimientoV2;
 	};
@@ -31,8 +31,8 @@ public:
 			// Fotogramas en "testing2_32_alt3": 78
 			// Fotogramas en "testing2_64_alt3": 78
 			// Fotogramas en "enemigo1_v1_64_alt1": 3
-			// Fotogramas en "enemigo1_v2_64": 35
-			IDx = (IDx + 1) % 35;
+			// Fotogramas en "enemigo1_v2_64": 31
+			IDx = (IDx + 1) % 31;
 		else if (movimiento_alt1 == eEliminadoV2)
 			// Cantidad de fotogramas en la imagen
 			// Cantidad regular: 9

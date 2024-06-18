@@ -44,7 +44,7 @@ public:
 		// enemigo1_v1_64_alt1 (Aumento en parpadeo)
 		// enemigo1_v2_64
 		//
-		imgEnemigo1 = gcnew System::Drawing::Bitmap("img/enemigo1_v2_64.png");
+		imgEnemigo1 = gcnew System::Drawing::Bitmap("img/enemigo1_v3_64.png");
 		//
 		// nombres de imagenes asignadas al enemigo 2:
 		// testing3_32_alt2
@@ -60,7 +60,7 @@ public:
 		// testing5_32_alt2
 		// aliado_v1_64_alt1
 		//
-		imgAliado = gcnew System::Drawing::Bitmap("img/aliado_v1_64_alt1.png");
+		imgAliado = gcnew System::Drawing::Bitmap("img/aliado_v2_64_alt1.png");
 
 		jugador = new Jugador(imgJugador);
 		enemigos1 = new Enemigos1(pX_e1, pY_e1, imgEnemigo1, cant_e1);
