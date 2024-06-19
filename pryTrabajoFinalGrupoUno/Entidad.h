@@ -41,6 +41,9 @@ public:
 	int getAlto() {
 		return alto;
 	};
+	int getIDx() {
+		return IDx;
+	}
 	System::Drawing::Rectangle Area()
 	{
 		return System::Drawing::Rectangle(x, y, ancho, alto);

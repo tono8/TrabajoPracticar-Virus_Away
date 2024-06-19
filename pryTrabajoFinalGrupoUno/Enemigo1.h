@@ -18,6 +18,12 @@ public:
 		alto = img->Height / 2;//Cantidad de fotogramas 
 		movimiento_alt1 = eMovimientoV2;
 	};
+	SpriteEnemigo1v2 getMovimiento() {
+		return movimiento_alt1;
+	}
+	void setMovimiento(SpriteEnemigo1v2 value) {
+		movimiento_alt1 = value;
+	}
 	void eMostrar1(System::Drawing::Graphics^ g, System::Drawing::Bitmap^ img)
 	{
 		System::Drawing::Rectangle corte = System::Drawing::Rectangle(IDx * ancho, movimiento_alt1 * alto, ancho, alto);
@@ -124,16 +130,25 @@ public:
 			delete E1;
 		}
 	};
-	int eEliminar(System::Drawing::Rectangle rectangulo) {
-		int cant = 0;
+	void eEliminar(int posicion) {
+		enemigos1.erase(enemigos1.begin() + posicion);
+	}
+	int eSize() {
+		return enemigos1.size();
+	}
+	Enemigo1* getP(int posicion) {
+		return enemigos1[posicion];
+	}
+	void eLimpiar(System::Drawing::Rectangle rectangulo) { // Se llama limpiar por el contexto de la historia del juego
 		for (int i = 0; i < enemigos1.size(); i++)
 		{
-			if (enemigos1[i]->Area().IntersectsWith(rectangulo)) {
-				enemigos1.erase(enemigos1.begin() + i--);
-				cant++;
+			Enemigo1* E1 = enemigos1[i];
+			if (E1->Area().IntersectsWith(rectangulo)) {
+				E1->setDX(0);
+				E1->setDY(0);
+				E1->setMovimiento(eEliminadoV2); 
 			}
 		}
-		return cant;
 	}
 	bool eColision(System::Drawing::Rectangle obj) {
 		for each (Enemigo1 * E1 in enemigos1) {

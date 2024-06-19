@@ -27,7 +27,7 @@ public:
 	void setVida(int value) {
 		vida_j += value;
 	}
-	int getVida(int value) {
+	int getVida() {
 		return vida_j;
 	}
 	void setMovimiento(SpriteJugador value) {

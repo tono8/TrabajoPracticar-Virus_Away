@@ -22,9 +22,11 @@ private:
 	System::Drawing::Bitmap^ imgEnemigo3;
 	System::Drawing::Bitmap^ imgAliado;
 
+	bool finalizar = false;
 	int mejorCD; // Cooldown de perdida de salud ante la colision con un enemigo
+	int cronometro_1;
 public:
-	Controlador(	int salud_j, 
+	Controlador(	int salud_j, int crM_1,
 					int pX_e1, int pY_e1, int cant_e1, 
 					int pX_e2, int pY_e2, int cant_e2, 
 					int pX_e3, int pY_e3, int cant_e3,
@@ -72,6 +74,7 @@ public:
 		proyectiles = new Proyectiles();
 
 		mejorCD = 0;
+		cronometro_1 = crM_1 * 1000;
 	}
 	~Controlador()
 	{
@@ -139,22 +142,32 @@ public:
 	}
 	bool mover(System::Drawing::Graphics^ g)
 	{
-		jugador->mover(g);
-		// Aqui se colocara una funcion para llamar a cuestionario de preguntas
-		if (enemigos1->eColision(jugador->Area()) && clock() - mejorCD >= 4000 ||
-			enemigos2->eColision(jugador->Area()) && clock() - mejorCD >= 4000 ||
-			enemigos3->eColision(jugador->Area()) && clock() - mejorCD >= 4000) {
-			jugador->setVida(-1);
-			mejorCD = clock();
-		}
-		//if (jugador->getVida() == 0 || clock() >= time) {
-		//	if
-		//}
 		for (int i = 0; i < proyectiles->prSize(); i++) {
 			Proyectil* pr = proyectiles->get(i);
-			enemigos1->eEliminar(pr->Area());
-
+			enemigos1->eLimpiar(pr->Area());
 		}
+		for (int i = 0; i < enemigos1->eSize(); i++) {
+			Enemigo1* E1 = enemigos1->getP(1);
+			if (E1->getMovimiento() == eEliminadoV2 && E1->getIDx() == 12) {
+				enemigos1->eEliminar(i);
+			}
+		}
+		if (enemigos1->eColision(jugador->Area()) && clock() - mejorCD >= 4000/* ||
+			enemigos2->eColision(jugador->Area()) && clock() - mejorCD >= 4000 ||
+			enemigos3->eColision(jugador->Area()) && clock() - mejorCD >= 4000*/) {
+			jugador->setVida(-1);
+			mejorCD = clock();
+			if (jugador->getVida() == 0) {
+				jugador->setMovimiento(jCapturado);
+			}
+		}
+		if (jugador->getMovimiento() == jCapturado && jugador->getIDx() == 4) {
+			return false;
+		}
+		if (clock() >= cronometro_1) {
+			return false;
+		}
+		jugador->mover(g);
 		enemigos1->mover(g, jugador->getX(), jugador->getY());
 		enemigos2->mover(g);
 		enemigos3->mover(g);
