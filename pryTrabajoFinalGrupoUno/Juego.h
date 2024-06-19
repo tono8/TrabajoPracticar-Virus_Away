@@ -21,8 +21,10 @@ private:
 	System::Drawing::Bitmap^ imgEnemigo2;
 	System::Drawing::Bitmap^ imgEnemigo3;
 	System::Drawing::Bitmap^ imgAliado;
+
+	int mejorCD; // Cooldown de perdida de salud ante la colision con un enemigo
 public:
-	Controlador(	/*int salud_j, */
+	Controlador(	int salud_j, 
 					int pX_e1, int pY_e1, int cant_e1, 
 					int pX_e2, int pY_e2, int cant_e2, 
 					int pX_e3, int pY_e3, int cant_e3,
@@ -62,12 +64,14 @@ public:
 		//
 		imgAliado = gcnew System::Drawing::Bitmap("img/aliado_v2_64_alt1.png");
 
-		jugador = new Jugador(imgJugador);
+		jugador = new Jugador(imgJugador, salud_j);
 		enemigos1 = new Enemigos1(pX_e1, pY_e1, imgEnemigo1, cant_e1);
 		enemigos2 = new Enemigos2(pX_e2, pY_e2, imgEnemigo2, cant_e2);
 		enemigos3 = new Enemigos3(pX_e3, pY_e3, imgEnemigo3, cant_e3);
 		aliados = new Aliados(pX_a, pY_a, imgAliado, cant_a);
 		proyectiles = new Proyectiles();
+
+		mejorCD = 0;
 	}
 	~Controlador()
 	{
@@ -112,7 +116,7 @@ public:
 		}
 	}
 	void DispararJugador(bool movimiento, System::Windows::Forms::Keys tecla) {
-		int v = 10;
+		int v = 20;
 		if (movimiento == true)
 		{
 			if (tecla == System::Windows::Forms::Keys::I) {
@@ -136,20 +140,35 @@ public:
 	bool mover(System::Drawing::Graphics^ g)
 	{
 		jugador->mover(g);
+		// Aqui se colocara una funcion para llamar a cuestionario de preguntas
+		if (enemigos1->eColision(jugador->Area()) && clock() - mejorCD >= 4000 ||
+			enemigos2->eColision(jugador->Area()) && clock() - mejorCD >= 4000 ||
+			enemigos3->eColision(jugador->Area()) && clock() - mejorCD >= 4000) {
+			jugador->setVida(-1);
+			mejorCD = clock();
+		}
+		//if (jugador->getVida() == 0 || clock() >= time) {
+		//	if
+		//}
+		for (int i = 0; i < proyectiles->prSize(); i++) {
+			Proyectil* pr = proyectiles->get(i);
+			enemigos1->eEliminar(pr->Area());
+
+		}
 		enemigos1->mover(g, jugador->getX(), jugador->getY());
 		enemigos2->mover(g);
 		enemigos3->mover(g);
-		aliados->mover(g);
 		proyectiles->mover(g);
+		aliados->mover(g);
 		return true;
 	}
 	void mostrar(System::Drawing::Graphics^ g)
 	{
-		jugador->mostrar(g, imgJugador);
 		enemigos1->mostrar(g, imgEnemigo1);
 		enemigos2->mostrar(g, imgEnemigo1);
 		enemigos3->mostrar(g, imgEnemigo1);
 		aliados->mostrar(g, imgAliado);
 		proyectiles->mostrar(g);
+		jugador->mostrar(g, imgJugador);
 	}
 };

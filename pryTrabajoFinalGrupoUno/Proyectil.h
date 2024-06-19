@@ -9,6 +9,12 @@ public:
 		this->dx = dx_pr;
 		this->dy = dy_pr;
 		ancho = alto = 3;
+		if (dx != 0) {
+			ancho = 30;
+		}
+		if (dy != 0) {
+			alto = 30;
+		}
 	};
 };
 class Proyectiles

@@ -9,11 +9,11 @@ enum SpriteJugador {
 };
 class Jugador : public Entidad {
 private:
-	int vida;
+	int vida_j;
 	int puntos;
 	SpriteJugador movimiento;
 public:
-	Jugador(System::Drawing::Bitmap^ img) {
+	Jugador(System::Drawing::Bitmap^ img, int salud_j) {
 		x = 360; y = 360;
 		dx = dy = 0;
 
@@ -21,6 +21,14 @@ public:
 		alto = img->Height / 5;//Cantidad de fotogramas verticales
 
 		movimiento = jCaminarAbajo;
+
+		vida_j = salud_j;
+	}
+	void setVida(int value) {
+		vida_j += value;
+	}
+	int getVida(int value) {
+		return vida_j;
 	}
 	void setMovimiento(SpriteJugador value) {
 		movimiento = value;
@@ -45,6 +53,7 @@ public:
 	}
 	void mostrar(System::Drawing::Graphics^ g, System::Drawing::Bitmap^ img)
 	{
+		g->DrawString("Vidas: " + vida_j, gcnew System::Drawing::Font("Arial", 14), System::Drawing::Brushes::White, 0, 0);
 		System::Drawing::Rectangle corte = System::Drawing::Rectangle(IDx * ancho, movimiento * alto, ancho, alto);
 		g->DrawImage(img, Area(), corte, System::Drawing::GraphicsUnit::Pixel);
 		//g->DrawRectangle(Pens::Black, Area());

@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include <time.h>
 
 using namespace std;
 
@@ -10,8 +11,8 @@ protected:
 	int x, y;
 	int dx, dy;
 	int ancho, alto;
-	//Indice de direccion
-	int IDx;//se declara para mostrar fotogramas de acuerdo al indice
+	// Indice de direccion
+	int IDx;// se declara para mostrar fotogramas de acuerdo al indice
 	float zoom;
 public:
 	Entidad() {

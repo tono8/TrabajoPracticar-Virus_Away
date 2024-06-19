@@ -71,7 +71,7 @@ public:
 			delete E3;
 		}
 	};
-	bool eColision3(System::Drawing::Rectangle obj) {
+	bool eColision(System::Drawing::Rectangle obj) {
 		for each (Enemigo3 * E3 in enemigos3) {
 			if (E3->NextArea().IntersectsWith(obj))
 				return true;

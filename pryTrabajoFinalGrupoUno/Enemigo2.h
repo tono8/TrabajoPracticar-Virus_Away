@@ -68,7 +68,7 @@ public:
 			delete E2;
 		}
 	};
-	bool eColision2(System::Drawing::Rectangle obj) {
+	bool eColision(System::Drawing::Rectangle obj) {
 		for each (Enemigo2 * E2 in enemigos2) {
 			if (E2->NextArea().IntersectsWith(obj))
 				return true;

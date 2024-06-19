@@ -25,7 +25,7 @@ namespace pryTrabajoFinalGrupoUno {
 			//
 			//TODO: Add the constructor code here
 			//
-			juego = gcnew Controlador(220, 60, 8, 0, 0, 0, 0, 0, 0, 120, 120, 2);
+			juego = gcnew Controlador(1, 220, 60, 8, 0, 0, 0, 0, 0, 0, 120, 120, 2);
 		}
 
 	protected:
@@ -98,9 +98,11 @@ namespace pryTrabajoFinalGrupoUno {
 
 		bf->Graphics->DrawImage(fondoJuego1_v1, 0, 0, (int)bf->Graphics->VisibleClipBounds.Width, (int)bf->Graphics->VisibleClipBounds.Height);
 		//bf->Graphics->Clear(SystemColors::Control);
-
-		juego->mover(bf->Graphics);
 		juego->mostrar(bf->Graphics);
+
+		if (juego->mover(g) == false) {
+			timer_I->Enabled = false;
+		}
 
 		bf->Render(g);
 
