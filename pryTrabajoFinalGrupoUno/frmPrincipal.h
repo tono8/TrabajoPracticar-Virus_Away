@@ -1,6 +1,5 @@
 #pragma once
 //frmPresentacion
-#include "frmJuego1.h"
 #include "frmInstrucciones.h"
 #include "frmInstrucciones_alternativo.h"
 #include "frmCreditos.h"
@@ -159,7 +158,7 @@ namespace pryTrabajoFinalGrupoUno {
 			this->Name = L"frmPrincipal";
 			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"UPC - TF - //NOMBRE DEL JUEGO//";
+			this->Text = L"UPC - TF - Virus_Zapper";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 

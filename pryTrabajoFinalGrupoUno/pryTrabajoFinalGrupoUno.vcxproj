@@ -151,6 +151,9 @@
     <ClInclude Include="frmPerder.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="frmPreguntas.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="frmPrincipal.h">
       <FileType>CppForm</FileType>
     </ClInclude>

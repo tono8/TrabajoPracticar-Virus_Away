@@ -77,5 +77,8 @@
     <ClInclude Include="frmInstrucciones_alternativo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="frmPreguntas.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
