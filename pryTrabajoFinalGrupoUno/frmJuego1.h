@@ -102,6 +102,8 @@ namespace pryTrabajoFinalGrupoUno {
 
 		if (juego->mover(g) == false) {
 			timer_I->Enabled = false;
+			this->Visible = false;
+			//this->Close(); // Para todos los procesos y causa un error de buffer
 		}
 
 		bf->Render(g);

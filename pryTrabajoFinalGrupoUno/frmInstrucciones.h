@@ -108,7 +108,7 @@ namespace pryTrabajoFinalGrupoUno {
 			this->ShowIcon = false;
 			this->ShowInTaskbar = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"frmInstrucciones";
+			this->Text = L"Instrucciones";
 			this->ResumeLayout(false);
 
 		}

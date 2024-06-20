@@ -117,8 +117,12 @@ namespace pryTrabajoFinalGrupoUno {
 			this->Controls->Add(this->btnMenuPrc);
 			this->Controls->Add(this->btnSlcNiv);
 			this->Controls->Add(this->btnContinuar1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->MaximizeBox = false;
 			this->Name = L"frmMission";
-			this->Text = L"frmMission";
+			this->ShowIcon = false;
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+			this->Text = L"Elije una opcion";
 			this->ResumeLayout(false);
 
 		}

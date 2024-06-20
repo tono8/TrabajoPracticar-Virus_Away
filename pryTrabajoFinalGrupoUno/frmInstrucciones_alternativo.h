@@ -1,4 +1,5 @@
 #pragma once
+#include"frmSeleccionar.h"
 
 namespace pryTrabajoFinalGrupoUno {
 
@@ -102,7 +103,7 @@ namespace pryTrabajoFinalGrupoUno {
 			this->ShowIcon = false;
 			this->ShowInTaskbar = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"frmInstrucciones_alternativo";
+			this->Text = L"Instrucciones";
 			this->ResumeLayout(false);
 
 		}
@@ -111,6 +112,10 @@ namespace pryTrabajoFinalGrupoUno {
 		this->Close();
 	}
 	private: System::Void btnIniciar_Click(System::Object^ sender, System::EventArgs^ e) {
+		frmSeleccionar^ lvlSlc = gcnew frmSeleccionar();
+		this->Visible = false;
+		lvlSlc->ShowDialog();
+		this->Visible = true;
 	}
 	};
 }

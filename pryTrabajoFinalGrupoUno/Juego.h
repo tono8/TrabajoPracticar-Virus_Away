@@ -160,6 +160,8 @@ public:
 		if (enemigos1->eColision(jugador->Area()) && clock() - mejorCD >= 4000/* ||
 			enemigos2->eColision(jugador->Area()) && clock() - mejorCD >= 4000 ||
 			enemigos3->eColision(jugador->Area()) && clock() - mejorCD >= 4000*/) {
+			//pryTrabajoFinalGrupoUno::frmMission^ pregunta_t = gcnew pryTrabajoFinalGrupoUno::frmMission();
+			//pregunta_t->ShowDialog();
 			jugador->setVida(-1);
 			mejorCD = clock();
 		}
