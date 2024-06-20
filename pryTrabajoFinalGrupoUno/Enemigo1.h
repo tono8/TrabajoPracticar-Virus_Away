@@ -38,6 +38,7 @@ public:
 			// Fotogramas en "testing2_64_alt3": 78
 			// Fotogramas en "enemigo1_v1_64_alt1": 3
 			// Fotogramas en "enemigo1_v2_64": 31
+			// Fotogramas en "enemigo1_v4_64": 31
 			IDx = (IDx + 1) % 31;
 		else if (movimiento_alt1 == eEliminadoV2)
 			// Cantidad de fotogramas en la imagen
@@ -46,7 +47,8 @@ public:
 			// Fotogramas en "testing2_64_alt3": 27
 			// Fotogramas en "enemigo1_v1_64_alt1": 4
 			// Fotogramas en "enemigo1_v2_64": 12
-			IDx = IDx + 1 % 12;
+			// Fotogramas en "enemigo1_v4_64": 27
+			IDx = IDx + 1 % 27;
 	}
 	void eMover1(System::Drawing::Graphics^ g, int pX_j, int pY_j) {
 		x_j = pX_j;
@@ -71,47 +73,6 @@ public:
 		else if (y > y_j) {
 			y -= dy;
 		}
-		//// Eje X
-		//if (x == x_j) {
-		//	x += 0;
-		//}
-		//else if (x < x_j) {
-		//	x += dx;
-		//	IDx++;
-		//	movimiento = eCaminarDerecha;
-		//}
-		//else if (x > x_j) {
-		//	x -= dx;
-		//	IDx++;
-		//	movimiento = eCaminarIzquierda;
-		//}
-		//// Eje y
-		//if (y == y_j) {
-		//	y += 0;
-		//}
-		//else if (y < y_j) {
-		//	y += dy;
-		//	IDx++;
-		//	movimiento = eCaminarAbajo;
-		//}
-		//else if (y > y_j) {
-		//	y -= dy;
-		//	IDx++;
-		//	movimiento = eCaminarArriba;
-		//}
-
-		//if (dx < 0) {
-		//	movimiento = eCaminarIzquierda;
-		//}
-		//else if (dx > 0) {
-		//	movimiento = eCaminarDerecha;
-		//}
-		//else if (dy < 0) {
-		//	movimiento = eCaminarArriba;
-		//}
-		//else if (dy > 0) {
-		//	movimiento = eCaminarAbajo;
-		//}
 	}
 };
 class Enemigos1
@@ -130,14 +91,14 @@ public:
 			delete E1;
 		}
 	};
-	void eEliminar(int posicion) {
-		enemigos1.erase(enemigos1.begin() + posicion);
+	void eEliminar(int listaPosicion1) {
+		enemigos1.erase(enemigos1.begin() + listaPosicion1);
 	}
 	int eSize() {
 		return enemigos1.size();
 	}
-	Enemigo1* getP(int posicion) {
-		return enemigos1[posicion];
+	Enemigo1* getP(int listaPosicion1) {
+		return enemigos1[listaPosicion1];
 	}
 	void eLimpiar(System::Drawing::Rectangle rectangulo) { // Se llama limpiar por el contexto de la historia del juego
 		for (int i = 0; i < enemigos1.size(); i++)

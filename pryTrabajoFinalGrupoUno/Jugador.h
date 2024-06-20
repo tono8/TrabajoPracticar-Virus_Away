@@ -5,6 +5,10 @@ enum SpriteJugador {
 	jCaminarIzquierda,
 	jCaminarArriba,
 	jCaminarAbajo,
+	jDispararDerecha,
+	jDispararIzquierda,
+	jDispararArriba,
+	jDispararAbajo,
 	jCapturado
 };
 class Jugador : public Entidad {
@@ -17,8 +21,8 @@ public:
 		x = 360; y = 360;
 		dx = dy = 0;
 
-		ancho = img->Width / 4;//Cantidad de fotogramas horizontales - Cantidad regular: 9
-		alto = img->Height / 5;//Cantidad de fotogramas verticales
+		ancho = img->Width / 32;//Cantidad de fotogramas horizontales
+		alto = img->Height / 9;//Cantidad de fotogramas verticales
 
 		movimiento = jCaminarAbajo;
 
@@ -36,11 +40,11 @@ public:
 	SpriteJugador getMovimiento() {
 		return movimiento;
 	}
-	int getPuntos() {
-		return puntos;
-	}
 	void setPuntos(int value) {
 		puntos += value;
+	}
+	int getPuntos() {
+		return puntos;
 	}
 
 	void mover(System::Drawing::Graphics^ g) {
@@ -62,17 +66,17 @@ public:
 		{
 			if (movimiento >= jCaminarDerecha && movimiento <= jCaminarAbajo && (dx != 0 || dy != 0)) {
 				// Cantidad de fotogramas en la imagen
-				// Cantidad regular: 9
 				// Fotogramas en "testing1_32_alt2": 27
 				// Fotogramas en "jugador_v1_64_alt1": 3
-				IDx = (IDx + 1) % 3;
+				// Fotogramas en "jugador_v2-2_64": 4
+				IDx = (IDx + 1) % 4;
 			}
 			else if (movimiento == jCapturado) {
 				// Cantidad de fotogramas en la imagen
-				// Cantidad regular: 9
 				// Fotogramas en "testing1_32_alt2": 27
 				// Fotogramas en "jugador_v1_64_alt1": 4
-				IDx = (IDx + 1) % 4;
+				// Fotogramas en "jugador_v2-2_64": 32
+				IDx = (IDx + 1) % 32;
 			}
 		}
 	}

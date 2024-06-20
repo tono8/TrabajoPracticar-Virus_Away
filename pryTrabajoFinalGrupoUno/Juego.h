@@ -38,8 +38,9 @@ public:
 		// testing1
 		// testing1_32_alt1
 		// testing1_32_alt2
+		// jugador_v2-2_64
 		//
-		imgJugador = gcnew System::Drawing::Bitmap("img/jugador_v1_64_alt1.png");
+		imgJugador = gcnew System::Drawing::Bitmap("img/jugador_v2-2_64.png");
 		//
 		// nombres de imagenes asignadas al enemigo 1:
 		// testing2_32_alt2
@@ -47,8 +48,9 @@ public:
 		// testing2_64_alt3
 		// enemigo1_v1_64_alt1 (Aumento en parpadeo)
 		// enemigo1_v2_64
+		// enemigo1_v4_64
 		//
-		imgEnemigo1 = gcnew System::Drawing::Bitmap("img/enemigo1_v3_64.png");
+		imgEnemigo1 = gcnew System::Drawing::Bitmap("img/enemigo1_v4_64.png");
 		//
 		// nombres de imagenes asignadas al enemigo 2:
 		// testing3_32_alt2
@@ -123,19 +125,19 @@ public:
 		if (movimiento == true)
 		{
 			if (tecla == System::Windows::Forms::Keys::I) {
-				jugador->setMovimiento(jCaminarArriba);
+				jugador->setMovimiento(jDispararArriba);
 				proyectiles->prAgregar(new Proyectil(jugador->getX() + jugador->getAncho() / 2, jugador->getY() + jugador->getAlto() / 2, 0, -v));
 			}
 			else if (tecla == System::Windows::Forms::Keys::K) {
-				jugador->setMovimiento(jCaminarAbajo);
+				jugador->setMovimiento(jDispararAbajo);
 				proyectiles->prAgregar(new Proyectil(jugador->getX() + jugador->getAncho() / 2, jugador->getY() + jugador->getAlto() / 2, 0, v));
 			}
 			else if (tecla == System::Windows::Forms::Keys::J) {
-				jugador->setMovimiento(jCaminarIzquierda);
+				jugador->setMovimiento(jDispararIzquierda);
 				proyectiles->prAgregar(new Proyectil(jugador->getX() + jugador->getAncho() / 2, jugador->getY() + jugador->getAlto() / 2, -v, 0));
 			}
 			else if (tecla == System::Windows::Forms::Keys::L) {
-				jugador->setMovimiento(jCaminarDerecha);
+				jugador->setMovimiento(jDispararDerecha);
 				proyectiles->prAgregar(new Proyectil(jugador->getX() + jugador->getAncho() / 2, jugador->getY() + jugador->getAlto() / 2, v, 0));
 			}
 		}
@@ -148,7 +150,7 @@ public:
 		}
 		for (int i = 0; i < enemigos1->eSize(); i++) {
 			Enemigo1* E1 = enemigos1->getP(1);
-			if (E1->getMovimiento() == eEliminadoV2 && E1->getIDx() == 12) {
+			if (E1->getMovimiento() == eEliminadoV2 && E1->getIDx() == 26) {
 				enemigos1->eEliminar(i);
 			}
 		}
@@ -159,15 +161,18 @@ public:
 			mejorCD = clock();
 			if (jugador->getVida() == 0) {
 				jugador->setMovimiento(jCapturado);
+				if (jugador->getMovimiento() == jCapturado && jugador->getIDx() == 31) {
+					return false;
+				}
+				return false;
 			}
-		}
-		if (jugador->getMovimiento() == jCapturado && jugador->getIDx() == 4) {
-			return false;
 		}
 		if (clock() >= cronometro_1) {
 			return false;
 		}
-		jugador->mover(g);
+		if (jugador->getMovimiento() != jCapturado) {
+			jugador->mover(g);
+		}
 		enemigos1->mover(g, jugador->getX(), jugador->getY());
 		enemigos2->mover(g);
 		enemigos3->mover(g);
