@@ -133,13 +133,15 @@ namespace pryTrabajoFinalGrupoUno {
 		}
 #pragma endregion
 	private: System::Void btnIniciarLvl1_Click(System::Object^ sender, System::EventArgs^ e) {
-		/*frmJuego1^ frmJ1 = gcnew frmJuego1();
-		frmJ1->ShowDialog();*/
+		//frmJuego1^ frmJ1 = gcnew frmJuego1();
+		//frmJ1->ShowDialog();
 	}
 	private: System::Void btnIniciarLvl2_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void btnRetMenu_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
+		//frmPrincipal^ mMenu = gcnew frmPrincipal();
+		//mMenu->Show();
 	}
 };
 }
