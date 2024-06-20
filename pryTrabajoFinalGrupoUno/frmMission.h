@@ -41,6 +41,9 @@ namespace pryTrabajoFinalGrupoUno {
 	protected:
 	private: System::Windows::Forms::Button^ btnContinuar1;
 	private: System::Windows::Forms::Button^ btnMenuPrc;
+	private: System::Windows::Forms::PictureBox^ ptbPerder;
+
+
 
 	private:
 		/// <summary>
@@ -55,9 +58,12 @@ namespace pryTrabajoFinalGrupoUno {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(frmMission::typeid));
 			this->btnSlcNiv = (gcnew System::Windows::Forms::Button());
 			this->btnContinuar1 = (gcnew System::Windows::Forms::Button());
 			this->btnMenuPrc = (gcnew System::Windows::Forms::Button());
+			this->ptbPerder = (gcnew System::Windows::Forms::PictureBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ptbPerder))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// btnSlcNiv
@@ -109,20 +115,31 @@ namespace pryTrabajoFinalGrupoUno {
 			this->btnMenuPrc->UseVisualStyleBackColor = false;
 			this->btnMenuPrc->Click += gcnew System::EventHandler(this, &frmMission::btnMenuPrc_Click);
 			// 
+			// ptbPerder
+			// 
+			this->ptbPerder->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ptbPerder.Image")));
+			this->ptbPerder->Location = System::Drawing::Point(0, 1);
+			this->ptbPerder->Name = L"ptbPerder";
+			this->ptbPerder->Size = System::Drawing::Size(420, 419);
+			this->ptbPerder->TabIndex = 5;
+			this->ptbPerder->TabStop = false;
+			// 
 			// frmMission
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(422, 411);
+			this->ClientSize = System::Drawing::Size(419, 421);
 			this->Controls->Add(this->btnMenuPrc);
 			this->Controls->Add(this->btnSlcNiv);
 			this->Controls->Add(this->btnContinuar1);
+			this->Controls->Add(this->ptbPerder);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MaximizeBox = false;
 			this->Name = L"frmMission";
 			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Elije una opcion";
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ptbPerder))->EndInit();
 			this->ResumeLayout(false);
 
 		}

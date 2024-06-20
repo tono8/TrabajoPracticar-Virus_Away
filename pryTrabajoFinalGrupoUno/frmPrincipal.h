@@ -109,7 +109,7 @@ namespace pryTrabajoFinalGrupoUno {
 			this->btnInstrucciones->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnInstrucciones->ForeColor = System::Drawing::SystemColors::Control;
-			this->btnInstrucciones->Location = System::Drawing::Point(12, 420);
+			this->btnInstrucciones->Location = System::Drawing::Point(12, 421);
 			this->btnInstrucciones->Name = L"btnInstrucciones";
 			this->btnInstrucciones->Size = System::Drawing::Size(250, 40);
 			this->btnInstrucciones->TabIndex = 1;
@@ -120,7 +120,7 @@ namespace pryTrabajoFinalGrupoUno {
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(0, 0);
+			this->pictureBox1->Location = System::Drawing::Point(0, 1);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(640, 640);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -146,7 +146,7 @@ namespace pryTrabajoFinalGrupoUno {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(640, 640);
+			this->ClientSize = System::Drawing::Size(640, 641);
 			this->Controls->Add(this->btnBonificacion);
 			this->Controls->Add(this->btnFinalizar1);
 			this->Controls->Add(this->btnCreditos);
