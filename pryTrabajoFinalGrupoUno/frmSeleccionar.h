@@ -1,5 +1,5 @@
 #pragma once
-
+#include "frmJuego1.h"
 namespace pryTrabajoFinalGrupoUno {
 
 	using namespace System;
@@ -133,8 +133,9 @@ namespace pryTrabajoFinalGrupoUno {
 		}
 #pragma endregion
 	private: System::Void btnIniciarLvl1_Click(System::Object^ sender, System::EventArgs^ e) {
-		//frmJuego1^ frmJ1 = gcnew frmJuego1();
-		//frmJ1->ShowDialog();
+		frmJuego1^ frmJ1 = gcnew frmJuego1();
+		this->Visible=false;
+		frmJ1->ShowDialog();
 	}
 	private: System::Void btnIniciarLvl2_Click(System::Object^ sender, System::EventArgs^ e) {
 	}

@@ -189,6 +189,9 @@
     <EmbeddedResource Include="frmPerder.resx">
       <DependentUpon>frmPerder.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPreguntas.resx">
+      <DependentUpon>frmPreguntas.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.h</DependentUpon>
     </EmbeddedResource>

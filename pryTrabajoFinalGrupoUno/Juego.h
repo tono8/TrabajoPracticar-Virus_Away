@@ -170,8 +170,8 @@ public:
 			if (jugador->getMovimiento() == jCapturado && jugador->getIDx() == 4) {
 				if (!finalizar) {
 					finalizar = true;
-					pryTrabajoFinalGrupoUno::frmMission^ pregunta_t = gcnew pryTrabajoFinalGrupoUno::frmMission();
-					pregunta_t->ShowDialog();
+					pryTrabajoFinalGrupoUno::frmMission^ menuSlc = gcnew pryTrabajoFinalGrupoUno::frmMission();
+					menuSlc->ShowDialog();
 				}
 				return false;
 			}

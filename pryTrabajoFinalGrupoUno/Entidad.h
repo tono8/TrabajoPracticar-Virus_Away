@@ -21,27 +21,27 @@ public:
 		ancho = alto = 0;
 		IDx = 0;
 	};
-	void setDX(int value)
+	void setDX(int value) // Encapsulamiento
 	{
 		dx = value;
 	}
-	void setDY(int value)
+	void setDY(int value) // Encapsulamiento
 	{
 		dy = value;
 	}
-	int getX() {
+	int getX() { // Encapsulamiento
 		return x;
 	};
-	int getY() {
+	int getY() { // Encapsulamiento
 		return y;
 	};
-	int getAncho() {
+	int getAncho() { // Encapsulamiento
 		return ancho;
 	};
-	int getAlto() {
+	int getAlto() { // Encapsulamiento
 		return alto;
 	};
-	int getIDx() {
+	int getIDx() { // Encapsulamiento
 		return IDx;
 	}
 	System::Drawing::Rectangle Area()

@@ -1,7 +1,7 @@
 #pragma once
-#include "frmJuego1.h"
-#include "frmJuego2.h"
-#include "frmSeleccionar.h"
+//#include "frmJuego1.h"
+//#include "frmJuego2.h"
+//#include "frmSeleccionar.h"
 
 namespace pryTrabajoFinalGrupoUno {
 
@@ -147,15 +147,15 @@ namespace pryTrabajoFinalGrupoUno {
 	private: System::Void btnContinuar1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void btnSlcNiv_Click(System::Object^ sender, System::EventArgs^ e) {
-		frmSeleccionar^ lvlSlc = gcnew frmSeleccionar();
-		this->Visible=false;
-		lvlSlc->Show();
+		//frmSeleccionar^ lvlSlc = gcnew frmSeleccionar();
+		//this->Visible=false;
+		//lvlSlc->Show();
 	}
 	private: System::Void btnMenuPrc_Click(System::Object^ sender, System::EventArgs^ e) {
-		frmPrincipal^ mMenu = gcnew frmPrincipal();
-		this->Visible=false;
-		mMenu->Show();
-		this->Close();
+		//frmPrincipal^ mMenu = gcnew frmPrincipal();
+		//this->Visible=false;
+		//mMenu->Show();
+		//this->Close();
 	}
 };
 }

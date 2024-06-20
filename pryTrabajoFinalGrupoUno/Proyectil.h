@@ -33,10 +33,10 @@ public:
 	void prEliminar(int pos) {
 		proyectiles.erase(proyectiles.begin() + pos);
 	}
-	int prSize() {
+	int prSize() { // Encapsulamiento
 		return proyectiles.size();
 	}
-	Proyectil* get(int pos) {
+	Proyectil* get(int pos) { // Encapsulamiento
 		return proyectiles[pos];
 	}
 	bool prColision(System::Drawing::Rectangle obj) {

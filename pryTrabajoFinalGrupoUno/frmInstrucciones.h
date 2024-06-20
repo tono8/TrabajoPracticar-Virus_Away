@@ -98,7 +98,7 @@ namespace pryTrabajoFinalGrupoUno {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(860, 861);
+			this->ClientSize = System::Drawing::Size(860, 860);
 			this->Controls->Add(this->btnRetMenu);
 			this->Controls->Add(this->btnIniciar);
 			this->Cursor = System::Windows::Forms::Cursors::Arrow;
