@@ -64,7 +64,7 @@ public:
 
 		if (dx != 0 || dy != 0)
 		{
-			if (movimiento >= jCaminarDerecha && movimiento <= jCaminarAbajo && (dx != 0 || dy != 0)) {
+			if (movimiento >= jCaminarDerecha && movimiento <= jCaminarAbajo) {
 				// Cantidad de fotogramas en la imagen
 				// Fotogramas en "testing1_32_alt2": 27
 				// Fotogramas en "jugador_v1_64_alt1": 3

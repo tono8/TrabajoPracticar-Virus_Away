@@ -7,6 +7,9 @@
 #include "Enemigo3.h"
 #include "Aliado.h"
 #include "Proyectil.h" // Es tambien valido hacer la incorporacion en las clases "Jugador.h" y "Enemigo.h".
+#include "frmMission.h"
+#include "frmPerder.h"
+#include "frmGanar.h"
 ref class Controlador {
 private:
 	Jugador* jugador;
@@ -159,10 +162,14 @@ public:
 			enemigos3->eColision(jugador->Area()) && clock() - mejorCD >= 4000*/) {
 			jugador->setVida(-1);
 			mejorCD = clock();
-			if (jugador->getVida() == 0) {
-				jugador->setMovimiento(jCapturado);
-				if (jugador->getMovimiento() == jCapturado && jugador->getIDx() == 31) {
-					return false;
+		}
+		if (jugador->getVida() == 0) {
+			jugador->setMovimiento(jCapturado);
+			if (jugador->getMovimiento() == jCapturado && jugador->getIDx() == 4) {
+				if (!finalizar) {
+					finalizar = true;
+					pryTrabajoFinalGrupoUno::frmMission^ pregunta_t = gcnew pryTrabajoFinalGrupoUno::frmMission();
+					pregunta_t->ShowDialog();
 				}
 				return false;
 			}
