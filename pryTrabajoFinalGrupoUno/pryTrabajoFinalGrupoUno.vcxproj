@@ -138,6 +138,9 @@
     <ClInclude Include="frmInstrucciones_alternativo.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="frmIntroduccion.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="frmJuego1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -176,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmInstrucciones_alternativo.resx">
       <DependentUpon>frmInstrucciones_alternativo.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIntroduccion.resx">
+      <DependentUpon>frmIntroduccion.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmJuego1.resx">
       <DependentUpon>frmJuego1.h</DependentUpon>
