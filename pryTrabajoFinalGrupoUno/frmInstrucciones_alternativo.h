@@ -115,7 +115,6 @@ namespace pryTrabajoFinalGrupoUno {
 		frmSeleccionar^ lvlSlc = gcnew frmSeleccionar();
 		this->Visible = false;
 		lvlSlc->ShowDialog();
-		this->Visible = true;
 	}
 	};
 }

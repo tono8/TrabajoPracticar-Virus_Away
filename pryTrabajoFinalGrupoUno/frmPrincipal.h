@@ -1,5 +1,6 @@
 #pragma once
 //frmPresentacion
+#include "frmSeleccionar.h"
 #include "frmInstrucciones.h"
 #include "frmInstrucciones_alternativo.h"
 #include "frmCreditos.h"
@@ -180,6 +181,7 @@ namespace pryTrabajoFinalGrupoUno {
 
 		}
 #pragma endregion
+		// EL CRONOMETRO DEL JUEGO 1 INCIA AQUI - ESO NO DEBERIA DE SUCEDER - TIENE SOLUCION PERO JUESTO QUE ME DOY CUENTA YA ESTOY ALMORZANDO
 	private: System::Void btnIniciar_Click(System::Object^ sender, System::EventArgs^ e) {
 		//frmJuego1^ frmJ1 = gcnew frmJuego1();
 		frmInstrucciones_alternativo^ frmInstrAlt = gcnew frmInstrucciones_alternativo();

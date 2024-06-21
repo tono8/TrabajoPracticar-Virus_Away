@@ -1,5 +1,6 @@
 #pragma once
 #include "frmJuego1.h"
+#include "frmJuego2.h"
 namespace pryTrabajoFinalGrupoUno {
 
 	using namespace System;
@@ -138,9 +139,13 @@ namespace pryTrabajoFinalGrupoUno {
 		frmJ1->ShowDialog();
 	}
 	private: System::Void btnIniciarLvl2_Click(System::Object^ sender, System::EventArgs^ e) {
+		frmJuego2^ frmJ2 = gcnew frmJuego2();
+		this->Visible = false;
+		frmJ2->ShowDialog();
 	}
 	private: System::Void btnRetMenu_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Close();
+		this->Visible = false;
+		//this->Close();
 		//frmPrincipal^ mMenu = gcnew frmPrincipal();
 		//mMenu->Show();
 	}
