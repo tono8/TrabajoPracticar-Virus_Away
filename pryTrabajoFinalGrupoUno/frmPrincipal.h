@@ -168,10 +168,10 @@ namespace pryTrabajoFinalGrupoUno {
 			this->Controls->Add(this->btnIniciar);
 			this->Controls->Add(this->btnInstrucciones);
 			this->Controls->Add(this->pictureBox1);
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
 			this->Name = L"frmPrincipal";
-			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"UPC - TF - Virus_Away";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
