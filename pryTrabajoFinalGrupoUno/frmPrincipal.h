@@ -33,6 +33,7 @@ namespace pryTrabajoFinalGrupoUno {
 	private: System::Windows::Forms::Button^ btnFinalizar1;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Button^ btnBonificacion;
+	private: System::Windows::Forms::PictureBox^ pictureBox2;
 
 	protected:
 	protected:
@@ -48,7 +49,9 @@ namespace pryTrabajoFinalGrupoUno {
 			this->btnInstrucciones = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->btnBonificacion = (gcnew System::Windows::Forms::Button());
+			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// btnIniciar
@@ -142,11 +145,23 @@ namespace pryTrabajoFinalGrupoUno {
 			this->btnBonificacion->UseVisualStyleBackColor = false;
 			this->btnBonificacion->Visible = false;
 			// 
+			// pictureBox2
+			// 
+			this->pictureBox2->BackColor = System::Drawing::Color::Black;
+			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
+			this->pictureBox2->Location = System::Drawing::Point(0, 104);
+			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->Size = System::Drawing::Size(640, 133);
+			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox2->TabIndex = 5;
+			this->pictureBox2->TabStop = false;
+			// 
 			// frmPrincipal
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(640, 641);
+			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->btnBonificacion);
 			this->Controls->Add(this->btnFinalizar1);
 			this->Controls->Add(this->btnCreditos);
@@ -158,8 +173,9 @@ namespace pryTrabajoFinalGrupoUno {
 			this->Name = L"frmPrincipal";
 			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"UPC - TF - Virus_Zapper";
+			this->Text = L"UPC - TF - Virus_Away";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->ResumeLayout(false);
 
 		}

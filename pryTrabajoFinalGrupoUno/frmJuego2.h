@@ -57,7 +57,7 @@ namespace pryTrabajoFinalGrupoUno {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(860, 861);
 			this->Name = L"frmJuego2";
-			this->Text = L"frmJuego2";
+			this->Text = L"UPC - TF - Virus_Away - Nivel 2";
 			this->ResumeLayout(false);
 
 		}

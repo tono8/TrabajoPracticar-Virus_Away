@@ -84,7 +84,7 @@ namespace pryTrabajoFinalGrupoUno {
 			this->Name = L"frmJuego1";
 			this->ShowInTaskbar = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"UPC - TF - Virus_Away";
+			this->Text = L"UPC - TF - Virus_Away - Nivel 1";
 			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &frmJuego1::frmJuego1_KeyDown);
 			this->KeyUp += gcnew System::Windows::Forms::KeyEventHandler(this, &frmJuego1::frmJuego1_KeyUp);
 			this->ResumeLayout(false);
