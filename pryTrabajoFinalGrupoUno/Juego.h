@@ -176,9 +176,6 @@ public:
 				return false;
 			}
 		}
-		if (clock() >= cronometro_1) {
-			return false;
-		}
 		if (jugador->getMovimiento() != jCapturado) {
 			jugador->mover(g);
 		}

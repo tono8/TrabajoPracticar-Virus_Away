@@ -25,7 +25,7 @@ namespace pryTrabajoFinalGrupoUno {
 			//
 			//TODO: Add the constructor code here
 			//
-			juego = gcnew Controlador(1, 60, 220, 60, 12, 0, 0, 0, 0, 0, 0, 120, 120, 2);
+			juego = gcnew Controlador(6, 120, 220, 60, 12, 0, 0, 0, 0, 0, 0, 120, 120, 2);
 		}
 
 	protected:
@@ -62,6 +62,7 @@ namespace pryTrabajoFinalGrupoUno {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(frmJuego1::typeid));
 			this->timer_I = (gcnew System::Windows::Forms::Timer(this->components));
 			this->SuspendLayout();
 			// 
@@ -80,17 +81,22 @@ namespace pryTrabajoFinalGrupoUno {
 			this->Cursor = System::Windows::Forms::Cursors::No;
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
 			this->Name = L"frmJuego1";
 			this->ShowInTaskbar = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"UPC - TF - Virus_Away - Nivel 1";
+			this->Load += gcnew System::EventHandler(this, &frmJuego1::frmJuego1_Load);
 			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &frmJuego1::frmJuego1_KeyDown);
 			this->KeyUp += gcnew System::Windows::Forms::KeyEventHandler(this, &frmJuego1::frmJuego1_KeyUp);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+	private: System::Void frmJuego1_Load(System::Object^ sender, System::EventArgs^ e) {
+		timer_I->Enabled = true;
+	}
 	private: System::Void timer_I_Tick(System::Object^ sender, System::EventArgs^ e) {
 		Graphics^ g = this->CreateGraphics();
 		BufferedGraphicsContext^ bfc = BufferedGraphicsManager::Current;
@@ -103,7 +109,6 @@ namespace pryTrabajoFinalGrupoUno {
 		if (juego->mover(g) == false) {
 			timer_I->Enabled = false;
 			this->Visible = false;
-			//this->Close(); // Para todos los procesos y causa un error de buffer
 		}
 
 		bf->Render(g);
@@ -119,5 +124,5 @@ namespace pryTrabajoFinalGrupoUno {
 	private: System::Void frmJuego1_KeyUp(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
 		juego->movimientoJugador(false, e->KeyCode);
 	}
-	};
+};
 }

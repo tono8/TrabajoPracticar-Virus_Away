@@ -57,9 +57,13 @@ namespace pryTrabajoFinalGrupoUno {
 			this->ClientSize = System::Drawing::Size(640, 641);
 			this->Name = L"frmIntroduccion";
 			this->Text = L"frmIntroduccion";
+			this->Load += gcnew System::EventHandler(this, &frmIntroduccion::frmIntroduccion_Load);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+	private: System::Void frmIntroduccion_Load(System::Object^ sender, System::EventArgs^ e) {
+		
+	}
 	};
 }
