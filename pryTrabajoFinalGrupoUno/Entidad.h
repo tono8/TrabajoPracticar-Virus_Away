@@ -2,9 +2,8 @@
 #include <iostream>
 #include <vector>
 #include <time.h>
-
+#include <ctime>
 using namespace std;
-
 class Entidad // Cambiar nombre a entidad gracias a la inclusion de la clase proyectil
 {
 protected:
