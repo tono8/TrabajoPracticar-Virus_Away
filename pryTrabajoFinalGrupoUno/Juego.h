@@ -51,12 +51,13 @@ public:
 		// testing2_64_alt3
 		// enemigo1_v1_64_alt1 (Aumento en parpadeo)
 		// enemigo1_v2_64
-		// enemigo1_v4_64
+		// enemigo1_v4_64 // Su diseño es igual al los 'Moleks' del juego 'Phozon'
 		//
 		imgEnemigo1 = gcnew System::Drawing::Bitmap("img/enemigo1_v4_64.png");
 		//
 		// nombres de imagenes asignadas al enemigo 2:
 		// testing3_32_alt2
+		// enemigo2_v1_64 // Su diseño es igual al personaje 'Chemic' del juego 'Phozon'
 		//
 		imgEnemigo2 = gcnew System::Drawing::Bitmap("img/testing3_32_alt2.png");
 		//
