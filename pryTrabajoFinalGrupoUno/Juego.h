@@ -150,16 +150,21 @@ public:
 	}
 	bool mover(System::Drawing::Graphics^ g)
 	{
-		for (int i = 0; i < enemigos1->eSize(); i++) {
-			Enemigo1* E1 = enemigos1->getP(1);
-			if (E1->getMovimiento() == eEliminado1 && E1->getIDx() == 26) {
-				enemigos1->eEliminar(i);
-			}
-		}
-		for (int i = 0; i < proyectiles->prSize(); i++) {
+		for (int i = 0; i < enemigos1->eSize(); i++){
 			Proyectil* pr = proyectiles->get(i);
-			enemigos1->eLimpiar(pr->Area());
+			enemigos1->Eliminar(pr->Area());
 		}
+		//for (int i = 0; i < enemigos1->eSize(); i++) {
+		//	Enemigo1* E1 = enemigos1->getP(1);
+		//	if (E1->getMovimiento() == eEliminado1 && E1->getIDx() == 26) {
+		//		enemigos1->eEliminar(i);
+		//	}
+		//}
+		//for (int i = 0; i < proyectiles->prSize(); i++) {
+		//	Proyectil* pr = proyectiles->get(i);
+		//	enemigos1->eEliminar(pr->Area());
+		//	//enemigos1->eLimpiar(pr->Area());
+		//}
 		if (enemigos1->eColision(jugador->Area()) && clock() - mejorCD >= 2000 ||
 			enemigos2->eColision(jugador->Area()) && clock() - mejorCD >= 2000 ||
 			enemigos3->eColision(jugador->Area()) && clock() - mejorCD >= 2000) {

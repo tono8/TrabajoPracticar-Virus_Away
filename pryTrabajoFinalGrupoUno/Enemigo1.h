@@ -98,26 +98,36 @@ public:
 			delete E1;
 		}
 	};
-	void eEliminar(int lP1) {
-		enemigos1.erase(enemigos1.begin() + lP1--);
+	int Eliminar(System::Drawing::Rectangle rect) {
+		int cant = 0;
+		for (int i = 0; i < enemigos1.size(); i++) {
+			if (enemigos1[i]->Area().IntersectsWith(rect)) {
+				enemigos1.erase(enemigos1.begin() + i--);
+				cant++;
+			}
+		}
+		return cant;
 	}
+	//void eEliminar(int lP1) {
+	//	enemigos1.erase(enemigos1.begin() + lP1--);
+	//}
 	int eSize() {
 		return enemigos1.size();
 	}
 	Enemigo1* getP(int lP1) {
 		return enemigos1[lP1];
 	}
-	void eLimpiar(System::Drawing::Rectangle rectangulo) { // Se llama limpiar por el contexto de la historia del juego
-		for (int i = 0; i < enemigos1.size(); i++)
-		{
-			Enemigo1* E1 = enemigos1[i];
-			if (E1->Area().IntersectsWith(rectangulo)) {
-				E1->setDX(0);
-				E1->setDY(0);
-				E1->setMovimiento(eEliminado1);
-			}
-		}
-	}
+	//void eLimpiar(System::Drawing::Rectangle rectangulo) { // Se llama limpiar por el contexto de la historia del juego
+	//	for (int i = 0; i < enemigos1.size(); i++)
+	//	{
+	//		Enemigo1* E1 = enemigos1[i];
+	//		if (E1->Area().IntersectsWith(rectangulo)) {
+	//			E1->setDX(0);
+	//			E1->setDY(0);
+	//			E1->setMovimiento(eEliminado1);
+	//		}
+	//	}
+	//}
 	bool eColision(System::Drawing::Rectangle obj) {
 		for each (Enemigo1 * E1 in enemigos1) {
 			if (E1->NextArea().IntersectsWith(obj))
