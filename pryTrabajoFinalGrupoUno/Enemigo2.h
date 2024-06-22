@@ -27,7 +27,7 @@ public:
 			// Cantidad regular: 9
 			// Fotogramas en "testing2_32_alt2": 27
 			IDx = (IDx + 1) % 27;
-		else if (movimiento == eEliminado)
+	}
 	void eMover2(System::Drawing::Graphics^ g)
 	{
 		if (!(x + dx >= 0 && x + ancho + dx < g->VisibleClipBounds.Width)) {
@@ -48,11 +48,6 @@ public:
 		}
 		else if (dy > 0) {
 			movimiento2 = eCaminarAbajo2;
-		}
-
-		}
-		else if (dy > 0) {
-			movimiento = eCaminarAbajo;
 		}
 
 		x += dx;
