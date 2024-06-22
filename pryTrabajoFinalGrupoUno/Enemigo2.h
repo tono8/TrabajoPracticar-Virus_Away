@@ -57,20 +57,12 @@ public:
 class Enemigos2
 {
 	vector<Enemigo2*> enemigos2;
+private:
+
 public:
-	Enemigos2(System::Drawing::Rectangle obj, System::Drawing::Bitmap^ img, int cant) {
-		for (int i = 0; i < cant; i++)
-		{
-			enemigos2.push_back(new Enemigo2(img));
-			//Enemigo2* E2 = new Enemigo2(img);
-			//if (E2->Area().IntersectsWith(obj) == false && eColision(E2->Area()) == false) {
-			//	enemigos2.push_back(E2);
-			//}
-			//else
-			//{
-			//	delete E2;
-			//	i--;
-			//}
+	Enemigos2(int x_e2, int y_e2, System::Drawing::Bitmap^ img, int cant) {
+		for (int i = 0; i < cant; i++) {
+			enemigos2.push_back(new Enemigo2(x_e2, y_e2, img));
 		}
 	};
 	~Enemigos2() {
@@ -78,27 +70,19 @@ public:
 			delete E2;
 		}
 	};
-	//~Enemigos2() {
-	//	for (int i = 0; i < enemigos2.size(); i++)
-	//		delete enemigos2.at(i);
-	//	}
-	//};
 	bool eColision(System::Drawing::Rectangle obj) {
 		for each (Enemigo2 * E2 in enemigos2) {
-			if (E2->NextArea().IntersectsWith(obj)) {
+			if (E2->NextArea().IntersectsWith(obj))
 				return true;
-			}
 		}
 		return false;
 	}
 	void mover(System::Drawing::Graphics^ g) {
-		for each (Enemigo2 * E2 in enemigos2) {
+		for each (Enemigo2 * E2 in enemigos2)
 			E2->eMover2(g);
-		}
 	}
 	void mostrar(System::Drawing::Graphics^ g, System::Drawing::Bitmap^ img) {
-		for (Enemigo2* E2 : enemigos2) {
+		for each (Enemigo2 * E2 in enemigos2)
 			E2->eMostrar2(g, img);
-		}
 	}
 };
