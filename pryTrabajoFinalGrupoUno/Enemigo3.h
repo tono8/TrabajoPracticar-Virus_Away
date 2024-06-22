@@ -1,16 +1,8 @@
 #pragma once
 #include "Enemigo.h"
-enum SpriteEnemigo3 {
-	eCaminarDerecha3,
-	eCaminarIzquierda3,
-	eCaminarArriba3,
-	eCaminarAbajo3,
-	eEliminado3
-};
 class Enemigo3 : public Enemigo {
 private:
 public:
-	SpriteEnemigo3 movimiento3;
 	Enemigo3(int x_e3, int y_e3, System::Drawing::Bitmap^ img) {
 		x = x_e3;
 		y = y_e3;
@@ -22,16 +14,16 @@ public:
 	};
 	void eMostrar3(System::Drawing::Graphics^ g, System::Drawing::Bitmap^ img)
 	{
-		System::Drawing::Rectangle corte = System::Drawing::Rectangle(IDx * ancho, movimiento3 * alto, ancho, alto);
+		System::Drawing::Rectangle corte = System::Drawing::Rectangle(IDx * ancho, movimiento * alto, ancho, alto);
 		g->DrawImage(img, Area(), corte, System::Drawing::GraphicsUnit::Pixel);
 		//g->DrawRectangle(Pens::Black, Area());
 
-		if (movimiento3 >= eCaminarDerecha3 && movimiento3 <= eCaminarAbajo3)
+		if (movimiento >= eCaminarDerecha && movimiento <= eCaminarAbajo)
 			// Cantidad de fotogramas en la imagen
 			// Cantidad regular: 9
 			// Fotogramas en "testing2_32_alt2": 27
-			IDx = (IDx + 1) % 27;
-		else if (movimiento3 == eEliminado3)
+			IDx = (IDx + 1) % 78;
+		else if (movimiento == eEliminado)
 			// Cantidad de fotogramas en la imagen
 			// Cantidad regular: 9
 			// Fotogramas en "testing2_32_alt2": 27
@@ -47,16 +39,16 @@ public:
 		}
 
 		if (dx < 0) {
-			movimiento3 = eCaminarIzquierda3;
+			movimiento = eCaminarIzquierda;
 		}
 		else if (dx > 0) {
-			movimiento3 = eCaminarDerecha3;
+			movimiento = eCaminarDerecha;
 		}
 		else if (dy < 0) {
-			movimiento3 = eCaminarArriba3;
+			movimiento = eCaminarArriba;
 		}
 		else if (dy > 0) {
-			movimiento3 = eCaminarAbajo3;
+			movimiento = eCaminarAbajo;
 		}
 
 		x += dx;

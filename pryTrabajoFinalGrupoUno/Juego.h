@@ -29,11 +29,11 @@ private:
 	int mejorCD; // Cooldown de perdida de salud ante la colision con un enemigo
 	int cronometro_1;
 public:
-	Controlador(	int salud_j, int crM_1,
-					int pX_e1, int pY_e1, int cant_e1, 
-					int cant_e2, 
-					int pX_e3, int pY_e3, int cant_e3,
-					int pX_a, int pY_a, int cant_a)
+	Controlador(int salud_j, int crM_1,
+		int pX_e1, int pY_e1, int cant_e1,
+		int cant_e2,
+		int pX_e3, int pY_e3, int cant_e3,
+		int pX_a, int pY_a, int cant_a)
 	{
 		//
 		// nombres de imagenes asignadas al jugador:
@@ -51,13 +51,13 @@ public:
 		// testing2_64_alt3
 		// enemigo1_v1_64_alt1 (Aumento en parpadeo)
 		// enemigo1_v2_64
-		// enemigo1_v4_64 // Su diseño es igual al los 'Moleks' del juego 'Phozon'
+		// enemigo1_v4_64
 		//
 		imgEnemigo1 = gcnew System::Drawing::Bitmap("img/enemigo1_v4_64.png");
 		//
 		// nombres de imagenes asignadas al enemigo 2:
 		// testing3_32_alt2
-		// enemigo2_v1_64 // Su diseño es igual al personaje 'Chemic' del juego 'Phozon'
+		// enemigo2_v1_64
 		//
 		imgEnemigo2 = gcnew System::Drawing::Bitmap("img/enemigo2_v1_64.png");
 		//
@@ -151,7 +151,7 @@ public:
 	{
 		for (int i = 0; i < enemigos1->eSize(); i++) {
 			Enemigo1* E1 = enemigos1->getP(1);
-			if (E1->getMovimiento() == eEliminado1 && E1->getIDx() == 26) {
+			if (E1->getMovimiento() == eEliminadoV2 && E1->getIDx() == 26) {
 				enemigos1->eEliminar(i);
 			}
 		}
