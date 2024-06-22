@@ -1,12 +1,12 @@
 #pragma once
 #include "Enemigo.h"
-enum SpriteEnemigo1v2 {
-	eMovimientoV2,
-	eEliminadoV2
+enum SpriteEnemigo1 {
+	eMovimiento1,
+	eEliminado1
 };
 class Enemigo1 : public Enemigo {
 public:
-	SpriteEnemigo1v2 movimiento_alt1;
+	SpriteEnemigo1 movimiento1;
 	Enemigo1(int x_e1, int y_e1, System::Drawing::Bitmap^ img) {
 		x = x_e1;
 		y = y_e1;
@@ -15,22 +15,22 @@ public:
 		// dx = dy = rand() % (50 - 0,2 + 1) + 0.8;
 		dx = dy = 2;
 		ancho = img->Width / 31;//Cantidad de fotogramas horizontales
-		alto = img->Height / 2;//Cantidad de fotogramas verticales
-		movimiento_alt1 = eMovimientoV2;
+		alto = img->Height / 2;//Cantidad de fotogramas 
+		movimiento1 = eMovimiento1;
 	};
-	SpriteEnemigo1v2 getMovimiento() {
-		return movimiento_alt1;
+	SpriteEnemigo1 getMovimiento() {
+		return movimiento1;
 	}
-	void setMovimiento(SpriteEnemigo1v2 value) {
-		movimiento_alt1 = value;
+	void setMovimiento(SpriteEnemigo1 value) {
+		movimiento1 = value;
 	}
 	void eMostrar1(System::Drawing::Graphics^ g, System::Drawing::Bitmap^ img)
 	{
-		System::Drawing::Rectangle corte = System::Drawing::Rectangle(IDx * ancho, movimiento_alt1 * alto, ancho, alto);
+		System::Drawing::Rectangle corte = System::Drawing::Rectangle(IDx * ancho, movimiento1 * alto, ancho, alto);
 		g->DrawImage(img, Area(), corte, System::Drawing::GraphicsUnit::Pixel);
 		//g->DrawRectangle(Pens::Black, Area());
 
-		if (movimiento_alt1 == eMovimientoV2)
+		if (movimiento1 == eMovimiento1)
 			// Cantidad de fotogramas en la imagen
 			// Cantidad regular: 9
 			// Fotogramas en "testing2_32_alt2": 27
@@ -40,7 +40,7 @@ public:
 			// Fotogramas en "enemigo1_v2_64": 31
 			// Fotogramas en "enemigo1_v4_64": 31
 			IDx = (IDx + 1) % 31;
-		else if (movimiento_alt1 == eEliminadoV2)
+		else if (movimiento1 == eEliminado1)
 			// Cantidad de fotogramas en la imagen
 			// Cantidad regular: 9
 			// Fotogramas en "testing2_32_alt2": 27
@@ -112,7 +112,7 @@ public:
 			if (E1->Area().IntersectsWith(rectangulo)) {
 				E1->setDX(0);
 				E1->setDY(0);
-				E1->setMovimiento(eEliminadoV2);
+				E1->setMovimiento(eEliminado1);
 			}
 		}
 	}
