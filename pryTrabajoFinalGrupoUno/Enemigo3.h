@@ -8,8 +8,8 @@ public:
 		y = y_e3;
 		x = rand() % 700;
 		y = rand() % 700;
-		dx = dy = rand() % (50 - 0,2 + 1) + 0.1;
-		ancho = img->Width / 27;//Cantidad de fotogramas horizontales
+		dx = dy = rand() % (50 - 15 + 1) + 5;
+		ancho = img->Width / 78;//Cantidad de fotogramas horizontales
 		alto = img->Height / 5;//Cantidad de fotogramas verticales
 	};
 	void eMostrar3(System::Drawing::Graphics^ g, System::Drawing::Bitmap^ img)
@@ -22,7 +22,7 @@ public:
 			// Cantidad de fotogramas en la imagen
 			// Cantidad regular: 9
 			// Fotogramas en "testing2_32_alt2": 27
-			IDx = (IDx + 1) % 27;
+			IDx = (IDx + 1) % 78;
 		else if (movimiento == eEliminado)
 			// Cantidad de fotogramas en la imagen
 			// Cantidad regular: 9

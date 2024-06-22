@@ -15,7 +15,7 @@ public:
 		// dx = dy = rand() % (50 - 0,2 + 1) + 0.8;
 		dx = dy = 2;
 		ancho = img->Width / 31;//Cantidad de fotogramas horizontales
-		alto = img->Height / 2;//Cantidad de fotogramas 
+		alto = img->Height / 2;//Cantidad de fotogramas verticales
 		movimiento_alt1 = eMovimientoV2;
 	};
 	SpriteEnemigo1v2 getMovimiento() {
@@ -51,8 +51,12 @@ public:
 			IDx = IDx + 1 % 27;
 	}
 	void eMover1(System::Drawing::Graphics^ g, int pX_j, int pY_j) {
+		// Algoritmo para perseguir al jugador
+		// Se obtiene la posicion del jugador
+		// ## Obtenido gracias al taller de asesoria #13
 		x_j = pX_j;
 		y_j = pY_j;
+		// Moviendo el enemigo atravez el
 		// Eje X
 		if (x == x_j) {
 			x += 0;
@@ -63,6 +67,7 @@ public:
 		else if (x > x_j) {
 			x -= dx;
 		}
+		// Moviendo el enemigo atravez el
 		// Eje y
 		if (y == y_j) {
 			y += 0;
@@ -92,7 +97,7 @@ public:
 		}
 	};
 	void eEliminar(int listaPosicion1) {
-		enemigos1.erase(enemigos1.begin() + listaPosicion1);
+		enemigos1.erase(enemigos1.begin() + listaPosicion1--);
 	}
 	int eSize() {
 		return enemigos1.size();

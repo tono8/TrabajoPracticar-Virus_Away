@@ -31,7 +31,7 @@ private:
 public:
 	Controlador(	int salud_j, int crM_1,
 					int pX_e1, int pY_e1, int cant_e1, 
-					int pX_e2, int pY_e2, int cant_e2, 
+					int cant_e2, 
 					int pX_e3, int pY_e3, int cant_e3,
 					int pX_a, int pY_a, int cant_a)
 	{
@@ -57,13 +57,15 @@ public:
 		//
 		// nombres de imagenes asignadas al enemigo 2:
 		// testing3_32_alt2
+		// enemigo2_v1_64
 		//
-		imgEnemigo2 = gcnew System::Drawing::Bitmap("img/testing3_32_alt2.png");
+		imgEnemigo2 = gcnew System::Drawing::Bitmap("img/enemigo2_v1_64.png");
 		//
 		// nombres de imagenes asignadas al enemigo 3:
 		// testing4_32_alt2
+		// testing1_64_alt3
 		//
-		imgEnemigo3 = gcnew System::Drawing::Bitmap("img/testing4_32_alt2.png");
+		imgEnemigo3 = gcnew System::Drawing::Bitmap("img/testing1_64_alt3.png");
 		//
 		// nombres de imagenes asignados al los aliados:
 		// testing5_32_alt2
@@ -73,7 +75,7 @@ public:
 
 		jugador = new Jugador(imgJugador, salud_j);
 		enemigos1 = new Enemigos1(pX_e1, pY_e1, imgEnemigo1, cant_e1);
-		enemigos2 = new Enemigos2(pX_e2, pY_e2, imgEnemigo2, cant_e2);
+		enemigos2 = new Enemigos2(jugador->Area(), imgEnemigo2, cant_e2);
 		enemigos3 = new Enemigos3(pX_e3, pY_e3, imgEnemigo3, cant_e3);
 		aliados = new Aliados(pX_a, pY_a, imgAliado, cant_a);
 		proyectiles = new Proyectiles();
@@ -180,7 +182,7 @@ public:
 			jugador->mover(g);
 		}
 		enemigos1->mover(g, jugador->getX(), jugador->getY());
-		enemigos2->mover(g);
+		//enemigos2->mover(g);
 		enemigos3->mover(g);
 		proyectiles->mover(g);
 		aliados->mover(g);
@@ -189,8 +191,8 @@ public:
 	void mostrar(System::Drawing::Graphics^ g)
 	{
 		enemigos1->mostrar(g, imgEnemigo1);
-		enemigos2->mostrar(g, imgEnemigo1);
-		enemigos3->mostrar(g, imgEnemigo1);
+		enemigos2->mostrar(g, imgEnemigo2);
+		enemigos3->mostrar(g, imgEnemigo3);
 		aliados->mostrar(g, imgAliado);
 		proyectiles->mostrar(g);
 		jugador->mostrar(g, imgJugador);
