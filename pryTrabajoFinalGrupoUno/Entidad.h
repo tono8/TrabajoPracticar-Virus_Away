@@ -51,6 +51,14 @@ public:
 	{
 		return System::Drawing::Rectangle(x + dx, y + dy, ancho, alto);
 	}
+	System::Drawing::Rectangle Hitbox()
+	{
+		return System::Drawing::Rectangle(x + ancho / 6, y + alto / 6, ancho * 2 / 3, alto * 2 / 3);
+	}
+	System::Drawing::Rectangle NextHitbox()
+	{
+		return System::Drawing::Rectangle(x + ancho / 6 + dx, y + alto / 6 + dy, ancho * 2 / 3, alto * 2 / 3);
+	}
 	virtual void mover(System::Drawing::Graphics^ g)
 	{
 		x += dx;

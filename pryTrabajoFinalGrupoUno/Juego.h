@@ -156,19 +156,19 @@ public:
 		}
 		for (int i = 0; i < enemigos1->eSize(); i++) {
 			Enemigo1* E1 = enemigos1->getP(1);
-			if (E1->getMovimiento() == eEliminado1 && E1->getIDx() == 1) {
+			if (E1->getMovimiento() == eEliminado1 && E1->getIDx() == 26) {
 				enemigos1->eEliminar(i);
 			}
 		}
-		if (enemigos1->eColision(jugador->Area()) && clock() - mejorCD >= 2000 ||
-			enemigos2->eColision(jugador->Area()) && clock() - mejorCD >= 2000 ||
-			enemigos3->eColision(jugador->Area()) && clock() - mejorCD >= 2000) {
+		if (enemigos1->eColision(jugador->NextHitbox()) && clock() - mejorCD >= 2000 ||
+			enemigos2->eColision(jugador->NextHitbox()) && clock() - mejorCD >= 2000 ||
+			enemigos3->eColision(jugador->NextHitbox()) && clock() - mejorCD >= 2000) {
 			//pryTrabajoFinalGrupoUno::frmMission^ pregunta_t = gcnew pryTrabajoFinalGrupoUno::frmMission();
 			//pregunta_t->ShowDialog();
 			jugador->setVida(-1);
 			mejorCD = clock();
 		}
-		//if (aliados->aColision(jugador->Area()) && clock() - mejorCD >= 100) {
+		//if (aliados->aColision(jugador->NextHitbox()) && clock() - mejorCD >= 100) {
 		//	pryTrabajoFinalGrupoUno::frmPreguntas^ objetivo = gcnew pryTrabajoFinalGrupoUno::frmPreguntas();
 		//	objetivo->ShowDialog();
 		//	mejorCD = clock();
