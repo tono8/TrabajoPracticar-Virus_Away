@@ -83,10 +83,10 @@
     <ClInclude Include="frmIntroduccion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Objetivo.h">
+    <ClInclude Include="Dependencias.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Dependencias.h">
+    <ClInclude Include="Objetivo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

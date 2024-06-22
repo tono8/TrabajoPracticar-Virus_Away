@@ -1,32 +1,19 @@
 #pragma once
-
 namespace pryTrabajoFinalGrupoUno {
-
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
-	/// <summary>
-	/// Summary for frmPreguntas
-	/// </summary>
 	public ref class frmPreguntas : public System::Windows::Forms::Form
 	{
 	public:
 		frmPreguntas(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
 		}
-
 	protected:
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
 		~frmPreguntas()
 		{
 			if (components)
@@ -38,32 +25,14 @@ namespace pryTrabajoFinalGrupoUno {
 	private: System::Windows::Forms::RadioButton^ rbRespuesta2;
 	private: System::Windows::Forms::RadioButton^ rbRespuesta3;
 	private: System::Windows::Forms::Button^ btnResponder;
-
-
 	protected:
-
 	protected:
-
-
-
-
 	private: System::Windows::Forms::Label^ lblPregunta;
 	private: System::Windows::Forms::Label^ lblRespuesta1;
 	private: System::Windows::Forms::Label^ lblRespuesta2;
 	private: System::Windows::Forms::Label^ lblRespuesta3;
-
-
-
-
-
-
-
 	private:
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
 		System::ComponentModel::Container ^components;
-
 #pragma region Windows Form Designer generated code
 		/// <summary>
 		/// Required method for Designer support - do not modify
