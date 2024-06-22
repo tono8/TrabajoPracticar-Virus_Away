@@ -150,15 +150,15 @@ public:
 	}
 	bool mover(System::Drawing::Graphics^ g)
 	{
-		for (int i = 0; i < enemigos1->eSize(); i++) {
-			Enemigo1* E1 = enemigos1->getP(1);
-			if (E1->getMovimiento() == eEliminado1 && E1->getIDx() == 26) {
-				enemigos1->eEliminar(i);
-			}
-		}
 		for (int i = 0; i < proyectiles->prSize(); i++) {
 			Proyectil* pr = proyectiles->get(i);
 			enemigos1->eLimpiar(pr->Area());
+		}
+		for (int i = 0; i < enemigos1->eSize(); i++) {
+			Enemigo1* E1 = enemigos1->getP(1);
+			if (E1->getMovimiento() == eEliminado1 && E1->getIDx() == 1) {
+				enemigos1->eEliminar(i);
+			}
 		}
 		if (enemigos1->eColision(jugador->Area()) && clock() - mejorCD >= 2000 ||
 			enemigos2->eColision(jugador->Area()) && clock() - mejorCD >= 2000 ||
@@ -181,8 +181,17 @@ public:
 			return false;
 		}
 		if (jugador->getVida() == 0) {
+			//if (!finalizar) {
+			//	finalizar = true;
+			//	pryTrabajoFinalGrupoUno::frmMission^ menuSlc = gcnew pryTrabajoFinalGrupoUno::frmMission();
+			//	menuSlc->ShowDialog();
+			//}
+			//return false;
 			jugador->setMovimiento(jCapturado);
-			if (jugador->getMovimiento() == jCapturado && jugador->getIDx() == 4) {
+			if (jugador->getMovimiento() == jCapturado && jugador->getIDx() == 21) {
+				if (jugador->getMovimiento() != jCapturado) {
+					jugador->mover(g);
+				}
 				if (!finalizar) {
 					finalizar = true;
 					pryTrabajoFinalGrupoUno::frmMission^ menuSlc = gcnew pryTrabajoFinalGrupoUno::frmMission();
@@ -209,7 +218,9 @@ public:
 		return true;
 	}
 	void mostrar(System::Drawing::Graphics^ g){
+		Enemigo1* E1 = enemigos1->getP(1);
 		g->DrawString("Enemigos: " + enemigos1->eSize(), gcnew System::Drawing::Font("Arial", 14), System::Drawing::Brushes::White, 0, 20);
+		g->DrawString("Indice de animacion del enemigo:	" + E1->getIDx(), gcnew System::Drawing::Font("Arial", 14), System::Drawing::Brushes::White, 0, 40);
 		//g->DrawString("Enemigos: " + get, gcnew System::Drawing::Font("Arial", 14), System::Drawing::Brushes::White, 0, 20);
 		enemigos1->mostrar(g, imgEnemigo1);
 		enemigos2->mostrar(g, imgEnemigo2);

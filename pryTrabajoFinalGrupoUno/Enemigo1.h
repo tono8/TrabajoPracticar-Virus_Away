@@ -98,14 +98,14 @@ public:
 			delete E1;
 		}
 	};
-	void eEliminar(int lP1) {
-		enemigos1.erase(enemigos1.begin() + lP1--);
+	void eEliminar(int posicion) {
+		enemigos1.erase(enemigos1.begin() + posicion);
 	}
 	int eSize() {
 		return enemigos1.size();
 	}
-	Enemigo1* getP(int lP1) {
-		return enemigos1[lP1];
+	Enemigo1* getP(int posicion) {
+		return enemigos1[posicion];
 	}
 	void eLimpiar(System::Drawing::Rectangle rectangulo) { // Se llama limpiar por el contexto de la historia del juego
 		for (int i = 0; i < enemigos1.size(); i++)

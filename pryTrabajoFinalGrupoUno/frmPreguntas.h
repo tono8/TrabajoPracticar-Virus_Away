@@ -671,10 +671,10 @@ namespace pryTrabajoFinalGrupoUno {
 
 			if (rbRespuesta1->Checked)
 				indicePregunta = 0;
-			else if (rbRespuesta2->Checked)
-				indicePregunta = 1;
-			else if (rbRespuesta3->Checked)
-				indicePregunta = 2;
+			//else if (rbRespuesta2->Checked)
+			//	indicePregunta = 1;
+			//else if (rbRespuesta3->Checked)
+			//	indicePregunta = 2;
 
 			if (indicePregunta == preguntaActual.indiceCorrecto)
 			{
