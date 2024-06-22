@@ -160,18 +160,24 @@ public:
 			Proyectil* pr = proyectiles->get(i);
 			enemigos1->eLimpiar(pr->Area());
 		}
-		if (enemigos1->eColision(jugador->Area()) && clock() - mejorCD >= 2000/* ||
-			enemigos2->eColision(jugador->Area()) && clock() - mejorCD >= 4000 ||
-			enemigos3->eColision(jugador->Area()) && clock() - mejorCD >= 4000*/) {
+		if (enemigos1->eColision(jugador->Area()) && clock() - mejorCD >= 2000 ||
+			enemigos2->eColision(jugador->Area()) && clock() - mejorCD >= 2000 ||
+			enemigos3->eColision(jugador->Area()) && clock() - mejorCD >= 2000) {
 			//pryTrabajoFinalGrupoUno::frmMission^ pregunta_t = gcnew pryTrabajoFinalGrupoUno::frmMission();
 			//pregunta_t->ShowDialog();
 			jugador->setVida(-1);
 			mejorCD = clock();
 		}
-		if (aliados->aColision(jugador->Area()) && clock() - mejorCD >= 100) {
+		//if (aliados->aColision(jugador->Area()) && clock() - mejorCD >= 100) {
+		//	pryTrabajoFinalGrupoUno::frmPreguntas^ objetivo = gcnew pryTrabajoFinalGrupoUno::frmPreguntas();
+		//	objetivo->ShowDialog();
+		//	mejorCD = clock();
+		//	return false;
+		//}
+		if (enemigos1->eSize() == 0 && !finalizar) {
+			finalizar = true;
 			pryTrabajoFinalGrupoUno::frmPreguntas^ objetivo = gcnew pryTrabajoFinalGrupoUno::frmPreguntas();
 			objetivo->ShowDialog();
-			mejorCD = clock();
 			return false;
 		}
 		if (jugador->getVida() == 0) {
@@ -202,8 +208,9 @@ public:
 		aliados->mover(g);
 		return true;
 	}
-	void mostrar(System::Drawing::Graphics^ g)
-	{
+	void mostrar(System::Drawing::Graphics^ g){
+		g->DrawString("Enemigos: " + enemigos1->eSize(), gcnew System::Drawing::Font("Arial", 14), System::Drawing::Brushes::White, 0, 20);
+		//g->DrawString("Enemigos: " + get, gcnew System::Drawing::Font("Arial", 14), System::Drawing::Brushes::White, 0, 20);
 		enemigos1->mostrar(g, imgEnemigo1);
 		enemigos2->mostrar(g, imgEnemigo2);
 		enemigos3->mostrar(g, imgEnemigo3);

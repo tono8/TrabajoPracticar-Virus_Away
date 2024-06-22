@@ -30,7 +30,7 @@ public:
 		g->DrawImage(img, Area(), corte, System::Drawing::GraphicsUnit::Pixel);
 		//g->DrawRectangle(Pens::Black, Area());
 
-		if (movimiento1 == eMovimiento1)
+		if (movimiento1 == eMovimiento1) {
 			// Cantidad de fotogramas en la imagen
 			// Cantidad regular: 9
 			// Fotogramas en "testing2_32_alt2": 27
@@ -40,7 +40,8 @@ public:
 			// Fotogramas en "enemigo1_v2_64": 31
 			// Fotogramas en "enemigo1_v4_64": 31
 			IDx = (IDx + 1) % 31;
-		else if (movimiento1 == eEliminado1)
+		}
+		else if (movimiento1 == eEliminado1) {
 			// Cantidad de fotogramas en la imagen
 			// Cantidad regular: 9
 			// Fotogramas en "testing2_32_alt2": 27
@@ -49,6 +50,7 @@ public:
 			// Fotogramas en "enemigo1_v2_64": 12
 			// Fotogramas en "enemigo1_v4_64": 27
 			IDx = IDx + 1 % 27;
+		}
 	}
 	void eMover1(System::Drawing::Graphics^ g, int pX_j, int pY_j) {
 		// Algoritmo para perseguir al jugador
@@ -96,14 +98,14 @@ public:
 			delete E1;
 		}
 	};
-	void eEliminar(int listaPosicion1) {
-		enemigos1.erase(enemigos1.begin() + listaPosicion1--);
+	void eEliminar(int lP1) {
+		enemigos1.erase(enemigos1.begin() + lP1--);
 	}
 	int eSize() {
 		return enemigos1.size();
 	}
-	Enemigo1* getP(int listaPosicion1) {
-		return enemigos1[listaPosicion1];
+	Enemigo1* getP(int lP1) {
+		return enemigos1[lP1];
 	}
 	void eLimpiar(System::Drawing::Rectangle rectangulo) { // Se llama limpiar por el contexto de la historia del juego
 		for (int i = 0; i < enemigos1.size(); i++)
