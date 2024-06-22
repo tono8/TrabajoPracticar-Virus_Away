@@ -1,8 +1,16 @@
 #pragma once
 #include "Enemigo.h"
+enum SpriteEnemigo2 {
+	eCaminarDerecha2,
+	eCaminarIzquierda2,
+	eCaminarArriba2,
+	eCaminarAbajo2,
+	eEliminado2
+};
 class Enemigo2 : public Enemigo {
 private:
 public:
+	SpriteEnemigo2 movimiento2;
 	Enemigo2(int x_e2, int y_e2, System::Drawing::Bitmap^ img) {
 		x = x_e2;
 		y = y_e2;
@@ -11,20 +19,15 @@ public:
 	};
 	void eMostrar2(System::Drawing::Graphics^ g, System::Drawing::Bitmap^ img)
 	{
-		System::Drawing::Rectangle corte = System::Drawing::Rectangle(IDx * ancho, movimiento * alto, ancho, alto);
+		System::Drawing::Rectangle corte = System::Drawing::Rectangle(IDx * ancho, movimiento2 * alto, ancho, alto);
 		g->DrawImage(img, Area(), corte, System::Drawing::GraphicsUnit::Pixel);
 		//g->DrawRectangle(Pens::Black, Area());
 
-		if (movimiento >= eCaminarDerecha && movimiento <= eCaminarAbajo)
+		if (movimiento2 >= eCaminarDerecha2 && movimiento2 <= eCaminarAbajo2)
 			// Cantidad de fotogramas en la imagen
 			// Cantidad regular: 9
 			// Fotogramas en "testing2_32_alt2": 27
 			IDx = (IDx + 1) % 27;
-		else if (movimiento == eEliminado)
-			// Cantidad de fotogramas en la imagen
-			// Cantidad regular: 9
-			// Fotogramas en "testing2_32_alt2": 27
-			IDx = IDx + 1 % 27;
 	}
 	void eMover2(System::Drawing::Graphics^ g)
 	{
@@ -36,16 +39,16 @@ public:
 		}
 
 		if (dx < 0) {
-			movimiento = eCaminarIzquierda;
+			movimiento2 = eCaminarIzquierda2;
 		}
 		else if (dx > 0) {
-			movimiento = eCaminarDerecha;
+			movimiento2 = eCaminarDerecha2;
 		}
 		else if (dy < 0) {
-			movimiento = eCaminarArriba;
+			movimiento2 = eCaminarArriba2;
 		}
 		else if (dy > 0) {
-			movimiento = eCaminarAbajo;
+			movimiento2 = eCaminarAbajo2;
 		}
 
 		x += dx;

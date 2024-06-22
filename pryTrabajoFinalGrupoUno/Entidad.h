@@ -1,10 +1,5 @@
 #pragma once
-#include <iostream>
-#include <vector>
-#include <time.h>
-
-using namespace std;
-
+#include "Dependencias.h"
 class Entidad // Cambiar nombre a entidad gracias a la inclusion de la clase proyectil
 {
 protected:
