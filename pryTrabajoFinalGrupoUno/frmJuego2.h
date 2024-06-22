@@ -16,6 +16,7 @@ namespace pryTrabajoFinalGrupoUno {
 	public ref class frmJuego2 : public System::Windows::Forms::Form
 	{
 		Controlador^ juego;
+		Bitmap^ fondoJuego2 = gcnew Bitmap("img/fondoGame2_v1.png");
 	public:
 		frmJuego2(void)
 		{
@@ -23,7 +24,9 @@ namespace pryTrabajoFinalGrupoUno {
 			//
 			//TODO: Add the constructor code here
 			//
-			juego = gcnew Controlador(6, 120, 0, 0, 0, 6, 220, 60, 4, 120, 120, 3);
+			//juego = gcnew Controlador(6, 120, 0, 0, 0, 6, 220, 60, 4, 120, 120, 3);
+
+			juego = gcnew Controlador(4, 120, 220, 60, 24, 8, 0, 0, 0, 120, 120, 3);
 		}
 
 	protected:
@@ -95,8 +98,8 @@ namespace pryTrabajoFinalGrupoUno {
 		BufferedGraphicsContext^ bfc = BufferedGraphicsManager::Current;
 		BufferedGraphics^ bf = bfc->Allocate(g, this->ClientRectangle);
 
-		//bf->Graphics->DrawImage(fondoJuego1_v1, 0, 0, (int)bf->Graphics->VisibleClipBounds.Width, (int)bf->Graphics->VisibleClipBounds.Height);
-		bf->Graphics->Clear(SystemColors::Control);
+		bf->Graphics->DrawImage(fondoJuego2, 0, 0, (int)bf->Graphics->VisibleClipBounds.Width, (int)bf->Graphics->VisibleClipBounds.Height);
+		//bf->Graphics->Clear(SystemColors::Control);
 		juego->mostrar(bf->Graphics);
 
 		if (juego->mover(g) == false) {

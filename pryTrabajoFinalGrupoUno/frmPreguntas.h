@@ -463,18 +463,18 @@ namespace pryTrabajoFinalGrupoUno {
 			Pregunta p49;
 			p49.testoPreguntas = "¿Quien es el unico peruano con un premio Nobel?";
 			p49.respuestas = gcnew List<String^>();
-			p49.respuestas->Add("1996");
-			p49.respuestas->Add("1997");
-			p49.respuestas->Add("1999");
+			p49.respuestas->Add("Cesar Vallejo");
+			p49.respuestas->Add("Mario Vargas Llosa");
+			p49.respuestas->Add("Julio Ramon Ribeyro");
 			p49.indiceCorrecto = 1;
 			preguntas->Add(p49);
 
 			Pregunta p50;
 			p50.testoPreguntas = "¿Como se le denomina a un triangulo con todos los lados desiguales?";
 			p50.respuestas = gcnew List<String^>();
-			p50.respuestas->Add("Cesar Vallejo");
-			p50.respuestas->Add("Julio Ramon Ribeyro");
-			p50.respuestas->Add("Mario Vargas Llosa");
+			p50.respuestas->Add("Equilatero");
+			p50.respuestas->Add("Isosceles");
+			p50.respuestas->Add("Escaleno ");
 			p50.indiceCorrecto = 2;
 			preguntas->Add(p50);
 
@@ -671,10 +671,10 @@ namespace pryTrabajoFinalGrupoUno {
 
 			if (rbRespuesta1->Checked)
 				indicePregunta = 0;
-			//else if (rbRespuesta2->Checked)
-			//	indicePregunta = 1;
-			//else if (rbRespuesta3->Checked)
-			//	indicePregunta = 2;
+			else if (rbRespuesta2->Checked)
+				indicePregunta = 1;
+			else if (rbRespuesta3->Checked)
+				indicePregunta = 2;
 
 			if (indicePregunta == preguntaActual.indiceCorrecto)
 			{

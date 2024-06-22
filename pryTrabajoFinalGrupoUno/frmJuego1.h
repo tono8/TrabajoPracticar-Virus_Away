@@ -15,8 +15,7 @@ namespace pryTrabajoFinalGrupoUno {
 	public ref class frmJuego1 : public System::Windows::Forms::Form
 	{
 		Controlador^ juego;
-
-		   Bitmap^ fondoJuego1_v1 = gcnew Bitmap("img/fondoGame1_v3.png");
+		Bitmap^ fondoJuego1_v1 = gcnew Bitmap("img/fondoGame1_v3.png");
 	public:
 		frmJuego1(void)
 		{

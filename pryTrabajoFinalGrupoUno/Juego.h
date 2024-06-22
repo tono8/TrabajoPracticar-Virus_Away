@@ -174,7 +174,7 @@ public:
 		//	mejorCD = clock();
 		//	return false;
 		//}
-		if (enemigos1->eSize() == 0 && !finalizar) {
+		if (enemigos1->eSize() <= 0 && !finalizar) {
 			finalizar = true;
 			pryTrabajoFinalGrupoUno::frmPreguntas^ objetivo = gcnew pryTrabajoFinalGrupoUno::frmPreguntas();
 			objetivo->ShowDialog();
@@ -220,7 +220,8 @@ public:
 	void mostrar(System::Drawing::Graphics^ g){
 		Enemigo1* E1 = enemigos1->getP(1);
 		g->DrawString("Enemigos: " + enemigos1->eSize(), gcnew System::Drawing::Font("Arial", 14), System::Drawing::Brushes::White, 0, 20);
-		g->DrawString("Indice de animacion del enemigo:	" + E1->getIDx(), gcnew System::Drawing::Font("Arial", 14), System::Drawing::Brushes::White, 0, 40);
+		g->DrawString("Aliados: " + aliados->aSize(), gcnew System::Drawing::Font("Arial", 14), System::Drawing::Brushes::White, 0, 40);
+		//g->DrawString("Indice de animacion del enemigo:	" + E1->getIDx(), gcnew System::Drawing::Font("Arial", 14), System::Drawing::Brushes::White, 0, 40);
 		//g->DrawString("Enemigos: " + get, gcnew System::Drawing::Font("Arial", 14), System::Drawing::Brushes::White, 0, 20);
 		enemigos1->mostrar(g, imgEnemigo1);
 		enemigos2->mostrar(g, imgEnemigo2);
