@@ -1,6 +1,5 @@
 #pragma once
 #include "Juego.h"
-
 namespace pryTrabajoFinalGrupoUno {
 
 	using namespace System;
@@ -17,7 +16,7 @@ namespace pryTrabajoFinalGrupoUno {
 	{
 		Controlador^ juego;
 
-		   Bitmap^ fondoJuego1_v1 = gcnew Bitmap("img/fondoGame1_v2.png");
+		   Bitmap^ fondoJuego1_v1 = gcnew Bitmap("img/fondoGame1_v3.png");
 	public:
 		frmJuego1(void)
 		{
@@ -25,7 +24,7 @@ namespace pryTrabajoFinalGrupoUno {
 			//
 			//TODO: Add the constructor code here
 			//
-			juego = gcnew Controlador(6, 120, 220, 60, 12, 0, 0, 0, 0, 120, 120, 2);
+			juego = gcnew Controlador(4, 120, 220, 60, 12, 0, 0, 0, 0, 120, 120, 2);
 		}
 
 	protected:

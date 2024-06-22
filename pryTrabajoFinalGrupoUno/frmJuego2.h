@@ -66,7 +66,7 @@ namespace pryTrabajoFinalGrupoUno {
 			// 
 			this->timer_I->Enabled = true;
 			this->timer_I->Interval = 22;
-			this->timer_I->Tick += gcnew System::EventHandler(this, &frmJuego2::timer_I_Tick);
+			this->timer_I->Tick += gcnew System::EventHandler(this, &frmJuego2::timer_II_Tick);
 			// 
 			// frmJuego2
 			// 
@@ -80,13 +80,17 @@ namespace pryTrabajoFinalGrupoUno {
 			this->ShowInTaskbar = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"UPC - TF - Virus_Away - Nivel 2";
+			this->Load += gcnew System::EventHandler(this, &frmJuego2::frmJuego2_Load);
 			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &frmJuego2::frmJuego2_KeyDown);
 			this->KeyUp += gcnew System::Windows::Forms::KeyEventHandler(this, &frmJuego2::frmJuego2_KeyUp);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	private: System::Void timer_I_Tick(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void frmJuego2_Load(System::Object^ sender, System::EventArgs^ e) {
+		timer_I->Enabled = true;
+	}
+	private: System::Void timer_II_Tick(System::Object^ sender, System::EventArgs^ e) {
 		Graphics^ g = this->CreateGraphics();
 		BufferedGraphicsContext^ bfc = BufferedGraphicsManager::Current;
 		BufferedGraphics^ bf = bfc->Allocate(g, this->ClientRectangle);
@@ -113,5 +117,5 @@ namespace pryTrabajoFinalGrupoUno {
 	private: System::Void frmJuego2_KeyUp(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
 		juego->movimientoJugador(false, e->KeyCode);
 	}
-	};
+};
 }

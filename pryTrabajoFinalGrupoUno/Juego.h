@@ -10,6 +10,7 @@
 #include "frmMission.h"
 #include "frmPerder.h"
 #include "frmGanar.h"
+#include "frmPreguntas.h"
 ref class Controlador {
 private:
 	Jugador* jugador;
@@ -159,13 +160,19 @@ public:
 			Proyectil* pr = proyectiles->get(i);
 			enemigos1->eLimpiar(pr->Area());
 		}
-		if (enemigos1->eColision(jugador->Area()) && clock() - mejorCD >= 4000/* ||
+		if (enemigos1->eColision(jugador->Area()) && clock() - mejorCD >= 2000/* ||
 			enemigos2->eColision(jugador->Area()) && clock() - mejorCD >= 4000 ||
 			enemigos3->eColision(jugador->Area()) && clock() - mejorCD >= 4000*/) {
 			//pryTrabajoFinalGrupoUno::frmMission^ pregunta_t = gcnew pryTrabajoFinalGrupoUno::frmMission();
 			//pregunta_t->ShowDialog();
 			jugador->setVida(-1);
 			mejorCD = clock();
+		}
+		if (aliados->aColision(jugador->Area()) && clock() - mejorCD >= 100) {
+			pryTrabajoFinalGrupoUno::frmPreguntas^ objetivo = gcnew pryTrabajoFinalGrupoUno::frmPreguntas();
+			objetivo->ShowDialog();
+			mejorCD = clock();
+			return false;
 		}
 		if (jugador->getVida() == 0) {
 			jugador->setMovimiento(jCapturado);
@@ -178,11 +185,18 @@ public:
 				return false;
 			}
 		}
+		if (jugador->getVida() <= -1) {
+			if (!finalizar) {
+				finalizar = true;
+				pryTrabajoFinalGrupoUno::frmMission^ menuSlc = gcnew pryTrabajoFinalGrupoUno::frmMission();
+				menuSlc->ShowDialog();
+			}
+			return false;
+		}
 		if (jugador->getMovimiento() != jCapturado) {
 			jugador->mover(g);
 		}
 		enemigos1->mover(g, jugador->getX(), jugador->getY());
-		//enemigos2->mover(g);
 		enemigos3->mover(g);
 		proyectiles->mover(g);
 		aliados->mover(g);

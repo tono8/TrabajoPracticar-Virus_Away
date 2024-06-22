@@ -686,7 +686,6 @@ namespace pryTrabajoFinalGrupoUno {
 			}
 			//cargarPregunta(); // Cargar una nueva pregunta aleatoria después de verificar la respuesta
 		}
-
 		private: System::Void btnResponder_Click(System::Object^ sender, System::EventArgs^ e) {
 			validarRespuesta(); // Llamar al método para verificar la respuesta
 		}
