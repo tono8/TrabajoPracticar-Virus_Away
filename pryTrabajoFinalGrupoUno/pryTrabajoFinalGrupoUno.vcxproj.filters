@@ -18,6 +18,45 @@
     <ClCompile Include="frmPrincipal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Pregunta1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pregunta2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pregunta3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pregunta4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pregunta5.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pregunta6.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pregunta7.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pregunta8.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pregunta9.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pregunta10.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pregunta11.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pregunta12.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="frmPrincipal.h">
@@ -81,6 +120,42 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="frmIntroduccion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pregunta1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pregunta2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pregunta3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pregunta4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pregunta5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pregunta6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pregunta7.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pregunta8.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pregunta9.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pregunta10.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pregunta11.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pregunta12.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
