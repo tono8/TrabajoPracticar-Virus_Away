@@ -94,6 +94,12 @@ public:
 			enemigos1.push_back(new Enemigo1(x_e1, y_e1, img));
 		}
 	};
+	int eSize() {
+		return enemigos1.size();
+	}
+	Enemigo1* getP(int posicion) {
+		return enemigos1[posicion];
+	}
 	~Enemigos1() {
 		for each (Enemigo1 * E1 in enemigos1) {
 			delete E1;
@@ -101,12 +107,6 @@ public:
 	};
 	void eEliminar(int posicion) {
 		enemigos1.erase(enemigos1.begin() + posicion);
-	}
-	int eSize() {
-		return enemigos1.size();
-	}
-	Enemigo1* getP(int posicion) {
-		return enemigos1[posicion];
 	}
 	void eLimpiar(System::Drawing::Rectangle rectangulo) { // Se llama limpiar por el contexto de la historia del juego
 		for (int i = 0; i < enemigos1.size(); i++)

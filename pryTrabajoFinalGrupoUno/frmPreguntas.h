@@ -580,6 +580,7 @@ namespace pryTrabajoFinalGrupoUno {
 			// 
 			// rbRespuesta1
 			// 
+			this->rbRespuesta1->Appearance = System::Windows::Forms::Appearance::Button;
 			this->rbRespuesta1->CheckAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->rbRespuesta1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Pixel,
 				static_cast<System::Byte>(0)));
@@ -593,6 +594,7 @@ namespace pryTrabajoFinalGrupoUno {
 			// 
 			// rbRespuesta2
 			// 
+			this->rbRespuesta2->Appearance = System::Windows::Forms::Appearance::Button;
 			this->rbRespuesta2->CheckAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->rbRespuesta2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Pixel,
 				static_cast<System::Byte>(0)));
@@ -606,6 +608,7 @@ namespace pryTrabajoFinalGrupoUno {
 			// 
 			// rbRespuesta3
 			// 
+			this->rbRespuesta3->Appearance = System::Windows::Forms::Appearance::Button;
 			this->rbRespuesta3->CheckAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->rbRespuesta3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Pixel,
 				static_cast<System::Byte>(0)));
