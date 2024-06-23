@@ -48,6 +48,7 @@ namespace pryTrabajoFinalGrupoUno {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(frmIntroduccion::typeid));
 			this->SuspendLayout();
 			// 
 			// frmIntroduccion
@@ -55,8 +56,10 @@ namespace pryTrabajoFinalGrupoUno {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(640, 641);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->MaximizeBox = false;
 			this->Name = L"frmIntroduccion";
-			this->Text = L"frmIntroduccion";
+			this->Text = L"Trabajo Final";
 			this->Load += gcnew System::EventHandler(this, &frmIntroduccion::frmIntroduccion_Load);
 			this->ResumeLayout(false);
 

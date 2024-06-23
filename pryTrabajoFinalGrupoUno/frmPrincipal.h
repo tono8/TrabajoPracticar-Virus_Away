@@ -174,7 +174,7 @@ namespace pryTrabajoFinalGrupoUno {
 			this->MaximizeBox = false;
 			this->Name = L"frmPrincipal";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"UPC - TF - Virus_Away";
+			this->Text = L"Trabajo Final - Virus_Away";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->ResumeLayout(false);

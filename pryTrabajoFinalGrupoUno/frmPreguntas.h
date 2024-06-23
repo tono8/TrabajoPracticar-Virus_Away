@@ -38,13 +38,22 @@ namespace pryTrabajoFinalGrupoUno {
 			preguntas->Add(p1);
 
 			Pregunta p2;
-			p2.testoPreguntas = "¿Cuantos continentes existen?";
+			p2.testoPreguntas = "¿Cual es la fuerza que evita que 2 cuerpos se atraviesen?";
 			p2.respuestas = gcnew List<String^>();
-			p2.respuestas->Add("6");
-			p2.respuestas->Add("5");
-			p2.respuestas->Add("4");
-			p2.indiceCorrecto = 0;
+			p2.respuestas->Add("Gravedad");
+			p2.respuestas->Add("Normal");
+			p2.respuestas->Add("Electromagnetismo");
+			p2.indiceCorrecto = 1;
 			preguntas->Add(p2);
+
+			//Pregunta p2;
+			//p2.testoPreguntas = "¿Cuantos continentes existen?";
+			//p2.respuestas = gcnew List<String^>();
+			//p2.respuestas->Add("6");
+			//p2.respuestas->Add("5");
+			//p2.respuestas->Add("4");
+			//p2.indiceCorrecto = 2;
+			//preguntas->Add(p2);
 
 			Pregunta p3;
 			p3.testoPreguntas = "¿Cual es la raiz cubica de 512?";
@@ -668,14 +677,12 @@ namespace pryTrabajoFinalGrupoUno {
 		{
 			Pregunta preguntaActual = preguntas[indicePreguntaActual];
 			int indicePregunta = -1;
-
 			if (rbRespuesta1->Checked)
 				indicePregunta = 0;
 			else if (rbRespuesta2->Checked)
 				indicePregunta = 1;
 			else if (rbRespuesta3->Checked)
 				indicePregunta = 2;
-
 			if (indicePregunta == preguntaActual.indiceCorrecto)
 			{
 				MessageBox::Show("¡Respuesta correcta!");
@@ -684,7 +691,7 @@ namespace pryTrabajoFinalGrupoUno {
 			{
 				MessageBox::Show("Respuesta incorrecta. La respuesta correcta es: " + preguntaActual.respuestas[preguntaActual.indiceCorrecto]);
 			}
-			//cargarPregunta(); // Cargar una nueva pregunta aleatoria después de verificar la respuesta
+			cargarPregunta(); // Cargar una nueva pregunta aleatoria después de verificar la respuesta
 		}
 		private: System::Void btnResponder_Click(System::Object^ sender, System::EventArgs^ e) {
 			validarRespuesta(); // Llamar al método para verificar la respuesta
