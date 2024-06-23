@@ -26,7 +26,7 @@ namespace pryTrabajoFinalGrupoUno {
 			//
 			//juego = gcnew Controlador(6, 120, 0, 0, 0, 6, 220, 60, 4, 120, 120, 3);
 
-			juego = gcnew Controlador(4, 120, 220, 60, 24, 8, 0, 0, 0, 120, 120, 3);
+			juego = gcnew Controlador(4, 120, 24, 8, 0, 0, 0, 120, 120, 3);
 		}
 
 	protected:

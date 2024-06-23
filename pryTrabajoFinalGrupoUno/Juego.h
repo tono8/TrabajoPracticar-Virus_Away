@@ -31,8 +31,7 @@ private:
 	int cronometro_1;
 public:
 	Controlador(int salud_j, int crM_1,
-		int pX_e1, int pY_e1, int cant_e1,
-		int cant_e2,
+		int cant_e1, int cant_e2,
 		int pX_e3, int pY_e3, int cant_e3,
 		int pX_a, int pY_a, int cant_a)
 	{
@@ -75,7 +74,7 @@ public:
 		imgAliado = gcnew System::Drawing::Bitmap("img/aliado_v2_64_alt1.png");
 
 		jugador = new Jugador(imgJugador, salud_j);
-		enemigos1 = new Enemigos1(pX_e1, pY_e1, imgEnemigo1, cant_e1);
+		enemigos1 = new Enemigos1(imgEnemigo1, cant_e1);
 		enemigos2 = new Enemigos2(jugador->Area(), imgEnemigo2, cant_e2);
 		enemigos3 = new Enemigos3(pX_e3, pY_e3, imgEnemigo3, cant_e3);
 		aliados = new Aliados(pX_a, pY_a, imgAliado, cant_a);
@@ -222,7 +221,6 @@ public:
 		g->DrawString("Enemigos: " + enemigos1->eSize(), gcnew System::Drawing::Font("Arial", 14), System::Drawing::Brushes::White, 0, 20);
 		g->DrawString("Aliados: " + aliados->aSize(), gcnew System::Drawing::Font("Arial", 14), System::Drawing::Brushes::White, 0, 40);
 		//g->DrawString("Indice de animacion del enemigo:	" + E1->getIDx(), gcnew System::Drawing::Font("Arial", 14), System::Drawing::Brushes::White, 0, 40);
-		//g->DrawString("Enemigos: " + get, gcnew System::Drawing::Font("Arial", 14), System::Drawing::Brushes::White, 0, 20);
 		enemigos1->mostrar(g, imgEnemigo1);
 		enemigos2->mostrar(g, imgEnemigo2);
 		enemigos3->mostrar(g, imgEnemigo3);

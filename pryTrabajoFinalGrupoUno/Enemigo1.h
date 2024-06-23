@@ -7,9 +7,7 @@ enum SpriteEnemigo1 {
 class Enemigo1 : public Enemigo {
 public:
 	SpriteEnemigo1 movimiento1;
-	Enemigo1(int x_e1, int y_e1, System::Drawing::Bitmap^ img) {
-		x = x_e1;
-		y = y_e1;
+	Enemigo1(System::Drawing::Bitmap^ img) {
 		x = rand() % 700;
 		y = rand() % 700;
 		// dx = dy = rand() % (50 - 0,2 + 1) + 0.8;
@@ -50,7 +48,8 @@ public:
 			// Fotogramas en "enemigo1_v1_64_alt1": 4
 			// Fotogramas en "enemigo1_v2_64": 12
 			// Fotogramas en "enemigo1_v4_64": 27
-			IDx = IDx + 1 % 27;
+			//IDx = IDx + 1 % 27;
+			IDx;
 		}
 	}
 	void eMover1(System::Drawing::Graphics^ g, int pX_j, int pY_j) {
@@ -89,9 +88,9 @@ class Enemigos1
 private:
 
 public:
-	Enemigos1(int x_e1, int y_e1, System::Drawing::Bitmap^ img, int cant) {
+	Enemigos1(System::Drawing::Bitmap^ img, int cant) {
 		for (int i = 0; i < cant; i++) {
-			enemigos1.push_back(new Enemigo1(x_e1, y_e1, img));
+			enemigos1.push_back(new Enemigo1(img));
 		}
 	};
 	int eSize() {
