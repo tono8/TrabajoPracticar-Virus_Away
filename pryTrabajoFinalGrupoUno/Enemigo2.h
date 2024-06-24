@@ -20,7 +20,8 @@ public:
 	{
 		System::Drawing::Rectangle corte = System::Drawing::Rectangle(IDx * ancho, movimiento * alto, ancho, alto);
 		g->DrawImage(img, Area(), corte, System::Drawing::GraphicsUnit::Pixel);
-		//g->DrawRectangle(Pens::Black, Area());
+		//g->DrawRectangle(System::Drawing::Pens::Black, Area());
+		//g->DrawRectangle(System::Drawing::Pens::Blue, Hitbox());
 	}
 	void eMover2(System::Drawing::Graphics^ g) {
 		x += dx;

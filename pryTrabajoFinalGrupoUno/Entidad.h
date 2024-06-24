@@ -12,7 +12,6 @@ protected:
 	int ancho, alto;
 	// Indice de direccion
 	int IDx;// se declara para mostrar fotogramas de acuerdo al indice
-	float zoom;
 public:
 	Entidad() {
 		x = y = 0;

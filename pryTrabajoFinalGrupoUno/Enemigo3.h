@@ -58,9 +58,6 @@ public:
 		else if (dy > 0) {
 			movimiento3 = eCaminarAbajo3;
 		}
-
-		x += dx;
-		y += dy;
 	}
 };
 class Enemigos3

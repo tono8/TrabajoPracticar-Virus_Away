@@ -174,14 +174,15 @@ namespace pryTrabajoFinalGrupoUno {
 			this->MaximizeBox = false;
 			this->Name = L"frmPrincipal";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"UPC - TF - Virus_Away";
+			this->Text = L"Trabajo Final - Virus_Away";
+			this->Load += gcnew System::EventHandler(this, &frmPrincipal::frmPrincipal_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-		// EL CRONOMETRO DEL JUEGO 1 INCIA AQUI - ESO NO DEBERIA DE SUCEDER - TIENE SOLUCION PERO JUESTO QUE ME DOY CUENTA YA ESTOY ALMORZANDO
+		// EL CRONOMETRO DEL JUEGO 1 INCIA AQUI - ESTO NO DEBERIA DE SUCEDER
 	private: System::Void btnIniciar_Click(System::Object^ sender, System::EventArgs^ e) {
 		//frmJuego1^ frmJ1 = gcnew frmJuego1();
 		frmInstrucciones_alternativo^ frmInstrAlt = gcnew frmInstrucciones_alternativo();
@@ -205,5 +206,8 @@ namespace pryTrabajoFinalGrupoUno {
 	private: System::Void btnFinalizar1_Click(System::Object^ sender, System::EventArgs^ e) {
 		Application::Exit();
 	}
+
+private: System::Void frmPrincipal_Load(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

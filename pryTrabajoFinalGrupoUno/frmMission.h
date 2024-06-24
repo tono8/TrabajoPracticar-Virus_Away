@@ -2,6 +2,7 @@
 //#include "frmJuego1.h"
 //#include "frmJuego2.h"
 //#include "frmSeleccionar.h"
+#include "frmPreguntas.h"
 
 namespace pryTrabajoFinalGrupoUno {
 
@@ -145,6 +146,9 @@ namespace pryTrabajoFinalGrupoUno {
 		}
 #pragma endregion
 	private: System::Void btnContinuar1_Click(System::Object^ sender, System::EventArgs^ e) {
+		frmPreguntas^ objetivo = gcnew frmPreguntas();
+		this->Visible=false;
+		objetivo->ShowDialog();
 	}
 	private: System::Void btnSlcNiv_Click(System::Object^ sender, System::EventArgs^ e) {
 		//frmSeleccionar^ lvlSlc = gcnew frmSeleccionar();

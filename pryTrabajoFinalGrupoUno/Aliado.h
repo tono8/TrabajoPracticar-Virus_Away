@@ -87,6 +87,12 @@ public:
 			aliados.push_back(new Aliado(x_a, y_a, img));
 		}
 	};
+	int aSize() {
+		return aliados.size();
+	}
+	Aliado* getP(int posicion) {
+		return aliados[posicion];
+	}
 	~Aliados() {
 		for each (Aliado * A in aliados) {
 			delete A;

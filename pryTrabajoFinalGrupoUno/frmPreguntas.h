@@ -1,4 +1,5 @@
 #pragma once
+#include "Juego.h"
 namespace pryTrabajoFinalGrupoUno {
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -11,7 +12,7 @@ namespace pryTrabajoFinalGrupoUno {
 	value struct Pregunta
 	{
 		String^ testoPreguntas;
-		List<String^>^ respuestas; // Cambiando a List<T> para su uso con .NET
+		List<String^>^ respuestas; // Se List<T> para su uso con .NET
 		int indiceCorrecto; // Índice de la respuesta correcta
 	};
 	public ref class frmPreguntas : public System::Windows::Forms::Form
@@ -38,13 +39,22 @@ namespace pryTrabajoFinalGrupoUno {
 			preguntas->Add(p1);
 
 			Pregunta p2;
-			p2.testoPreguntas = "¿Cuantos continentes existen?";
+			p2.testoPreguntas = "¿Cual es la fuerza que evita que 2 cuerpos se atraviesen?";
 			p2.respuestas = gcnew List<String^>();
-			p2.respuestas->Add("6");
-			p2.respuestas->Add("5");
-			p2.respuestas->Add("4");
-			p2.indiceCorrecto = 0;
+			p2.respuestas->Add("Gravedad");
+			p2.respuestas->Add("Normal");
+			p2.respuestas->Add("Electromagnetismo");
+			p2.indiceCorrecto = 1;
 			preguntas->Add(p2);
+
+			//Pregunta p2;
+			//p2.testoPreguntas = "¿Cuantos continentes existen?";
+			//p2.respuestas = gcnew List<String^>();
+			//p2.respuestas->Add("6");
+			//p2.respuestas->Add("5");
+			//p2.respuestas->Add("4");
+			//p2.indiceCorrecto = 2;
+			//preguntas->Add(p2);
 
 			Pregunta p3;
 			p3.testoPreguntas = "¿Cual es la raiz cubica de 512?";
@@ -463,18 +473,18 @@ namespace pryTrabajoFinalGrupoUno {
 			Pregunta p49;
 			p49.testoPreguntas = "¿Quien es el unico peruano con un premio Nobel?";
 			p49.respuestas = gcnew List<String^>();
-			p49.respuestas->Add("1996");
-			p49.respuestas->Add("1997");
-			p49.respuestas->Add("1999");
+			p49.respuestas->Add("Cesar Vallejo");
+			p49.respuestas->Add("Mario Vargas Llosa");
+			p49.respuestas->Add("Julio Ramon Ribeyro");
 			p49.indiceCorrecto = 1;
 			preguntas->Add(p49);
 
 			Pregunta p50;
 			p50.testoPreguntas = "¿Como se le denomina a un triangulo con todos los lados desiguales?";
 			p50.respuestas = gcnew List<String^>();
-			p50.respuestas->Add("Cesar Vallejo");
-			p50.respuestas->Add("Julio Ramon Ribeyro");
-			p50.respuestas->Add("Mario Vargas Llosa");
+			p50.respuestas->Add("Equilatero");
+			p50.respuestas->Add("Isosceles");
+			p50.respuestas->Add("Escaleno ");
 			p50.indiceCorrecto = 2;
 			preguntas->Add(p50);
 
@@ -571,6 +581,7 @@ namespace pryTrabajoFinalGrupoUno {
 			// 
 			// rbRespuesta1
 			// 
+			this->rbRespuesta1->Appearance = System::Windows::Forms::Appearance::Button;
 			this->rbRespuesta1->CheckAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->rbRespuesta1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Pixel,
 				static_cast<System::Byte>(0)));
@@ -584,6 +595,7 @@ namespace pryTrabajoFinalGrupoUno {
 			// 
 			// rbRespuesta2
 			// 
+			this->rbRespuesta2->Appearance = System::Windows::Forms::Appearance::Button;
 			this->rbRespuesta2->CheckAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->rbRespuesta2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Pixel,
 				static_cast<System::Byte>(0)));
@@ -597,6 +609,7 @@ namespace pryTrabajoFinalGrupoUno {
 			// 
 			// rbRespuesta3
 			// 
+			this->rbRespuesta3->Appearance = System::Windows::Forms::Appearance::Button;
 			this->rbRespuesta3->CheckAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->rbRespuesta3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Pixel,
 				static_cast<System::Byte>(0)));
@@ -668,23 +681,23 @@ namespace pryTrabajoFinalGrupoUno {
 		{
 			Pregunta preguntaActual = preguntas[indicePreguntaActual];
 			int indicePregunta = -1;
-
 			if (rbRespuesta1->Checked)
 				indicePregunta = 0;
-			//else if (rbRespuesta2->Checked)
-			//	indicePregunta = 1;
-			//else if (rbRespuesta3->Checked)
-			//	indicePregunta = 2;
-
+			else if (rbRespuesta2->Checked)
+				indicePregunta = 1;
+			else if (rbRespuesta3->Checked)
+				indicePregunta = 2;
 			if (indicePregunta == preguntaActual.indiceCorrecto)
 			{
 				MessageBox::Show("¡Respuesta correcta!");
+				this->Visible = false;
 			}
 			else
 			{
 				MessageBox::Show("Respuesta incorrecta. La respuesta correcta es: " + preguntaActual.respuestas[preguntaActual.indiceCorrecto]);
+				this->Visible = false;
 			}
-			//cargarPregunta(); // Cargar una nueva pregunta aleatoria después de verificar la respuesta
+			cargarPregunta(); // Cargar una nueva pregunta aleatoria después de verificar la respuesta
 		}
 		private: System::Void btnResponder_Click(System::Object^ sender, System::EventArgs^ e) {
 			validarRespuesta(); // Llamar al método para verificar la respuesta

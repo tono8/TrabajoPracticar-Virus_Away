@@ -7,9 +7,7 @@ enum SpriteEnemigo1 {
 class Enemigo1 : public Enemigo {
 public:
 	SpriteEnemigo1 movimiento1;
-	Enemigo1(int x_e1, int y_e1, System::Drawing::Bitmap^ img) {
-		x = x_e1;
-		y = y_e1;
+	Enemigo1(System::Drawing::Bitmap^ img) {
 		x = rand() % 700;
 		y = rand() % 700;
 		// dx = dy = rand() % (50 - 0,2 + 1) + 0.8;
@@ -29,7 +27,7 @@ public:
 		System::Drawing::Rectangle corte = System::Drawing::Rectangle(IDx * ancho, movimiento1 * alto, ancho, alto);
 		g->DrawImage(img, Area(), corte, System::Drawing::GraphicsUnit::Pixel);
 		//g->DrawRectangle(System::Drawing::Pens::Black, Area());
-		g->DrawRectangle(System::Drawing::Pens::Blue, Hitbox());
+		g->DrawRectangle(System::Drawing::Pens::Magenta, Hitbox());
 
 		if (movimiento1 == eMovimiento1) {
 			// Cantidad de fotogramas en la imagen
@@ -50,7 +48,8 @@ public:
 			// Fotogramas en "enemigo1_v1_64_alt1": 4
 			// Fotogramas en "enemigo1_v2_64": 12
 			// Fotogramas en "enemigo1_v4_64": 27
-			IDx = IDx + 1 % 27;
+			//IDx = IDx + 1 % 27;
+			IDx;
 		}
 	}
 	void eMover1(System::Drawing::Graphics^ g, int pX_j, int pY_j) {
@@ -89,11 +88,17 @@ class Enemigos1
 private:
 
 public:
-	Enemigos1(int x_e1, int y_e1, System::Drawing::Bitmap^ img, int cant) {
+	Enemigos1(System::Drawing::Bitmap^ img, int cant) {
 		for (int i = 0; i < cant; i++) {
-			enemigos1.push_back(new Enemigo1(x_e1, y_e1, img));
+			enemigos1.push_back(new Enemigo1(img));
 		}
 	};
+	int eSize() {
+		return enemigos1.size();
+	}
+	Enemigo1* getP(int posicion) {
+		return enemigos1[posicion];
+	}
 	~Enemigos1() {
 		for each (Enemigo1 * E1 in enemigos1) {
 			delete E1;
@@ -101,12 +106,6 @@ public:
 	};
 	void eEliminar(int posicion) {
 		enemigos1.erase(enemigos1.begin() + posicion);
-	}
-	int eSize() {
-		return enemigos1.size();
-	}
-	Enemigo1* getP(int posicion) {
-		return enemigos1[posicion];
 	}
 	void eLimpiar(System::Drawing::Rectangle rectangulo) { // Se llama limpiar por el contexto de la historia del juego
 		for (int i = 0; i < enemigos1.size(); i++)
