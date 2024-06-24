@@ -194,14 +194,14 @@ public:
 			//}
 			//return false;
 			jugador->setMovimiento(jCapturado);
-			if (jugador->getMovimiento() == jCapturado && jugador->getIDx() == 21) {
+			if (jugador->getMovimiento() == jCapturado && jugador->getIDx() == 2) {
 				if (jugador->getMovimiento() != jCapturado) {
 					jugador->mover(g);
 				}
 				if (!finalizar) {
 					finalizar = true;
-					//pryTrabajoFinalGrupoUno::frmMission^ menuSlc = gcnew pryTrabajoFinalGrupoUno::frmMission();
-					//menuSlc->ShowDialog();
+					pryTrabajoFinalGrupoUno::frmPerder^ perdiste = gcnew pryTrabajoFinalGrupoUno::frmPerder();
+					perdiste->ShowDialog();
 				}
 				return false;
 			}
