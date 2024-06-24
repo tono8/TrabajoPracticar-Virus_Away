@@ -29,6 +29,7 @@ private:
 	bool finalizar = false;
 	int mejorCD; // Cooldown de perdida de salud ante la colision con un enemigo
 	int cronometro_1;
+	int puntos;
 public:
 	Controlador(int salud_j, int crM_1,
 		int cant_e1, int cant_e2,
@@ -82,12 +83,18 @@ public:
 
 		mejorCD = 0;
 		cronometro_1 = crM_1 * 1000;
+		puntos = 0;
 	}
 	~Controlador()
 	{
 		delete jugador, enemigos1, enemigos2, enemigos3, aliados, proyectiles;
 	}
-
+	void incrementarPuntos() {
+		puntos++;
+	}
+	int getPuntos() {
+		return puntos;
+	}
 	void movimientoJugador(bool movimiento, System::Windows::Forms::Keys tecla)
 	{
 		int v = 6;
@@ -193,19 +200,11 @@ public:
 				}
 				if (!finalizar) {
 					finalizar = true;
-					pryTrabajoFinalGrupoUno::frmMission^ menuSlc = gcnew pryTrabajoFinalGrupoUno::frmMission();
-					menuSlc->ShowDialog();
+					//pryTrabajoFinalGrupoUno::frmMission^ menuSlc = gcnew pryTrabajoFinalGrupoUno::frmMission();
+					//menuSlc->ShowDialog();
 				}
 				return false;
 			}
-		}
-		if (jugador->getVida() <= -1) {
-			if (!finalizar) {
-				finalizar = true;
-				pryTrabajoFinalGrupoUno::frmMission^ menuSlc = gcnew pryTrabajoFinalGrupoUno::frmMission();
-				menuSlc->ShowDialog();
-			}
-			return false;
 		}
 		if (jugador->getMovimiento() != jCapturado) {
 			jugador->mover(g);

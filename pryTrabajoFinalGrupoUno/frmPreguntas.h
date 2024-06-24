@@ -1,4 +1,5 @@
 #pragma once
+#include "Juego.h"
 namespace pryTrabajoFinalGrupoUno {
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -11,7 +12,7 @@ namespace pryTrabajoFinalGrupoUno {
 	value struct Pregunta
 	{
 		String^ testoPreguntas;
-		List<String^>^ respuestas; // Cambiando a List<T> para su uso con .NET
+		List<String^>^ respuestas; // Se List<T> para su uso con .NET
 		int indiceCorrecto; // Índice de la respuesta correcta
 	};
 	public ref class frmPreguntas : public System::Windows::Forms::Form
@@ -689,10 +690,12 @@ namespace pryTrabajoFinalGrupoUno {
 			if (indicePregunta == preguntaActual.indiceCorrecto)
 			{
 				MessageBox::Show("¡Respuesta correcta!");
+				this->Visible = false;
 			}
 			else
 			{
 				MessageBox::Show("Respuesta incorrecta. La respuesta correcta es: " + preguntaActual.respuestas[preguntaActual.indiceCorrecto]);
+				this->Visible = false;
 			}
 			cargarPregunta(); // Cargar una nueva pregunta aleatoria después de verificar la respuesta
 		}
