@@ -55,6 +55,7 @@ namespace pryTrabajoFinalGrupoUno {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(frmInstrucciones::typeid));
 			this->btnIniciar = (gcnew System::Windows::Forms::Button());
 			this->btnRetMenu = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
@@ -68,7 +69,7 @@ namespace pryTrabajoFinalGrupoUno {
 			this->btnIniciar->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnIniciar->ForeColor = System::Drawing::SystemColors::Control;
-			this->btnIniciar->Location = System::Drawing::Point(297, 674);
+			this->btnIniciar->Location = System::Drawing::Point(297, 680);
 			this->btnIniciar->Name = L"btnIniciar";
 			this->btnIniciar->Size = System::Drawing::Size(250, 40);
 			this->btnIniciar->TabIndex = 0;
@@ -98,7 +99,8 @@ namespace pryTrabajoFinalGrupoUno {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(860, 860);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->ClientSize = System::Drawing::Size(860, 788);
 			this->Controls->Add(this->btnRetMenu);
 			this->Controls->Add(this->btnIniciar);
 			this->Cursor = System::Windows::Forms::Cursors::Arrow;

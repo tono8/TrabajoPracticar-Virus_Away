@@ -50,6 +50,7 @@ namespace pryTrabajoFinalGrupoUno {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(frmCreditos::typeid));
 			this->btnRetMenu = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
@@ -74,7 +75,8 @@ namespace pryTrabajoFinalGrupoUno {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(860, 861);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->ClientSize = System::Drawing::Size(860, 788);
 			this->Controls->Add(this->btnRetMenu);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"frmCreditos";
