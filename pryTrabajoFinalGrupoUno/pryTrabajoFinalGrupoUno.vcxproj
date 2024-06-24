@@ -119,19 +119,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="frmPrincipal.cpp" />
-    <ClCompile Include="MyForm.cpp" />
-    <ClCompile Include="Pregunta1.cpp" />
-    <ClCompile Include="Pregunta10.cpp" />
-    <ClCompile Include="Pregunta11.cpp" />
-    <ClCompile Include="Pregunta12.cpp" />
-    <ClCompile Include="Pregunta2.cpp" />
-    <ClCompile Include="Pregunta3.cpp" />
-    <ClCompile Include="Pregunta4.cpp" />
-    <ClCompile Include="Pregunta5.cpp" />
-    <ClCompile Include="Pregunta6.cpp" />
-    <ClCompile Include="Pregunta7.cpp" />
-    <ClCompile Include="Pregunta8.cpp" />
-    <ClCompile Include="Pregunta9.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Aliado.h" />
@@ -178,42 +165,6 @@
     </ClInclude>
     <ClInclude Include="Juego.h" />
     <ClInclude Include="Jugador.h" />
-    <ClInclude Include="Pregunta1.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="Pregunta10.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="Pregunta11.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="Pregunta12.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="Pregunta2.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="Pregunta3.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="Pregunta4.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="Pregunta5.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="Pregunta6.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="Pregunta7.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="Pregunta8.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="Pregunta9.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="Proyectil.h" />
   </ItemGroup>
   <ItemGroup>
@@ -252,42 +203,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSeleccionar.resx">
       <DependentUpon>frmSeleccionar.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pregunta1.resx">
-      <DependentUpon>Pregunta1.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pregunta10.resx">
-      <DependentUpon>Pregunta10.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pregunta11.resx">
-      <DependentUpon>Pregunta11.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pregunta12.resx">
-      <DependentUpon>Pregunta12.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pregunta2.resx">
-      <DependentUpon>Pregunta2.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pregunta3.resx">
-      <DependentUpon>Pregunta3.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pregunta4.resx">
-      <DependentUpon>Pregunta4.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pregunta5.resx">
-      <DependentUpon>Pregunta5.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pregunta6.resx">
-      <DependentUpon>Pregunta6.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pregunta7.resx">
-      <DependentUpon>Pregunta7.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pregunta8.resx">
-      <DependentUpon>Pregunta8.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pregunta9.resx">
-      <DependentUpon>Pregunta9.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
