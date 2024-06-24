@@ -69,7 +69,7 @@ namespace pryTrabajoFinalGrupoUno {
 			this->btnIniciar->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnIniciar->ForeColor = System::Drawing::SystemColors::Control;
-			this->btnIniciar->Location = System::Drawing::Point(297, 680);
+			this->btnIniciar->Location = System::Drawing::Point(297, 520);
 			this->btnIniciar->Name = L"btnIniciar";
 			this->btnIniciar->Size = System::Drawing::Size(250, 40);
 			this->btnIniciar->TabIndex = 0;
@@ -87,7 +87,7 @@ namespace pryTrabajoFinalGrupoUno {
 			this->btnRetMenu->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnRetMenu->ForeColor = System::Drawing::SystemColors::Control;
-			this->btnRetMenu->Location = System::Drawing::Point(297, 750);
+			this->btnRetMenu->Location = System::Drawing::Point(297, 593);
 			this->btnRetMenu->Name = L"btnRetMenu";
 			this->btnRetMenu->Size = System::Drawing::Size(250, 40);
 			this->btnRetMenu->TabIndex = 1;
