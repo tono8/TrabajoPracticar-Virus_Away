@@ -78,9 +78,9 @@ namespace pryTrabajoFinalGrupoUno {
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(1, 0);
+			this->pictureBox1->Location = System::Drawing::Point(0, 2);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(634, 642);
+			this->pictureBox1->Size = System::Drawing::Size(640, 640);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox1->TabIndex = 2;
 			this->pictureBox1->TabStop = false;
@@ -105,12 +105,9 @@ namespace pryTrabajoFinalGrupoUno {
 	private: System::Void frmIntroduccion_Load(System::Object^ sender, System::EventArgs^ e) {
 		
 	}
-	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		f2->Show();
+		this->Visible = false;
 	}
 };
 }
