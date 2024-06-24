@@ -78,9 +78,9 @@ namespace pryTrabajoFinalGrupoUno {
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(1, 0);
+			this->pictureBox1->Location = System::Drawing::Point(0, 2);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(634, 642);
+			this->pictureBox1->Size = System::Drawing::Size(640, 640);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox1->TabIndex = 2;
 			this->pictureBox1->TabStop = false;
@@ -95,22 +95,17 @@ namespace pryTrabajoFinalGrupoUno {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
 			this->Name = L"frmIntroduccion";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Trabajo Final";
-			this->Load += gcnew System::EventHandler(this, &frmIntroduccion::frmIntroduccion_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	private: System::Void frmIntroduccion_Load(System::Object^ sender, System::EventArgs^ e) {
-		
-	}
-	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
+
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		f2->Show();
+		this->Visible = false;
 	}
 };
 }
