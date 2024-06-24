@@ -97,15 +97,12 @@ namespace pryTrabajoFinalGrupoUno {
 			this->Name = L"frmIntroduccion";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Trabajo Final";
-			this->Load += gcnew System::EventHandler(this, &frmIntroduccion::frmIntroduccion_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	private: System::Void frmIntroduccion_Load(System::Object^ sender, System::EventArgs^ e) {
-		
-	}
+
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		f2->Show();
 		this->Visible = false;
