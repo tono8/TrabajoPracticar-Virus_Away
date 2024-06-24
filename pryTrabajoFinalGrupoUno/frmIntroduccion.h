@@ -95,6 +95,7 @@ namespace pryTrabajoFinalGrupoUno {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
 			this->Name = L"frmIntroduccion";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Trabajo Final";
 			this->Load += gcnew System::EventHandler(this, &frmIntroduccion::frmIntroduccion_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
