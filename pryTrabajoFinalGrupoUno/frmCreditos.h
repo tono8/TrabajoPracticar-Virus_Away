@@ -63,7 +63,7 @@ namespace pryTrabajoFinalGrupoUno {
 			this->btnRetMenu->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnRetMenu->ForeColor = System::Drawing::SystemColors::Control;
-			this->btnRetMenu->Location = System::Drawing::Point(297, 750);
+			this->btnRetMenu->Location = System::Drawing::Point(292, 714);
 			this->btnRetMenu->Name = L"btnRetMenu";
 			this->btnRetMenu->Size = System::Drawing::Size(250, 40);
 			this->btnRetMenu->TabIndex = 0;
@@ -80,14 +80,17 @@ namespace pryTrabajoFinalGrupoUno {
 			this->Controls->Add(this->btnRetMenu);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"frmCreditos";
-			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+			this->StartPosition = System::Windows::Forms::FormStartPosition::Manual;
 			this->Text = L"frmCreditos";
+			this->Load += gcnew System::EventHandler(this, &frmCreditos::frmCreditos_Load);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
 	private: System::Void btnRetMenu_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
+	}
+	private: System::Void frmCreditos_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	};
 }

@@ -100,7 +100,7 @@ namespace pryTrabajoFinalGrupoUno {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(860, 788);
+			this->ClientSize = System::Drawing::Size(862, 746);
 			this->Controls->Add(this->btnRetMenu);
 			this->Controls->Add(this->btnIniciar);
 			this->Cursor = System::Windows::Forms::Cursors::Arrow;
