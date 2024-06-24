@@ -175,6 +175,7 @@ namespace pryTrabajoFinalGrupoUno {
 			this->Name = L"frmPrincipal";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Trabajo Final - Virus_Away";
+			this->Load += gcnew System::EventHandler(this, &frmPrincipal::frmPrincipal_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->ResumeLayout(false);
@@ -205,5 +206,8 @@ namespace pryTrabajoFinalGrupoUno {
 	private: System::Void btnFinalizar1_Click(System::Object^ sender, System::EventArgs^ e) {
 		Application::Exit();
 	}
+
+private: System::Void frmPrincipal_Load(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
